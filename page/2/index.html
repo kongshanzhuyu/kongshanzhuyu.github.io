@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ABeta’s blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ABeta’s blog">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="ios-navigationbar的刷新" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/navigationbar的刷新/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/navigationbar的刷新/">navigationBar的刷新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="navigationBar的刷新">navigationBar的刷新</h2><p>　　通过前面介绍的内容，我们知道navigationBar中包含了这几个重要组成部分：leftBarButtonItem, rightBarButtonItem, backBarButtonItem, title。当一个view controller添加到navigationController以后，navigationBar的显示遵循一下几个原则：</p>
+<p>　　1）、Left side of the navigationBar</p>
+<p>　　a）如果当前的viewController设置了leftBarButtonItem，则显示当前VC所自带的leftBarButtonItem。</p>
+<p>　　b）如果当前的viewController没有设置leftBarButtonItem，且当前VC不是rootVC的时候，则显示前一层VC的backBarButtonItem。如果前一层的VC没有显示的指定backBarButtonItem的话，系统将会根据前一层VC的title属性自动生成一个back按钮，并显示出来。</p>
+<p>　　c）如果当前的viewController没有设置leftBarButtonItem，且当前VC已是rootVC的时候，左边将不显示任何东西。</p>
+<p>　　此处注意：5.0中新增加了一个属性leftItemsSupplementBackButton，通过指定该属性为YES，可以让leftBarButtonItem和backBarButtonItem同时显示，其中leftBarButtonItem显示在backBarButtonItem的右边。</p>
+<p>　　2)、title部分</p>
+<p>　　a）如果当前VC通过 .navigationItem.titleView指定了自定义的titleView，系统将会显示指定的titleView，此处要注意自定义titleView的高度不要超过navigationBar的高度，否则会显示出界。</p>
+<p>　　b）如果当前VC没有指定titleView，系统则会根据当前VC的title或者当前VC的navigationItem.title的内容创建一个UILabel并显示，其中如果指定了navigationItem.title的话，则优先显示navigationItem.title的内容。</p>
+<p>　　3)、Right side of the navigationBar</p>
+<p>　　a）如果当前VC指定了rightBarButtonItem的话，则显示指定的内容。</p>
+<p>　　b）如果当前VC没有指定rightBarButtonItem的话，则不显示任何东西。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/navigationbar的刷新/" data-id="cie2ful27000xc2s6lpl1uwhx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-sqlite命令行工具" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/sqlite命令行工具/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/sqlite命令行工具/">sqlite3命令行工具</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。</p>
+<p>打开终端，键入如下命令：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~  sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">SQLite <span class="keyword">version</span> 3.8.5 2014-08-15 22:37:57</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> usage hints.</span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
+<p>.help命令是sqlite3的元命令工具之一,它列出了sqlite3所有的元命令。 </p>
+<p>.exit 和 .quit 命令退出sqlite3会话。我们还可以使用组合键Ctrl + D 退出sqlite3。</p>
+<p>.databases命令显示了连接数据库。</p>
+<p>.tables表命令列出可用的表。</p>
+<h2 id="创建一个数据库">创建一个数据库</h2><p>使用sqlite3命令行工具来创建一个新的数据库文件：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">这里我们创建一个新的<span class="keyword">test</span>.<span class="keyword">db</span>数据库。如果文件存在，则打开数据库。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##创建数据库表</span><br></pre></td></tr></table></figure>
+<p>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">##基本sqlite3元命令</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .tables<br>Cars<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">.tables命令显示可用的表。</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; SELECT * FROM cars;<br>1|Audi|52642<br>2|Mercedes|57127<br>3|Skoda|9000<br>4|Volvo|29000<br>5|Bentley|350000<br>6|Citroen|21000<br>7|Hummer|41400<br>8|Volkswagen|21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT查询语句的输出默认情况下是按行输出，行分隔符是<span class="escape">`|</span><span class="escape">`。</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .separator :<br>sqlite&gt; SELECT * FROM cars;<br>1:Audi:52642<br>2:Mercedes:57127<br>3:Skoda:9000<br>4:Volvo:29000<br>5:Bentley:350000<br>6:Citroen:21000<br>7:Hummer:41400<br>8:Volkswagen:21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">上面使用了新的分隔符`:<span class="escape">`</span><br><span class="line"></span></span></span><br><span class="line">还有其他几个可用的输出模式。下面的示例显示列的输出模式：</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .mode column<br>sqlite&gt; .headers on<br>sqlite&gt; SELECT * FROM cars;<br>Id          Name        Price</p>
+<hr>
+<p>1           Audi        52642<br>2           Mercedes    57127<br>3           Skoda       9000<br>4           Volvo       29000<br>5           Bentley     350000<br>6           Citroen     21000<br>7           Hummer      41400<br>8           Volkswagen  21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .width 15 18<br>sqlite&gt; SELECT Name, Price FROM cars;<br>Name             Price</p>
+<hr>
+<p>Audi             52642<br>Mercedes         57127<br>Skoda            9000<br>Volvo            29000<br>Bentley          350000<br>Citroen          21000<br>Hummer           41400<br>Volkswagen       21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在这里，我们改变列宽。第一列将15个字符宽,第二列是18。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .show<br>echo: off<br>      eqp: off<br>  explain: off<br>  headers: on<br>     mode: column<br>nullvalue: “”<br>   output: stdout<br>separator: “:”<br>    stats: off<br>    width: 15 18<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.show</span> 命令列出各种设置。这些包括输出模式，在列表模式下使用的分隔符和是否显示头部。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .schema Cars<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.schema</span> 命令显示表的结构。它返回创建表的DDL SQL。</span><br><span class="line"></span><br><span class="line"><span class="class">.prompt</span> 命令可以改变的sqlite3的提示。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .prompt “&gt; “ “. “</p>
+<blockquote>
+<p>SELECT * FROM Cars<br>. LIMIT 2;<br>Id               Name                Price</p>
+<hr>
+<p>1                Audi                52642<br>2                Mercedes            57127<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有两个提示。最主要是第一个提示，另一个是继续提示。默认的主提示符是<span class="string">'sqlite&gt;'</span> 和默认的继续提示<span class="string">'...&gt;'</span>。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">##从shell执行SQL</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>$ sqlite3 test.db “SELECT * FROM Cars;”<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">##Dumping tables</span></span><br><span class="line"></span><br><span class="line">我们将使用.<span class="keyword">dump</span>命令来转储。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .dump Cars<br>PRAGMA foreign_keys=OFF;<br>BEGIN TRANSACTION;<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br>COMMIT;<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.dump</span> 命令显示了我们所必需的SQL创建表的信息。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .output cars2.sql<br>sqlite&gt; .dump Cars<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">我们也可以将输出重定向到一个文件中。</span><br><span class="line"></span><br><span class="line">.output命令会将输出重定向cars2.sql文件。</span><br><span class="line"></span><br><span class="line"><span class="comment">##Reading SQL</span></span><br><span class="line"></span><br><span class="line">我们可以从一个文件名读取SQL语句 `.<span class="command">read</span>` 命令。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; DROP TABLE Cars;<br>sqlite&gt; .tables Cars<br>sqlite&gt; .read cars.sql<br>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; SELECT * FROM Cars WHERE Id=1;<br>Id          Name        Price     </p>
+<hr>
+<p>1           Audi        52642<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="stylus">#<span class="id">#The</span> <span class="class">.sqlite_history</span> file</span><br><span class="line"></span><br><span class="line">命令和语句中存档于 .sqlite_history文件。该文件位于主目录。</span></span><br></pre></td></tr></table></figure></p>
+<p>$ tail -5 ~/.sqlite_history<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用tail命令,我们显示最后五项。</span><br><span class="line"></span><br><span class="line">#<span class="id">#Resource</span> file</span><br><span class="line"></span><br><span class="line">sqlite3 工具有一个资源文件 <span class="class">.sqliterc</span> 。 它位于主目录。如果没有这些文件，我们可以简单地创建它。 这些文件可以包含元命令，或常规的SQL语句。</span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line">$ cat <span class="class">.sqliterc</span> </span><br><span class="line"><span class="class">.mode</span> column</span><br><span class="line"><span class="class">.header</span> on</span><br><span class="line"><span class="class">.nullvalue</span> NULL</span><br></pre></td></tr></table></figure></p>
+<p>这里是一个简单的资源文件的例子，它有三个元命令。有了资源文件，我们不需要再次执行已有的元命令。当我们开始 sqlite3 工具，他们将自动执行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/sqlite命令行工具/" data-id="cie2ful1y000oc2s6hn9uajkr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-XML&amp;JSON" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/XML&JSON/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/XML&JSON/">数据解析XML</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="XML">XML</h1><h2 id="SAX解析">SAX解析</h2><ol>
+<li><p>创建XML解析对象</p>
+ <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *fileURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"bookstore"</span> withExtension:<span class="string">@"xml"</span>];</span><br><span class="line"><span class="built_in">NSXMLParser</span> *xmlParser = [[<span class="built_in">NSXMLParser</span> alloc] initWithContentsOfURL:fileURL];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li>设置XML解析对象的代理</li>
+<li><p>开始解析</p>
+ <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">BOOL</span> flag = [xmlParser parse];</span><br><span class="line">   <span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">       <span class="built_in">NSLog</span>(<span class="string">@"xmlParser parse error."</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>NSXMLParser对象代理方法：</p>
+<ul>
+<li><p>(void)parserDidStartDocument:(NSXMLParser *)parser </p>
+<blockquote>
+<p>当开始解析XML文档的时候，调用这个方法。通常在这个方法里，<code>创建存储模型对象的数组</code></p>
+</blockquote>
+</li>
+<li><p>(void)parser:(NSXMLParser <em>)parser didStartElement:(NSString </em>)elementName namespaceURI:(NSString <em>)namespaceURI qualifiedName:(NSString </em>)qName attributes:(NSDictionary *)attributeDict </p>
+<blockquote>
+<p>当开始解析，遇到元素的开始标签的时候，调用这个方法。通常在这个方法里，<code>创建模型对象或解析标签中的属性保存在模型对象中</code></p>
+</blockquote>
+</li>
+<li><p>(void)parser:(NSXMLParser <em>)parser foundCharacters:(NSString </em>)string</p>
+<blockquote>
+<p>当解析到xml标签的文本内容的时候，调用这个方法, 通常在这里先<code>暂存解析到的文本内容</code></p>
+</blockquote>
+</li>
+<li><p>(void)parser:(NSXMLParser <em>)parser didEndElement:(NSString </em>)elementName namespaceURI:(NSString <em>)namespaceURI qualifiedName:(NSString </em>)qName</p>
+<blockquote>
+<p>当解析xml内容遇到结束标签的时候，调用这个方法。通常在这个方法里，<code>需要将模型对象保存入数组中或把标签对应的文本内容解析出来，保存在模型对象中（KVC）</code></p>
+</blockquote>
+</li>
+<li><p>(void)parserDidEndDocument:(NSXMLParser *)parser</p>
+<blockquote>
+<p>当整个xml文档全部解析结束的时候，该方法会被调用</p>
+</blockquote>
+</li>
+<li><p>(void)parser:(NSXMLParser <em>)parser parseErrorOccurred:(NSError </em>)parseError</p>
+<blockquote>
+<p>当遇到解析错误时，该方法会被调用</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="DOM解析_(以GDataXMLNode为例)">DOM解析 (以GDataXMLNode为例)</h2><p>使用:</p>
+<p>添加头文件搜索路径：<br><code>Build Settings-&gt;Header Search Paths-&gt;&quot;/usr/include/libxml2&quot;</code></p>
+<p>用非ARC的方式编译GDataXMLNode.m文件：<br><code>-fno-objc-arc</code></p>
+<p>链接libxml2.dylib该动态库：<br><code>Build Phases-&gt;Link Binary With Libraries-&gt;&quot;libxml2.dylib&quot;</code></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span></span><br><span class="line">    <span class="keyword">*</span> <span class="variable">&lt;节点&gt;</span> (GDataXMLNode)</span><br><span class="line">    <span class="keyword">*</span> 根据 DOM，XML 文档中的每个成分都是一个节点。</span><br><span class="line">    <span class="keyword">*</span> DOM 是这样规定的：</span><br><span class="line">    <span class="keyword">*</span> 整个文档是一个文档节点</span><br><span class="line">    <span class="keyword">*</span> 每个 XML 标签是一个元素节点</span><br><span class="line">    <span class="keyword">*</span> 包含在 XML 元素中的文本是文本节点</span><br><span class="line">    <span class="keyword">*</span> 每一个 XML 属性是一个属性节点</span><br><span class="line">    <span class="keyword">*</span> 注释属于注释节点</span><br><span class="line">    <span class="keyword">*</span>/</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>根据XML文件创建NSData对象</p>
+ <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *fileURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"bookstore"</span> withExtension:<span class="string">@"xml"</span>];</span><br><span class="line">   <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfURL:fileURL];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>根据NSData对象创建GDataXMLDocument对象（即DOM模型对象），该对象在内存中是以树形结构存储的</p>
+ <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GDataXMLDocument *doc = [[GDataXMLDocument alloc] <span class="string">initWithData:</span>data <span class="string">options:</span><span class="number">0</span> <span class="string">error:</span>nil];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过DOM模型对象，取出XML文件的根元素</p>
+ <figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">GDataXMLElement *rootElement </span>=<span class="string"> [doc rootElement];</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>由于是树形结构，所以，可以根据子元素的名字使用根元素获取到所有子元素，并类推获得子元素的子元素</p>
+ <figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="atom">for</span> (<span class="name">GDataXMLElement</span> *<span class="atom">element</span> <span class="atom">in</span> <span class="atom">elements</span>) &#123;</span><br><span class="line">       // 创建图书对象</span><br><span class="line">       <span class="name">YMBook</span> *<span class="atom">book</span> = [[<span class="name">YMBook</span> <span class="atom">alloc</span>] <span class="atom">init</span>];</span><br><span class="line">       </span><br><span class="line">       // 根据属性名字，解析<span class="atom">book</span>元素的属性值</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">category</span> = [[<span class="atom">element</span> <span class="atom">attributeForName</span>:<span class="atom">kCategory</span>] <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       // 解析<span class="atom">book</span>的子元素包含的文本内容及其子元素的属性</span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">titleElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kTitle</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">title</span> = [<span class="atom">titleElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">lang</span> = [[<span class="atom">titleElement</span> <span class="atom">attributeForName</span>:<span class="atom">kLanguage</span>] <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">authorElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kAuthor</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">author</span> = [<span class="atom">authorElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">yearElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kYear</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">year</span> = [<span class="atom">yearElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">priceElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kPrice</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">price</span> = [<span class="atom">priceElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       [<span class="name">_bookStore</span> <span class="atom">addObject</span>:<span class="atom">book</span>];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="JSON">JSON</h1><p>从结构上看，所有的数据（data）最终都可以分解成三种类型：</p>
+<ul>
+<li>第一种类型是标量（scalar），也就是一个单独的字符串（string）或数字（numbers），比如”北京”这个单独的词</li>
+<li>第二种类型是序列（sequence），也就是若干个相关的数据按照一定顺序并列在一起，又叫做数组（array）或列表（List），比如”北京，上海”</li>
+<li>第三种类型是映射（mapping），也就是一个名/值对（Name/value），即数据有一个名称，还有一个与之相对应的值，这又称作散列（hash）或字典（dictionary），比如”首都：北京”</li>
+</ul>
+<p>Douglas Crockford发明了JSON，Json的规定非常简单:</p>
+<ol>
+<li>并列的数据之间用逗号（”, “）分隔</li>
+<li>映射用冒号（”: “）表示</li>
+<li>并列数据的集合（数组）用方括号(“[]”)表示</li>
+<li>映射的集合（对象）用大括号（”{}”）表示</li>
+</ol>
+<p>比如，下面这句话：</p>
+<blockquote>
+<p>“北京市的面积为16800平方公里，常住人口1600万人。上海市的面积为6400平方公里，常住人口1800万。”</p>
+</blockquote>
+<p>写成JSON格式就是这样：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">　　&#123;"<span class="attribute">城市</span>":<span class="value"><span class="string">"北京"</span></span>,"<span class="attribute">面积</span>":<span class="value"><span class="number">16800</span></span>,"<span class="attribute">人口</span>":<span class="value"><span class="number">1600</span></span>&#125;,</span><br><span class="line">　　&#123;"<span class="attribute">城市</span>":<span class="value"><span class="string">"上海"</span></span>,"<span class="attribute">面积</span>":<span class="value"><span class="number">6400</span></span>,"<span class="attribute">人口</span>":<span class="value"><span class="number">1800</span></span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>如果事先知道数据的结构，上面的写法还可以进一步简化：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">　　[<span class="string">"北京"</span>,<span class="number">16800</span>,<span class="number">1600</span>],</span><br><span class="line">　　[<span class="string">"上海"</span>,<span class="number">6400</span>,<span class="number">1800</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><em><code>rfc-4627</code></em></p>
+<p><em><code>www.json.org/json-zh.htm</code></em></p>
+<p><em><code>www.sojson.com</code></em></p>
+<h2 id="NSJSONSerialization">NSJSONSerialization</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">id</span>)JSONObjectWithData:(<span class="built_in">NSData</span> *)data</span><br><span class="line">                options:(<span class="built_in">NSJSONReadingOptions</span>)opt</span><br><span class="line">                  error:(<span class="built_in">NSError</span> **)error</span><br><span class="line">                  </span><br><span class="line">+ (<span class="built_in">NSData</span> *)dataWithJSONObject:(<span class="keyword">id</span>)obj</span><br><span class="line">                      options:(<span class="built_in">NSJSONWritingOptions</span>)opt</span><br><span class="line">                        error:(<span class="built_in">NSError</span> **)error</span><br></pre></td></tr></table></figure>
+<h2 id="JSONKit">JSONKit</h2><p>使用：<br><code>-fno-objc-arc</code></p>
+<p>序列化: <code>NSArray</code> <code>NSDictionary</code> <code>NSString</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">– JSONData</span><br><span class="line">– <span class="string">JSONDataWithOptions:</span><span class="string">includeQuotes:</span><span class="string">error:</span></span><br><span class="line">- <span class="string">JSONDataWithOptions:</span><span class="string">serializeUnsupportedClassesUsingDelegate:</span><span class="string">selector:</span><span class="string">error:</span></span><br><span class="line">- <span class="string">JSONDataWithOptions:</span><span class="string">serializeUnsupportedClassesUsingBlock:</span><span class="string">error:</span></span><br><span class="line"></span><br><span class="line">– JSONString</span><br><span class="line">– <span class="string">JSONStringWithOptions:</span><span class="string">includeQuotes:</span><span class="string">error:</span></span><br><span class="line">- <span class="string">JSONStringWithOptions:</span><span class="string">serializeUnsupportedClassesUsingDelegate:</span><span class="string">selector:</span><span class="string">error:</span></span><br><span class="line">– <span class="string">JSONStringWithOptions:</span><span class="string">serializeUnsupportedClassesUsingBlock:</span><span class="string">error:</span></span><br></pre></td></tr></table></figure>
+<p>反序列化: <code>NSData</code> <code>NSString</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">– objectFromJSONData</span><br><span class="line">– <span class="string">objectFromJSONDataWithParseOptions:</span></span><br><span class="line">– <span class="string">objectFromJSONDataWithParseOptions:</span><span class="string">error:</span></span><br><span class="line">– mutableObjectFromJSONData</span><br><span class="line">– <span class="string">mutableObjectFromJSONDataWithParseOptions:</span></span><br><span class="line">– <span class="string">mutableObjectFromJSONDataWithParseOptions:</span><span class="string">error:</span></span><br><span class="line"></span><br><span class="line">– objectFromJSONString</span><br><span class="line">– <span class="string">objectFromJSONStringWithParseOptions:</span></span><br><span class="line">– <span class="string">objectFromJSONStringWithParseOptions:</span><span class="string">error:</span></span><br><span class="line">– mutableObjectFromJSONString</span><br><span class="line">– <span class="string">mutableObjectFromJSONStringWithParseOptions:</span></span><br><span class="line">– <span class="string">mutableObjectFromJSONStringWithParseOptions:</span><span class="string">error:</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/XML&JSON/" data-id="cie2ful3v0028c2s6ywcvllg5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据解析XML/">数据解析XML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-fmdb" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/fmdb/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/fmdb/">FMDB</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="FMDB">FMDB</h1><blockquote>
+<p>如果直接使用sqlite3操作数据库（c/c++ API），操作麻烦，使用难度大，工作效率低。所以，在Objective-c中使用比较麻烦，下面是一个简单的基本查询：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 *oldDatabase = <span class="literal">nil</span>;</span><br><span class="line"><span class="built_in">NSString</span> *filePath = <span class="string">@"/File/Path/For/Sqlite/Database"</span>;</span><br><span class="line">sqlite3_open([filePath UTF8String], &amp;oldDatabase);</span><br><span class="line">sqlite3_stmt* statement = <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* sqlQuery = <span class="string">"SELECT NAME FROM TABLENAME"</span>;</span><br><span class="line"><span class="keyword">if</span> (sqlite3_prepare_v2(oldDatabase, sqlQuery, -<span class="number">1</span>, &amp;statement, <span class="literal">NULL</span>) == SQLITE_OK)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span> (sqlite3_step(statement) == SQLITE_ROW) <span class="comment">// get row one by one</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* zdatabaseName = sqlite3_column_text(statement, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%s %s"</span>, __FUNCTION__, zdatabaseName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">sqlite3_finalize(statement);</span><br><span class="line">sqlite3_close(oldDatabase);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>而FMDB数据库操作类对sqlite3的操作进行了便利地封装并保证了多线程下安全地操作数据库</p>
+</blockquote>
+<p>FMDB有三个主要的类</p>
+<p>1.FMDatabase – 表示一个单独的SQLite数据库，用来执行SQLite的命令</p>
+<p>2.FMResultSet – 表示FMDatabase执行查询后的结果集</p>
+<p>3.FMDatabaseQueue – 如果你想在多线程中执行多个查询或更新，你应该使用该类，这是线程安全的</p>
+<h1 id="FMDatabase">FMDatabase</h1><p><strong>数据库创建</strong></p>
+<p>创建FMDatabase对象时参数为SQLite数据库文件路径。该文件路径无需真实存在，如果不存在会自动创建</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSArray</span> *paths = <span class="built_in">NSSearchPathForDirectoriesInDomains</span>(<span class="built_in">NSDocumentDirectory</span>, <span class="built_in">NSUserDomainMask</span>, <span class="literal">YES</span>);</span><br><span class="line"><span class="built_in">NSString</span> *docDir = [paths objectAtIndex:<span class="number">0</span>]; </span><br><span class="line"><span class="built_in">NSString</span> *dataBasePath = [docDir stringByAppendingPathExtension:<span class="string">@"tataBase.db"</span>];</span><br><span class="line">FMDatabase *db = [FMDatabase databaseWithPath:dataBasePath];</span><br></pre></td></tr></table></figure>
+<p><strong>打开数据库</strong></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (![<span class="keyword">db</span> <span class="keyword">open</span>]) &#123;</span><br><span class="line">        NSLog(@<span class="string">"Could not open db."</span>);</span><br><span class="line">        <span class="keyword">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>执行更新</strong></p>
+<ul>
+<li>executeUpdate</li>
+</ul>
+<p>一切不是SELECT命令的命令都视为更新。这包括  CREATE, UPDATE, INSERT,ALTER等。简单来说，只要不是以SELECT开头的命令都是UPDATE命令</p>
+<p>执行更新返回一个BOOL值。YES表示执行成功，NO表示有错误。你可以调用 -lastErrorMessage 和 -lastErrorCode方法来得到更多信息。以插入操作举例：</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO PersonList(Name, Age, Sex, Phone, Address, Photo) VALUES (?,?,?,?,?,?)"</span>,@<span class="string">"Jone"</span>, <span class="collection">[NSNumber numberWithInt:20]</span>, <span class="collection">[NSNumber numberWithInt:0]</span>, @“<span class="number">091234567</span>”, @“Taiwan, R.O.C”, <span class="collection">[NSData dataWithContentsOfFile: filepath]</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><strong>执行查询</strong></p>
+<ul>
+<li>executeQuery</li>
+</ul>
+<p>SELECT命令就是查询操作</p>
+<p>执行查询时，如果成功返回<strong>FMResultSet</strong>对象，错误返回nil</p>
+<p>与执行更新相同，也可以使用 -lastErrorCode和-lastErrorMessage获知错误信息</p>
+<p>获得FMResultSet对象rs后，即使只有一条记录，一样要使用[rs next];</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FMResultSet *rs = [db <span class="string">executeQuery:</span>@<span class="string">"SELECT Name, Age, FROM PersonList"</span>];</span><br><span class="line"><span class="keyword">while</span> ([rs next]) &#123;</span><br><span class="line">	NSString *name = [rs <span class="string">stringForColumn:</span>@<span class="string">"Name"</span>];</span><br><span class="line">	<span class="typename">int</span> age = [rs <span class="string">intForColumn:</span>@<span class="string">"Age"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>FMResultSet根据类型提取数据的方法:</p>
+<pre><code>-<span class="ruby"> <span class="symbol">intForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">longForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">nlongLongIntForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">boolForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">doubleForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">stringForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">dateForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">dataForColumn:</span>
+</span>-<span class="ruby"> <span class="symbol">dataNoCopyForColumn:</span>
+</span>-<span class="ruby"> <span class="constant">UTF8StringForColumnName</span><span class="symbol">:</span>
+</span>-<span class="ruby"> <span class="symbol">objectForColumnName:</span></span>
+</code></pre><p><code>以上这些方法，都有个{type}ForColumnIndex:版本，根据colum的位置来提取数据</code>    </p>
+<p>有些时候，只是需要query某一个row里特定的一个数值（比如只是要找John的年龄），FMDB提供了几个比较简便的方法。这些方法定义在FMDatabaseAdditions.h，如果要使用，记得先import进来</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//找地址</span><br><span class="line">NSString *address = [db stringForQuery:@"<span class="operator"><span class="keyword">SELECT</span> Address <span class="keyword">FROM</span> PersonList <span class="keyword">WHERE</span> Name = ?<span class="string">",@"</span>John”];</span></span><br><span class="line">//找年齡</span><br><span class="line">int age = [db intForQuery:@"<span class="operator"><span class="keyword">SELECT</span> Age <span class="keyword">FROM</span> PersonList <span class="keyword">WHERE</span> Name = ?<span class="string">",@"</span>John”];</span></span><br></pre></td></tr></table></figure>
+<p>使用完数据库，[FMDatabase close]，关闭数据库连接来释放SQLite使用的资源</p>
+<p><strong>批量操作</strong></p>
+<p>使用FMDatabase 的executeStatements:或者executeStatements:withResultBlock:（是否需要返回结果）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSString *sql = @"<span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> bulktest1 (id <span class="built_in">integer</span> <span class="keyword">primary</span> <span class="keyword">key</span> autoincrement, x <span class="built_in">text</span>);</span>"</span><br><span class="line">                 "<span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> bulktest2 (id <span class="built_in">integer</span> <span class="keyword">primary</span> <span class="keyword">key</span> autoincrement, y <span class="built_in">text</span>);</span>"</span><br><span class="line">                 "<span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> bulktest3 (id <span class="built_in">integer</span> <span class="keyword">primary</span> <span class="keyword">key</span> autoincrement, z <span class="built_in">text</span>);</span>"</span><br><span class="line">                 "<span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> bulktest1 (x) <span class="keyword">values</span> (<span class="string">'XXX'</span>);</span>"</span><br><span class="line">                 "<span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> bulktest2 (y) <span class="keyword">values</span> (<span class="string">'YYY'</span>);</span>"</span><br><span class="line">                 "<span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> bulktest3 (z) <span class="keyword">values</span> (<span class="string">'ZZZ'</span>);</span>";</span><br><span class="line"></span><br><span class="line">success = [db executeStatements:sql];</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sql = @"<span class="operator"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="keyword">count</span> <span class="keyword">from</span> bulktest1;</span>"</span><br><span class="line">       "<span class="operator"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="keyword">count</span> <span class="keyword">from</span> bulktest2;</span>"</span><br><span class="line">       "<span class="operator"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="keyword">count</span> <span class="keyword">from</span> bulktest3;</span>";</span><br><span class="line"></span><br><span class="line">success = [self.db executeStatements:sql withResultBlock:^int(NSDictionary *dictionary) &#123;</span><br><span class="line">    NSInteger count = [dictionary[@"count"] integerValue];</span><br><span class="line">    XCTAssertEqual(count, 1, @"expected one record for dictionary %@", dictionary);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p><strong>绑定参数</strong></p>
+<p>INSERT INTO myTable VALUES (?, ?, ?)</p>
+<p>问号只是占位，执行操作可以使用NSArray, NSDictionary, or a va_list来匹配参数</p>
+<p>你也可以选择使用命名参数语法：INSERT INTO myTable VALUES (:id, :name, :value) </p>
+<p>参数名必须以冒名开头。SQLite本身支持其他字符（$,@），Dictionary key的内部实现是冒号开头。注意你的NSDictionary key不要包含冒号</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSDictionary *argsDict = @&#123;@<span class="string">"name"</span>:@<span class="string">"Jason"</span>&#125;;</span><br><span class="line">    [db <span class="string">executeUpdate:</span>@<span class="string">"INSERT INTO myTable VALUES (:name)"</span> <span class="string">withParameterDictionary:</span>argsDict];</span><br></pre></td></tr></table></figure>
+<p><strong>FMDatabaseQueue 及线程安全</strong></p>
+<p><code>不能使用同一个FMDatabase在不同线程中操作，多线程的操作是通过FMDatabaseQueue实现</code></p>
+<p>首先创建队列，然后把单任务包装到事务里，串行执行</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FMDatabaseQueue *queue = [FMDatabaseQueue <span class="string">databaseQueueWithPath:</span>aPath]; </span><br><span class="line">[queue <span class="string">inDatabase:</span>^(FMDatabase *db) &#123;    </span><br><span class="line">          [db <span class="string">executeUpdate:</span>@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, [NSNumber <span class="string">numberWithInt:</span><span class="number">1</span>]];    </span><br><span class="line">          [db <span class="string">executeUpdate:</span>@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, [NSNumber <span class="string">numberWithInt:</span><span class="number">2</span>]];    </span><br><span class="line">          [db <span class="string">executeUpdate:</span>@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, [NSNumber <span class="string">numberWithInt:</span><span class="number">3</span>]];    </span><br><span class="line">          FMResultSet *rs = [db <span class="string">executeQuery:</span>@<span class="string">"select * from foo"</span>];    </span><br><span class="line">         <span class="keyword">while</span>([rs next]) &#123;   </span><br><span class="line">            …    </span><br><span class="line">         &#125;    </span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>事务的回滚：（当前的队列的操作的取消）</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[queue inTransaction:^<span class="list">(<span class="keyword">FMDatabase</span> *db, BOOL *rollback)</span> <span class="collection">&#123;    </span><br><span class="line">            <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, <span class="collection">[NSNumber numberWithInt:1]</span>]</span><span class="comment">;    </span></span><br><span class="line">            <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, <span class="collection">[NSNumber numberWithInt:2]</span>]</span><span class="comment">;    </span></span><br><span class="line">            <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, <span class="collection">[NSNumber numberWithInt:3]</span>]</span><span class="comment">;    </span></span><br><span class="line">            if <span class="list">(<span class="keyword">whoopsSomethingWrongHappened</span>)</span> <span class="collection">&#123;    </span><br><span class="line">                    *rollback = YES; </span><br><span class="line">                    return;    </span><br><span class="line">            &#125;</span>   </span><br><span class="line">            // etc…    </span><br><span class="line">            <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO myTable VALUES (?)"</span>, <span class="collection">[NSNumber numberWithInt:4]</span>]</span><span class="comment">;    </span></span><br><span class="line">    &#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><em>FMDatabaseQueue会在同一个队列里<code>同步</code>执行任务， GCD也会按它接收的块的顺序来执行</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/fmdb/" data-id="cie2ful2o001hc2s63hf44bje" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FMDB/">FMDB</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-Sqlite" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/Sqlite/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/Sqlite/">SQLite</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介">简介</h2><p>SQLite是个轻量级的嵌入式关系数据库。它不作为一个独立的进程运行，而是通过动态或者静态库的方式链接到应用程序中。它生成的数据库文件是一个普通的磁盘文件，可以放在任何目录下。SQLite本身是C语言开发的，开放源码，并且跨平台支持，并且被大部分驻留编程语言支持。详细内容-&gt; <a href="http://sqlite.org" target="_blank" rel="external">sqlite.org</a></p>
+<h2 id="SQLite数据库之SQL语言">SQLite数据库之SQL语言</h2><h3 id="数据定义语言(DDL)">数据定义语言(DDL)</h3><ul>
+<li>CREATE</li>
+<li>ALTER TABLE</li>
+<li>DROP</li>
+</ul>
+<h3 id="数据操作语言(DML)">数据操作语言(DML)</h3><ul>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+</ul>
+<h3 id="数据查询语言(DQL)">数据查询语言(DQL)</h3><ul>
+<li>SELECT</li>
+</ul>
+<h2 id="SQLite中的数据类型">SQLite中的数据类型</h2><ul>
+<li>NULL 空值</li>
+<li>INTEGER 有符号整数</li>
+<li>REAL 浮点数</li>
+<li>TEXT 文本字符串</li>
+<li>BLOB 二进制数据，如图片、声音等</li>
+</ul>
+<h2 id="SQLite命令行工具安装">SQLite命令行工具安装</h2><ul>
+<li>Windows版本：<a href="http://www.sqlite.org/sqlite-shell-win32-x86-3070701.zip" target="_blank" rel="external">下载</a></li>
+<li>Unix/Linux：终端中自带sqlite，无需下载安装</li>
+</ul>
+<h2 id="SQLite命令行工具">SQLite命令行工具</h2><h3 id="数据库和表的元命令">数据库和表的元命令</h3><ol>
+<li><p>创建数据库 <code>sqlite3 test.db</code></p>
+</li>
+<li><p>打开已经存在的数据库 <code>sqlite3 test.db</code></p>
+</li>
+<li><p>导入数据 <code>.read test.sql</code></p>
+</li>
+<li><p>列出所有数据表：<code>.tables</code></p>
+</li>
+<li><p>显示数据库结构：<code>.schema</code></p>
+</li>
+<li><p>显示表的结构： <code>.schema Students</code></p>
+</li>
+<li><p>导出某个表的数据：<code>.dump Students</code></p>
+</li>
+<li><p>设置导出文件流：<code>.output stdout</code> </p>
+</li>
+</ol>
+<h3 id="数据显示相关元命令">数据显示相关元命令</h3><ol>
+<li><p>设置分隔符：<code>.separator :</code></p>
+</li>
+<li><p>设置显示模式：<code>.mode column</code></p>
+</li>
+<li><p>显示标题栏：<code>.headers on</code></p>
+</li>
+<li><p>设置每列的显示宽度：<code>.width 8, 10, 15</code>        </p>
+</li>
+<li><p>设置NULL值得显示样式：<code>.nullvalue NaN</code></p>
+</li>
+<li><p>列出当前显示格式的设置情况：<code>.show</code></p>
+</li>
+<li><p>配置文件：<code>~/.sqliterc</code></p>
+</li>
+</ol>
+<hr>
+<h2 id="SQLite数据库操作">SQLite数据库操作</h2><h3 id="DDL">DDL</h3><h5 id="创建表_(CREATE)">创建表 (CREATE)</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Students(ID <span class="built_in">integer</span>, Name <span class="built_in">text</span>, Age <span class="built_in">integer</span>);</span></span><br></pre></td></tr></table></figure>
+<h6 id="修改表_(ALTER_TABLE)">修改表 (ALTER TABLE)</h6><p><em>将Students表改名为Teachers表</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Students <span class="keyword">RENAME</span> <span class="keyword">TO</span> Teachers;</span></span><br></pre></td></tr></table></figure>
+<p><em>向Teacher表的结构中，增加一个Sex列</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Teachers <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> Sex <span class="built_in">text</span>;</span></span><br></pre></td></tr></table></figure>
+<h6 id="删除表_(DROP_TABLE)">删除表 (DROP TABLE)</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> Teachers;</span></span><br></pre></td></tr></table></figure>
+<h3 id="约束_（Constraints）">约束 （Constraints）</h3><p>什么是约束？<br>比如学校教师的教师表，部分字段可能会有如下约束：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">年龄 - 大于20岁。如果你想录入一个小于20岁的教师，系统会报错</span><br><span class="line">国籍 - 默认中国。所谓默认，就是如果你不填写，系统自动填上默认值</span><br><span class="line">姓名 - 不能为空。如果不填，会报错</span><br><span class="line">员工号 - 唯一。如果重复，会报错</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面提到的大于、默认、不能为空、唯一等，就是数据的约束条件。在用 CREATE TABLE 创建表的时候，就应该将每个字段列的约束条件事先说明（如果有的话）， 以后再往表里输入数据的时候，系统会自动为我们检查是否满足约束条件，如果不满足，系统会报错。</p>
+</blockquote>
+<p>SQLite 常用约束如下：</p>
+<ul>
+<li>NOT NULL - 非空</li>
+<li>UNIQUE - 唯一</li>
+<li>PRIMARY KEY - 主键</li>
+<li>FOREIGN KEY - 外键</li>
+<li>CHECK - 条件检查</li>
+<li>DEFAULT - 默认</li>
+</ul>
+<h5 id="主键_（PRIMARY_KEY）">主键    （PRIMARY KEY）</h5><ul>
+<li>数据表中每一条记录都有一个主键，这就像我们每个人的身份证号码、员工号、银行帐号；反过来也可以说，每一个主键对应着一条数据记录。 所以，主键必须是唯一的</li>
+<li>一般情况下主键同时也是一个索引，所以通过主键查找记录速度比较快</li>
+<li>在关系型数据库中，一个表的主键可以作为另外一个表的外键， 这样，这两个表之间就通过这个键建立了关系</li>
+<li>主键一般是整数或者字符串，只要保证唯一就行。 在 SQLite 中，主键如果是整数类型，该列的值可以自动增长</li>
+</ul>
+<h5 id="默认值_（DEFAULT）">默认值 （DEFAULT）</h5><p>有些字段，在每条记录中，值都一样，只在个别情况下才需要更改，可以给这些字段设置默认值    </p>
+<h5 id="非空_(NOT_NULL)">非空 (NOT NULL)</h5><p>有些字段，可能一时不知道填什么值，并且也没设置默认值。当添加数据时，这些字段空置不填，系统会认为是NULL</p>
+<p>但有另外一些字段，必须被天上值，如果不填，就会出错。这样的字段被称为非空(NOT NULL)字段，需要在定义表的时候事先声明</p>
+<h5 id="唯一值_(UNIQUE)">唯一值    (UNIQUE)</h5><p>除了主键，可能也有写字段的值不能重复，就需要用到UNIQUE约束了</p>
+<h5 id="条件检查_(CHECK)">条件检查    (CHECK)</h5><p>某些值必须符合一定的条件才允许存入，这是就需要用到这个 CHECK 约束</p>
+<h5 id="外键_(FOREIGN_KEY)">外键 (FOREIGN KEY)</h5><p>现在，我们的数据库中已经有 Teachers 表了，假如我们再建立一个 Students 表， 要求 Students 表中的每一个学生都对应一个 Teachers 表中的教师。</p>
+<p>很简单，只需要在 Students 表中建立一个 TeacherID 字段，保存对应教师的 ID， 这样，学生和教师之间就建立了关系。</p>
+<p><code>问题是：我们有可能给学生存入一个不在的 Teachers 表中的 TeacherID 值， 而且发现不了这个错误。</code></p>
+<p>这种情况下，可以把 Students 表中 TeacherID 字段声明为一个外键， 让它的值对应到 Teachers 表的 ID 字段上。</p>
+<p>这样，一旦在 Students 表中存入一个不存在的教师 Id ，系统就会报错。</p>
+<p>实际测试中，发现尽管设置了外键约束，依然能够添加不在Teachers表中的ID，比如3。原因是因为外键开关默认是关闭的，打开开关即可使能外键约束。</p>
+<p><code>注意：</code>默认情况下，sqlite3动态库中外键功能是关闭的，如果要使用该动态库，需要重新编译该库，并打开响应编译宏开关。详见<a href="https://www.sqlite.org/foreignkeys.html" target="_blank" rel="external">SQLite Foreign Key Support</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/Sqlite/" data-id="cie2ful43002hc2s6hp7vkgxq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLite/">SQLite</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-iOS音频技术" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/iOS音频技术/" class="article-date">
+  <time datetime="2015-04-15T05:44:05.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/iOS音频技术/">音频处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="音频基础知识">音频基础知识</h1><p>自然界信息：模拟信号 </p>
+<p>模拟信号-&gt;数字信号 （数字化）</p>
+<p>炭粒电话筒原理： 声音振动-&gt;炭粒(电阻)-&gt;电流变化</p>
+<p><code>采样</code>-&gt;<code>量化</code>-&gt;<code>编码</code></p>
+<h3 id="采样">采样</h3><ul>
+<li>频率 （人耳识别声波频率 20Hz-20KHz）</li>
+<li>采样定理（奈奎斯特定律:如果信号是带限的，并且采样频率大于信号带宽(频宽)的2倍，那么，原来的连续信号可以从采样样本中完全重建出来）</li>
+<li><p>采样率</p>
+  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在数字音频领域，常用的采样率:</span><br><span class="line"><span class="number">8</span>,<span class="number">000</span> Hz - 电话所用采样率，对于人的说话已经足够</span><br><span class="line"><span class="number">22</span>,<span class="number">050</span> Hz - 无线电广播所用采样率</span><br><span class="line"><span class="number">44</span>,<span class="number">100</span> Hz - 音频CD,也常用于<span class="built_in">MPEG</span>-<span class="number">1</span>音频（VCD, SVCD, <span class="built_in">MP3</span>）所用采样率</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>滤波 （高通滤波器、低通滤波器）    </p>
+</li>
+</ul>
+<h3 id="量化">量化</h3><p>连续信号经过采样成为离散信号，离散信号经过量化即成为数字信号。信号的采样和量化通常都是由ADC实现的。例如CD音频信号就是按照44110Hz的频率采样，按16位元量化为有着65536（=2^{16}）个可能取值的数字信号。</p>
+<h3 id="编码">编码</h3><p>调制即模拟信号-&gt;数字信号，解调即数字信号-&gt;模拟信号</p>
+<ul>
+<li><p>PCM (脉冲编码调制 英文：Pulse-code modulation)</p>
+<p>  在电话学中，电话的声音频号编码标准是每秒8000个模拟样本，每个样本8位，总共每秒64 kbit的数字信号</p>
+</li>
+<li><p>MP3、WMA、WAV</p>
+</li>
+</ul>
+<h1 id="使用System_Sound_Services播放UI音效和调用振动效果">使用System Sound Services播放UI音效和调用振动效果</h1><h2 id="概述">概述</h2><p>iOS中最简单的播放声音就是播放系统声音，播放系统声音要用到System Sound Services，它是Audio Toolbox Framework的一部分，它提供Ｃ语言风格接口用于播放短的声音，如果对应的设备支持振动，还可以调用振动效果。</p>
+<p>使用 System Sound Services 的限制条件：</p>
+<ul>
+<li>音频文件播放长度不能大于30秒</li>
+<li>必须是线性的音频格式：PCM or IMA4 (IMA/ADPCM) </li>
+<li>文件格式必须是.caf, .aif, 或者 .wav</li>
+</ul>
+<p>如果是使用<code>AudioServicesPlaySystemSound</code>函数，还有如下限制：</p>
+<ul>
+<li>音量大小调节，依赖于当前系统音量设置</li>
+<li>声音立即播放</li>
+<li>不支持循环播放、立体声和定位</li>
+<li>不支持同时播放，即一次只能播放一个声音</li>
+</ul>
+<p>类似地，<code>AudioServicesPlayAlertSound</code>函数可以播放一个简短的的声音作为警告音。如果在他们的铃音设置中配置了振动，调用这个函数除了播放声音文件外，还会调用振动功能</p>
+<p>注意：<code>系统提供的警告声音和系统提供的用户界面的声音效果并不提供给您的应用程序。例如，使用kSystemSoundID_UserPreferredAlert常数作为参数传递给AudioServicesPlayAlertSound函数将不会有任何效果</code></p>
+<h2 id="How_to？">How to？</h2><p>第一步：<code>引入头文件</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AudioToolbox/AudioToolbox.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>第二步：<code>创建一个系统声音ID对象</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加属性 (系统声音ID对象的URL)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CFURLRef</span> soundFileURLRef;</span><br><span class="line"><span class="comment">// 添加属性 (系统声音ID对象)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) SystemSoundID soundFileObject;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用CoreFoudation接口获取app的 main bundle</span><span class="built_in">CFBundleRef</span> mainBundle = <span class="built_in">CFBundleGetMainBundle</span> ();<span class="comment">// 获取将要播放的音频文件（tap.aif）的URL</span></span><br><span class="line"><span class="comment">// 在CoreFoundation中，创建方法中又Create或Copy的需要手动释放内存，所以_soundFileURLRef需要在后面释放其内存</span></span><br><span class="line">_soundFileURLRef  = <span class="built_in">CFBundleCopyResourceURL</span> (							 mainBundle,							 <span class="built_in">CFSTR</span> (<span class="string">"tap"</span>),							 <span class="built_in">CFSTR</span> (<span class="string">"caf"</span>),							 <span class="literal">NULL</span>);</span><br><span class="line"><span class="comment">// 根据声音文件的URL，创建一个系统声音ID对象</span>AudioServicesCreateSystemSoundID (	_soundFileURLRef,   &amp;_soundFileObject);</span><br></pre></td></tr></table></figure>
+<p>第三步：<code>播放声音</code></p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 普通播放</span><br><span class="line"><span class="pp">- <span class="params">(<span class="variable">IBAction</span>)</span> playSystemSound &#123;	AudioServicesPlaySystemSound <span class="params">(<span class="variable">_</span>sound<span class="variable">FileObject</span>)</span>;&#125;</span><br><span class="line">// 播放同时，触发一次振动</span><br><span class="line">- <span class="params">(<span class="variable">IBAction</span>)</span> playSystemSound &#123;	AudioServicesPlayAlertSound<span class="params">(<span class="variable">_</span>sound<span class="variable">FileObject</span>)</span>;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>第四步：<code>回收内存</code></p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(void)</span>dealloc</span><br><span class="line">&#123;</span><br><span class="line">	AudioServicesDisposeSystemSoundID<span class="params">(self.sound<span class="variable">FileObject</span>)</span>;</span><br><span class="line">	CFRelease<span class="params">(<span class="variable">_</span>sound<span class="variable">FileURLRef</span>)</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>关于振动</strong></p>
+<p>在运行iOS系统的设备上，如果设备支持振动，可以使用如下代码调用振动功能(iPod touch不支持该功能)</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;UIKit/UIKit.h&gt;</span></span>- (<span class="keyword">void</span>) vibratePhone &#123;	AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>补充说明</strong></p>
+<p><code>使用CoreFoundation接口 V.S. Foundation接口</code></p>
+<blockquote>
+<p>关于第二步，获取音频文件的URL，也可以使用Foundation接口，如下：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *sndURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"tap"</span> withExtension:<span class="string">@"caf"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用__bridge修饰，不转移对象的所有权。所以，后面也就不再需要释放_soundFileURLRef的内存了</span></span><br><span class="line">_soundFileURLRef = (__bridge <span class="built_in">CFURLRef</span>)sndURL;</span><br></pre></td></tr></table></figure>
+<p><code>在播放完声音之后，通过回调的方式来回收内存</code></p>
+<blockquote>
+<p>关于第四步，回收内存，如果想再声音播放完之后，立刻就回收内存，需要通过注册回调函数的方式来进行，如下所示：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建完系统声音ID对象之后，注册移除对象的回调函数</span></span><br><span class="line">AudioServicesAddSystemSoundCompletion(_soundFileObject, <span class="literal">nil</span>, <span class="literal">nil</span>, SoundFinished, <span class="literal">nil</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是该回调函数的实现，首先移除该回调函数，然后移除系统ID对象</span></span><br><span class="line"><span class="comment">// 注意，不需要再释放_soundFileURLRef了</span></span><br><span class="line"><span class="keyword">void</span> SoundFinished (SystemSoundID snd, <span class="keyword">void</span>* context) &#123;</span><br><span class="line">	AudioServicesRemoveSystemSoundCompletion(snd);</span><br><span class="line">	AudioServicesDisposeSystemSoundID(snd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用AVAudioPlayer来播放本地的音频文件或内存中的音频数据">使用AVAudioPlayer来播放本地的音频文件或内存中的音频数据</h1><h2 id="概述-1">概述</h2><p>AVAudioPlayer类提供了一个简单的Objective-C接口，用于播放声音。如果您的应用程序不需要立体声定位或精确同步，如果你不是播放来自网络的音频流，苹果建议您使用这个类进行播放。</p>
+<p>使用AVAudioPlayer实例，你可以：</p>
+<ul>
+<li>播放任何时长的音频</li>
+<li>播放本地的音频文件或内存中的音频数据</li>
+<li>支持循环播放</li>
+<li>同时播放多个声音（虽然不是精确同步）</li>
+<li>可以直接定位到音频播放的任意一个位置，支持快进，快退</li>
+<li>可以改变播放速率</li>
+<li>可以设置播放的音量和立体声特性</li>
+</ul>
+<p><code>AVAudioPlayer类可以播放iOS系统支持的所有类型的音频格式</code></p>
+<h2 id="How_to?">How to?</h2><p>配置一个音频播放器对象需要如下三步:</p>
+<ol>
+<li>通过文件URL或者NSData初始化一个音频播放器实例对象</li>
+<li>调用prepareToPlay函数来初始化音频硬件</li>
+<li>设置代理对象，该代理对象用来处理一些中断和播放完成时的事件</li>
+</ol>
+<h3 id="常用属性">常用属性</h3><ul>
+<li>音量(volume)</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.volume =<span class="number">0.8</span>;	 <span class="comment">// 0.0-1.0之间</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>循环次数(numberOfLoops)</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.numberOfLoops =<span class="number">3</span>;	<span class="comment">// 默认为0，只播放一次。如果是－1表示无限循环</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>总时长(duration)</li>
+</ul>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSTimeInterval <span class="built_in">duration</span> <span class="subst">=</span> player<span class="built_in">.</span><span class="built_in">duration</span>;	<span class="comment">// 只读，获取总时间(单位是秒)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当前位置(currentTime)</li>
+</ul>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.<span class="keyword">currentTime</span> =<span class="number">15.0</span>;	<span class="comment">// 可以指定从任意位置(单位是秒)开始播放</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>声道数(numberOfChannels)</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSUInteger</span> channels = player<span class="variable">.numberOfChannels</span>;	<span class="comment">// 只读，声道数</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>是否允许快放和慢放(enableRate)</li>
+</ul>
+<p><code>该属性需要在prepareToPlay方法调用之前设置</code></p>
+<ul>
+<li>播放速率(rate)</li>
+</ul>
+<p><code>rate可设置在0.5-2.0范围之内，需要enableRate为YES</code></p>
+<ul>
+<li>设置(settings)</li>
+</ul>
+<p><code>一个只读的字典，用来描述音频的特性，比如比特率(AVEncoderBitRateKey)、采样率(AVSampleRateKey)、数据格式(AVFormatIDKey)等</code></p>
+<h3 id="常用方法">常用方法</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)prepareToPlay;	/* <span class="keyword">get</span> ready <span class="keyword">to</span> play <span class="keyword">the</span> sound. happens automatically <span class="function_start"><span class="keyword">on</span></span> play. */</span><br><span class="line">- (BOOL)play;			/* sound <span class="keyword">is</span> played asynchronously. */</span><br><span class="line">- (BOOL)playAtTime:(NSTimeInterval)<span class="property">time</span> NS_AVAILABLE(<span class="number">10</span>_7, <span class="number">4</span>_0); /* play a sound <span class="keyword">some</span> <span class="property">time</span> <span class="keyword">in</span> <span class="keyword">the</span> future. <span class="property">time</span> <span class="keyword">is</span> an absolute <span class="property">time</span> based <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">and</span> <span class="keyword">greater than</span> deviceCurrentTime. */</span><br><span class="line">- (void)pause;			/* pauses playback, <span class="keyword">but</span> remains ready <span class="keyword">to</span> play. */</span><br><span class="line">- (void)stop;		   /* stops playback. no longer ready <span class="keyword">to</span> play. */</span><br></pre></td></tr></table></figure>
+<hr>
+<p>第一步：<code>引入头文件</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AVFoundation/AVFoundation.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>第二步：<code>配置AVAudioPlayer对象</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVAudioPlayer</span> *player;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIButton</span> *button;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURL</span> *soundFileURL = [[<span class="built_in">NSBundle</span> mainBundle] </span><br><span class="line">					urlForResource:<span class="string">@"sound"</span> withExtension: <span class="string">@"wav"</span>];</span><br><span class="line"><span class="built_in">AVAudioPlayer</span> *newPlayer =              [[<span class="built_in">AVAudioPlayer</span> alloc] initWithContentsOfURL: soundFileURL_player = newPlayer;_player<span class="variable">.delegate</span> = <span class="keyword">self</span>;[_player prepareToPlay];</span><br></pre></td></tr></table></figure>
+<p><code>播放或暂停</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">IBAction</span>) playOrPause: (<span class="keyword">id</span>) sender &#123;</span><br><span class="line">    <span class="comment">// 如果正在播放，就暂停</span>    <span class="keyword">if</span> (<span class="keyword">self</span><span class="variable">.player</span><span class="variable">.playing</span>) &#123;        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateHighlighted</span>];        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateNormal</span>];        [<span class="keyword">self</span><span class="variable">.player</span> pause];    <span class="comment">// 如果已经播放完成或暂停，则开始播放</span>    &#125; <span class="keyword">else</span> &#123;        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Pause"</span> forState: <span class="built_in">UIControlStateHighlighted</span>];        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Pause"</span> forState: <span class="built_in">UIControlStateNormal</span>];        [<span class="keyword">self</span><span class="variable">.player</span> play];&#125; &#125;</span><br></pre></td></tr></table></figure>
+<p><code>委托方法</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) audioPlayerDidFinishPlaying: (<span class="built_in">AVAudioPlayer</span> *) player                        successfully: (<span class="built_in">BOOL</span>) completed &#123;    <span class="keyword">if</span> (completed == <span class="literal">YES</span>) &#123;        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateHighlighted</span>];        &#125; &#125;</span><br></pre></td></tr></table></figure>
+<!--# 使用AVPlayer来播放本地或远端音频数据-->
+<h1 id="音频后台播放">音频后台播放</h1><p>要支持音频后台播放，app需要做如下事情：</p>
+<ul>
+<li>在Info.plist文件中增加“Required background modes”键 (UIBackgroundModes)包含值为“App plays audio” (audio)”</li>
+</ul>
+<ul>
+<li>设置audio session支持Playback</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setAudio2SupportBackgroundPlay</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">UIDevice</span> *device = [<span class="built_in">UIDevice</span> currentDevice];</span><br><span class="line">    <span class="keyword">if</span> (![device respondsToSelector:<span class="keyword">@selector</span>(isMultitaskingSupported)]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Unsupported device!"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!device<span class="variable">.multitaskingSupported</span>) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Unsupported multitask!"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">AVAudioSession</span> *session = [<span class="built_in">AVAudioSession</span> sharedInstance];</span><br><span class="line">    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line">    </span><br><span class="line">    [session setCategory:<span class="built_in">AVAudioSessionCategoryPlayback</span> error:&amp;error];</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Playback category error:%@"</span>, error);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    [session setActive:<span class="literal">YES</span> error:&amp;error];</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Active category error:%@"</span>, error);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>接收远程控制事件</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewWillAppear:animated];</span><br><span class="line">    <span class="comment">// 设置页面将要出现时，接收远程控制事件，并使该视图控制器成为第一响应者</span></span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] beginReceivingRemoteControlEvents];</span><br><span class="line">    [<span class="keyword">self</span> becomeFirstResponder];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewWillDisappear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewWillDisappear:animated];</span><br><span class="line">    <span class="comment">// 设置页面将要消失时，停止接收远程控制事件，并使该视图控制器失去第一响应者</span></span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] endReceivingRemoteControlEvents];</span><br><span class="line">    [<span class="keyword">self</span> resignFirstResponder];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)canBecomeFirstResponder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程控制事件的处理</span></span><br><span class="line">- (<span class="keyword">void</span>)remoteControlReceivedWithEvent:(<span class="built_in">UIEvent</span> *)event</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (event<span class="variable">.type</span> == <span class="built_in">UIEventTypeRemoteControl</span>) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (event<span class="variable">.subtype</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlPause</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlPlay</span>:</span><br><span class="line">            <span class="comment">// 线控耳机控制切换暂停和播放</span></span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlTogglePlayPause</span>:</span><br><span class="line">                [<span class="keyword">self</span> playOrPause:<span class="literal">nil</span>];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlNextTrack</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlPreviousTrack</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;MediaPlayer/MediaPlayer.h&gt;</span></span></span><br><span class="line">    <span class="comment">// 设置锁屏显示的图片</span></span><br><span class="line">    <span class="built_in">MPMediaItemArtwork</span> *artwork = [[<span class="built_in">MPMediaItemArtwork</span> alloc] initWithImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"红颜劫.jpg"</span>]];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 显示锁屏显示的播放信息</span></span><br><span class="line">    [<span class="built_in">MPNowPlayingInfoCenter</span> defaultCenter]<span class="variable">.nowPlayingInfo</span> = @&#123;</span><br><span class="line">                                                              <span class="built_in">MPMediaItemPropertyPlaybackDuration</span>:@(_player<span class="variable">.duration</span>),<span class="built_in">MPMediaItemPropertyTitle</span>:<span class="string">@"红颜劫"</span>, <span class="built_in">MPMediaItemPropertyArtist</span>:<span class="string">@"姚贝娜"</span>,<span class="built_in">MPMediaItemPropertyArtwork</span>:artwork, <span class="built_in">MPNowPlayingInfoPropertyPlaybackRate</span>:@(<span class="number">1.0</span>f)&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Audio_Session">Audio Session</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr_selector">[[AVAudioSession sharedInstance]</span> <span class="rule"><span class="attribute">setCategory</span>:<span class="value">AVAudioSessionCategoryPlayback error:&amp;error]</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="attr_selector">[[AVAudioSession sharedInstance]</span> <span class="rule"><span class="attribute">setActive</span>:<span class="value">YES error:&amp;error]</span></span>;</span><br></pre></td></tr></table></figure>
+<h1 id="中断(interruptions)">中断(interruptions)</h1><h1 id="输出线路变更（Routing_Changes）">输出线路变更（Routing Changes）</h1><h1 id="使用AVAudioRecorder来录制音频数据">使用AVAudioRecorder来录制音频数据</h1><p>How To:</p>
+<ul>
+<li>包含头文件</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AVFoundation/AVFoundation.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建属性 录音对象、播放对象、存放录音文件的URL</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>) <span class="built_in">AVAudioRecorder</span> *audioRecorder;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVAudioPlayer</span> *audioPlayer;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSURL</span> *soundFileURL;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置AVAudioSession支持录音和回放功能</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr_selector">[[AVAudioSession sharedInstance]</span> <span class="rule"><span class="attribute">setCategory</span>:<span class="value">AVAudioSessionCategoryPlayAndRecord error:nil]</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>录音前准备和设置工作</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableDictionary</span> *recordSettings = [<span class="built_in">NSMutableDictionary</span> dictionary];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 录音文件的编码格式</span></span><br><span class="line">recordSettings[<span class="built_in">AVFormatIDKey</span>] = @(kAudioFormatAppleIMA4);</span><br><span class="line"><span class="comment">// 采样率</span></span><br><span class="line">recordSettings[<span class="built_in">AVSampleRateKey</span>] = @(<span class="number">44100</span>);</span><br><span class="line"><span class="comment">// 通道数</span></span><br><span class="line">recordSettings[<span class="built_in">AVNumberOfChannelsKey</span>] = @<span class="number">2</span>;</span><br><span class="line"><span class="comment">// 量化位数</span></span><br><span class="line">recordSettings[<span class="built_in">AVLinearPCMBitDepthKey</span>] = @<span class="number">16</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编码质量</span></span><br><span class="line">recordSettings[<span class="built_in">AVEncoderAudioQualityKey</span>] = @(<span class="built_in">AVAudioQualityHigh</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">self</span><span class="variable">.audioRecorder</span> = [[<span class="built_in">AVAudioRecorder</span> alloc] initWithURL:<span class="keyword">self</span><span class="variable">.soundFileURL</span> settings:recordSettings error:&amp;error];</span><br><span class="line"><span class="keyword">if</span> (error != <span class="literal">nil</span>) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"recorder error.%@"</span>,error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//准备录制</span></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.audioRecorder</span> prepareToRecord];</span><br></pre></td></tr></table></figure>
+<h1 id="视频播放">视频播放</h1><h2 id="MPMoviePlayerController">MPMoviePlayerController</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *url = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"abc"</span> withExtension:<span class="string">@"mp4"</span>];</span><br><span class="line"><span class="keyword">self</span><span class="variable">.player</span> = [[<span class="built_in">MPMoviePlayerController</span> alloc] initWithContentURL:url];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> prepareToPlay];</span><br><span class="line"></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.view</span> addSubview:<span class="keyword">self</span><span class="variable">.player</span><span class="variable">.view</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span><span class="variable">.player</span><span class="variable">.view</span><span class="variable">.frame</span> = <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.bounds</span>;</span><br><span class="line"></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> play];</span><br></pre></td></tr></table></figure>
+<h2 id="MPMoviePlayerViewController">MPMoviePlayerViewController</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://live.3gv.ifeng.com/live/hongkong.m3u8"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">MPMoviePlayerViewController</span> *player = [[<span class="built_in">MPMoviePlayerViewController</span> alloc] initWithContentURL:url];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 设置模态显示的过度效果</span></span><br><span class="line">    player<span class="variable">.modalTransitionStyle</span> = <span class="built_in">UIModalTransitionStyleCoverVertical</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 以模态的方式显示视频界面</span></span><br><span class="line"><span class="comment">//    [self presentMoviePlayerViewControllerAnimated:player];</span></span><br><span class="line">    [<span class="keyword">self</span> presentViewController:player animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
+<h1 id="流媒体网站测试">流媒体网站测试</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//live.3gv.ifeng.com/live/hongkong.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamEdge.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamEdge.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamMobLow.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamMobLow.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamMobHigh.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamMobHigh.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamWifi.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamWifi.m3u8 </span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamEdgeaudio.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamEdgeaudio.m3u8</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/iOS音频技术/" data-id="cie2ful2e0016c2s6z1tnthem" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音频处理/">音频处理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-键盘收起的方法" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/10/键盘收起的方法/" class="article-date">
+  <time datetime="2015-04-10T09:51:41.000Z" itemprop="datePublished">2015-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/10/键盘收起的方法/">键盘收起的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ios_收起键盘的方法">ios 收起键盘的方法</h1><h2 id="1-_点击_return_键收起键盘">1. 点击 return 键收起键盘</h2>   <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textFieldShouldReturn:(<span class="built_in">UITextField</span> *)textField</span><br><span class="line">&#123;</span><br><span class="line">    [textField resignFirstResponder];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-点击屏幕任意位置实现收起键盘">2.点击屏幕任意位置实现收起键盘</h2><ul>
+<li><p>通过touchesBegin（）方法</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">     <span class="tag">-</span> (void)<span class="tag">touchesBegan</span>:(NSSet *)<span class="tag">touches</span> <span class="tag">withEvent</span>:(UIEvent *)<span class="tag">event</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr_selector">[self.view endEditing:YES]</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>通过让 <code>textField</code> 失去第一响应者，来实现收起键盘:</p>
+<p><strong><code>First</code></strong>将self.view设置成一个UIControl，添加点击事件，辅助隐藏文本框的第一响应者</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   - (<span class="keyword">void</span>)loadView</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.view</span> = [[<span class="built_in">UIControl</span> alloc] initWithFrame:[[<span class="built_in">UIScreen</span> mainScreen] bounds]];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> whiteColor];</span><br><span class="line">    [(<span class="built_in">UIControl</span> *)<span class="keyword">self</span><span class="variable">.view</span> addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(clickBack) forControlEvents:<span class="built_in">UIControlEventTouchDown</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>   <strong><code>Second</code></strong>设置点击事件，点击背景使文本框失去第一响应者：</p>
+   <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">-</span> (void)<span class="tag">clickBack</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr_selector">[_textField resignFirstResponder]</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/10/键盘收起的方法/" data-id="cie2ful140003c2s6ko2fat9a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-ios_屏幕上移" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/10/ios_屏幕上移/" class="article-date">
+  <time datetime="2015-04-10T09:51:41.000Z" itemprop="datePublished">2015-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/10/ios_屏幕上移/">屏幕上移的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="方法步骤">方法步骤</h3><ul>
+<li><p>1.首先要知道 TextField 的位置:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_textField = [[<span class="built_in">UITextField</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">50</span>, <span class="number">500</span>, <span class="number">220</span>, <span class="number">44</span>)];</span><br><span class="line"> _textField<span class="variable">.borderStyle</span> = <span class="built_in">UITextBorderStyleBezel</span>;</span><br><span class="line"> _textField<span class="variable">.delegate</span> = <span class="keyword">self</span>;</span><br><span class="line"> [<span class="keyword">self</span><span class="variable">.view</span> addSubview:_textField];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>2.文本框进入编辑状态时，判断文本框的上边距，自身高度和距离键盘的距离，是否大于键盘的上边距，是则将self。view上衣该差值即可实现屏幕上移</p>
+  <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   - (<span class="keyword">void</span>)textFieldDidBeginEditing:(UITextField *)textField</span><br><span class="line">&#123;</span><br><span class="line">    CGRect oldFrame = _textField.frame;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">float</span> offset = oldFrame.origin.y+oldFrame.<span class="built_in">size</span>.<span class="variable">height</span>+<span class="number">20</span> - (self.view.frame.<span class="built_in">size</span>.<span class="variable">height</span> -<span class="number">216</span>);</span><br><span class="line">    <span class="built_in">float</span> <span class="variable">width</span> = [[UIScreen mainScreen] bounds].<span class="built_in">size</span>.<span class="variable">width</span>;</span><br><span class="line">    <span class="built_in">float</span> <span class="variable">height</span> = [[UIScreen mainScreen] bounds].<span class="built_in">size</span>.<span class="variable">height</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (offset &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        [UIView beginAnimations:@<span class="string">"resetViewHeight"</span> context:nil];</span><br><span class="line">        [UIView setAnimationDuration:<span class="number">0.3</span>];</span><br><span class="line">        CGRect <span class="built_in">rect</span> =  CGRectMake(<span class="number">0</span>, -offset, <span class="variable">width</span>, <span class="variable">height</span>);</span><br><span class="line">        self.view.frame = <span class="built_in">rect</span>;</span><br><span class="line">        [UIView commitAnimations];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>3.失去第一响应者的时候将 self.view 的 Frame 复原</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   - (<span class="keyword">void</span>)textFieldDidEndEditing:(<span class="built_in">UITextField</span> *)textField</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="built_in">UIView</span> beginAnimations:<span class="string">@"resetViewHeight"</span> context:<span class="literal">nil</span>];</span><br><span class="line">    [<span class="built_in">UIView</span> setAnimationDuration:<span class="number">0.1</span>];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.frame</span> = [[<span class="built_in">UIScreen</span> mainScreen] bounds];</span><br><span class="line">    [<span class="built_in">UIView</span> commitAnimations];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ms.net.cn/ms/Article/UploadFiles/200610/2006105143759367.gif" alt="image"></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/10/ios_屏幕上移/" data-id="cie2ful2c0013c2s62cnnq1ds" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-git常用操作" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/03/git常用操作/" class="article-date">
+  <time datetime="2015-04-03T11:20:14.000Z" itemprop="datePublished">2015-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/03/git常用操作/">git 常用操作2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本操作">基本操作</h2><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1</span>. 初始化仓库</span><br><span class="line"></span><br><span class="line">	 git init</span><br><span class="line"><span class="number">2</span>. 配置作者信息</span><br><span class="line">	 git config --global <span class="keyword">user</span>.email <span class="string">"youremail@corp.com"</span></span><br><span class="line">	 git config --global <span class="keyword">user</span>.name <span class="string">"yourname"</span></span><br><span class="line">	</span><br><span class="line"><span class="number">3</span>. 添加文件到暂存区</span><br><span class="line">	- git add \<span class="variable">&lt;filename\&gt;</span> </span><br><span class="line">	- git add * (添加所有文件到暂存区)</span><br><span class="line"><span class="number">4</span>. 移除文件</span><br><span class="line">	- git rm \<span class="variable">&lt;filename\&gt;</span></span><br><span class="line"><span class="number">5</span>. 重命名一个文件</span><br><span class="line">	- git mv \<span class="variable">&lt;oldfilename\&gt;</span> \<span class="variable">&lt;newfilename\&gt;</span></span><br><span class="line"><span class="number">6</span>. 提交暂存区</span><br><span class="line"></span><br><span class="line">	`git commit只会提交暂存区（staged）里面的文件`</span><br><span class="line"></span><br><span class="line">	git commit -m <span class="string">"message"</span>	</span><br><span class="line"><span class="number">7</span>. 查看工作目录的状态</span><br><span class="line">	git status</span><br><span class="line"><span class="number">8</span>. 查看提交历史记录</span><br><span class="line">	git <span class="keyword">log</span></span><br><span class="line"><span class="number">9</span>. 查看文件改变</span><br><span class="line">	git diff</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="撤销操作">撤销操作</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">1. </span>撤销加入暂存区的操作</span><br><span class="line"><span class="code">	git reset HEAD \&lt;file\&gt;</span></span><br><span class="line"><span class="bullet">2. </span>撤销修改的操作 </span><br><span class="line"><span class="code">	git checkout -- \&lt;file\&gt;</span></span><br><span class="line"><span class="bullet">3. </span>将本地的修改放进回收站</span><br><span class="line"><span class="code">	git stash</span></span><br><span class="line"><span class="bullet">4. </span>从回收站中恢复本地的修改</span><br><span class="line"><span class="code">	git stash apply</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Tag操作">Tag操作</h2><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1.</span> 查看<span class="built_in">tag</span></span><br><span class="line">	git <span class="built_in">tag</span></span><br><span class="line"><span class="number">2.</span> 创建<span class="built_in">tag</span></span><br><span class="line">	git <span class="built_in">tag</span> <span class="attribute">-a</span> v1<span class="built_in">.0</span> <span class="attribute">-m</span> <span class="string">"my version 1.0"</span></span><br><span class="line"><span class="number">3.</span> 显示<span class="built_in">tag</span>信息</span><br><span class="line">	git show v1<span class="built_in">.0</span></span><br><span class="line"><span class="number">4.</span> 对之前的提交打<span class="built_in">tag</span></span><br><span class="line">	git <span class="built_in">tag</span> <span class="attribute">-a</span> v0<span class="built_in">.1</span> <span class="attribute">-m</span> <span class="string">"version 0.1"</span> <span class="subst">+</span> 哈希值</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="查看哈希值">查看哈希值</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd <span class="class">.git</span></span><br><span class="line">cd <span class="class">.objects</span></span><br><span class="line">cd +哈希值的前两位 就可查看哈希值</span><br><span class="line">git cat-file -<span class="tag">p</span>  + 哈希值</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="分支操作">分支操作</h2><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. 查看分支</span><br><span class="line">	-<span class="ruby"> git branch</span><br><span class="line"></span>2. 创建分支</span><br><span class="line">	-<span class="ruby"> git branch \&lt;branchname\&gt;</span><br><span class="line"></span>3. 删除分支</span><br><span class="line">	-<span class="ruby"> git branch -d \&lt;branchname\&gt;</span><br><span class="line"></span>4. 切换分支</span><br><span class="line">	-<span class="ruby"> git checkout \&lt;branchname\&gt;</span><br><span class="line"></span>5. 合并分支</span><br><span class="line">	-<span class="ruby"> git merge \&lt;branchname\&gt;</span><br><span class="line"></span>6. rebase操作</span><br><span class="line">	-<span class="ruby"> git rebase \&lt;basebranch\&gt; \&lt;newbranch\&gt;</span><br><span class="line"></span>7. HEAD 指当前所在的分支   cat HEAD  查看当前的分支</span><br><span class="line">	*表示当前是哪个分支</span><br><span class="line">8. 解决合并冲突（修改同一个文件会有冲突，不同的文件没有冲突）</span><br><span class="line">   在冲突的文件中直接修改内容（cat file）</span><br><span class="line">	git branch --merged查看已经合并的分支</span><br><span class="line">	git branch --no-merged查看没有合并的分支</span><br><span class="line">9.	git cherry-pick -哈希值（希望只用另一个分支的单个功能）</span><br><span class="line">10.	git checkout -b + 分支名  创建一个分支并选择该分支</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="远端仓库操作">远端仓库操作</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. 克隆一个远端仓库</span><br><span class="line">	git clone *URL*</span><br><span class="line">2. 添加远端仓库</span><br><span class="line">	git remote add <span class="command">\&lt;</span>name<span class="command">\&gt;</span> <span class="command">\&lt;</span>URL<span class="command">\&gt;</span></span><br><span class="line">3. 更新远端仓库的分支和数据</span><br><span class="line">	git fetch <span class="command">\&lt;</span>name<span class="command">\&gt;</span> </span><br><span class="line">4. 获取并合并远端仓库的分支到当前分支</span><br><span class="line">	git pull <span class="command">\&lt;</span>reponame<span class="command">\&gt;</span> <span class="command">\&lt;</span>branchname<span class="command">\&gt;</span></span><br><span class="line">	eg: `git pull origin master`</span><br><span class="line">5. 上传本地分支和数据到远端仓库</span><br><span class="line">	git push <span class="command">\&lt;</span>reponame<span class="command">\&gt;</span> <span class="command">\&lt;</span>branchname<span class="command">\&gt;</span></span><br><span class="line">	eg: `git push origin master` </span><br><span class="line">6. 跟踪远端仓库上的分支</span><br><span class="line">	git checkout --track origin/testbranch</span><br><span class="line">	git checkout -b test origin/testbranch</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/03/git常用操作/" data-id="cie2ful2j001cc2s6erdyrbly" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Block-代码块" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/24/Block-代码块/" class="article-date">
+  <time datetime="2015-03-24T13:36:17.000Z" itemprop="datePublished">2015-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/24/Block-代码块/">Block(代码块)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概述">概述</h2><pre><code>- 代码块对象简称为“代码块”，是对<span class="keyword">C</span>语言中函数的扩展。运行在iOS4。<span class="number">0</span>和OS  X10.6版本以上
+- 代码块实际上是由<span class="keyword">C</span>语言实现的，所以在各种以<span class="keyword">C</span>作为基础的语言内都是有效的包括：Objective－<span class="keyword">C</span>，<span class="keyword">C</span>＋＋以及Objective－<span class="keyword">C</span>++
+- 代码块本质上是和其他变量类似，不同的是，代码块存储的数据是一个函数体，使用代码块时，可以像调用其他标准函数一样，传入参数数，并得到返回值。
+-  代码块不属于ANSI的<span class="keyword">C</span>语言标准。关于代码块的提议已经提交给了<span class="keyword">C</span>程序语言标准团体。
+</code></pre><h2 id="函数指针_VS_代码块">函数指针 VS 代码块</h2><p><strong>函数指针的语法格式</strong></p>
+<pre><code>返回值类型（*函数名）（参数列表）；
+
+eg: <span class="keyword">void</span> (*myFunction) (<span class="keyword">void</span>);
+</code></pre><p><strong>代码块的语法格式</strong></p>
+<pre><code>返回值类型（^代码块名）(参数列表) ＝ ^返回值类型(参数列表){表达式；}；
+
+eg: <span class="keyword">void</span> (^myBlock)() = ^{printf(<span class="string">"Hello, Block\n"</span>);};
+</code></pre><p><code>说明：</code></p>
+<pre><code>返回值类型和参数列表都可以有条件省略
+
+省略返回值类型，若表达式中有<span class="keyword">return</span>语句就使用该返回值的类型，若没有，则为<span class="keyword">void</span>    
+
+省略返回值类型时，若表达式中有多个<span class="keyword">return</span>语句，则所有<span class="keyword">return</span>语句返回值类型必须相同
+
+如果不使用参数，则参数列表也可以省略
+</code></pre><h2 id="代码块的使用">代码块的使用</h2><p>直接使用</p>
+<pre><code><span class="keyword">void</span>(^myBlock)() = ^{<span class="built_in">printf</span>(<span class="string">"Hello,Block\n"</span>);};
+
+myBlock();
+</code></pre><p>代码块内联</p>
+<pre><code>￼<span class="built_in">NSArray</span> *array = @[<span class="string">@"One"</span>, <span class="string">@"Two"</span>, <span class="string">@"Three"</span>, <span class="string">@"Four"</span>];
+
+￼<span class="built_in">NSLog</span>(<span class="string">@"Unsorted array: %@"</span>, array);
+
+￼<span class="built_in">NSArray</span> *sortedArray = [array
+
+￼sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(<span class="keyword">id</span> obj1, <span class="keyword">id</span> obj2) {<span class="keyword">return</span> [obj1 compare:obj2];
+￼}];
+
+<span class="built_in">NSLog</span>(<span class="string">@"Sorted array: %@"</span>, sortedArray);
+</code></pre><h2 id="使用typedef定义相同类型的代码块">使用typedef定义相同类型的代码块</h2><pre><code><span class="keyword">typedef</span> <span class="built_in">NSComparisonResult</span>(^<span class="built_in">NSComparator</span>)(<span class="keyword">id</span> obj1,<span class="keyword">id</span> obj2);
+</code></pre><h2 id="代码块的变量">代码块的变量</h2><pre><code>全局变量和静态变量在代码块内部可以正常使用<span class="comment">(可以修改其值)</span> 
+
+局部变量在代码块内部无法修改其值,原因是代码块的局部变量在编译阶段被看做为常量
+
+如果需要在代码块中修改局部变量,需要在局部变量前面加__block修饰符
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/24/Block-代码块/" data-id="cie2ful4e002qc2s6sikcs6sa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Block/">Block</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

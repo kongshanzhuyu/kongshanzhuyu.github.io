@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SQLite | ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介SQLite是个轻量级的嵌入式关系数据库。它不作为一个独立的进程运行，而是通过动态或者静态库的方式链接到应用程序中。它生成的数据库文件是一个普通的磁盘文件，可以放在任何目录下。SQLite本身是C语言开发的，开放源码，并且跨平台支持，并且被大部分驻留编程语言支持。详细内容-&amp;gt; sqlite.org
+SQLite数据库之SQL语言数据定义语言(DDL)
+CREATE
+ALTER TABLE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQLite">
+<meta property="og:url" content="http://yoursite.com/2015/04/15/Sqlite/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description" content="简介SQLite是个轻量级的嵌入式关系数据库。它不作为一个独立的进程运行，而是通过动态或者静态库的方式链接到应用程序中。它生成的数据库文件是一个普通的磁盘文件，可以放在任何目录下。SQLite本身是C语言开发的，开放源码，并且跨平台支持，并且被大部分驻留编程语言支持。详细内容-&amp;gt; sqlite.org
+SQLite数据库之SQL语言数据定义语言(DDL)
+CREATE
+ALTER TABLE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQLite">
+<meta name="twitter:description" content="简介SQLite是个轻量级的嵌入式关系数据库。它不作为一个独立的进程运行，而是通过动态或者静态库的方式链接到应用程序中。它生成的数据库文件是一个普通的磁盘文件，可以放在任何目录下。SQLite本身是C语言开发的，开放源码，并且跨平台支持，并且被大部分驻留编程语言支持。详细内容-&amp;gt; sqlite.org
+SQLite数据库之SQL语言数据定义语言(DDL)
+CREATE
+ALTER TABLE">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="ios-Sqlite" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/Sqlite/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SQLite
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介">简介</h2><p>SQLite是个轻量级的嵌入式关系数据库。它不作为一个独立的进程运行，而是通过动态或者静态库的方式链接到应用程序中。它生成的数据库文件是一个普通的磁盘文件，可以放在任何目录下。SQLite本身是C语言开发的，开放源码，并且跨平台支持，并且被大部分驻留编程语言支持。详细内容-&gt; <a href="http://sqlite.org" target="_blank" rel="external">sqlite.org</a></p>
+<h2 id="SQLite数据库之SQL语言">SQLite数据库之SQL语言</h2><h3 id="数据定义语言(DDL)">数据定义语言(DDL)</h3><ul>
+<li>CREATE</li>
+<li>ALTER TABLE</li>
+<li>DROP</li>
+</ul>
+<h3 id="数据操作语言(DML)">数据操作语言(DML)</h3><ul>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+</ul>
+<h3 id="数据查询语言(DQL)">数据查询语言(DQL)</h3><ul>
+<li>SELECT</li>
+</ul>
+<h2 id="SQLite中的数据类型">SQLite中的数据类型</h2><ul>
+<li>NULL 空值</li>
+<li>INTEGER 有符号整数</li>
+<li>REAL 浮点数</li>
+<li>TEXT 文本字符串</li>
+<li>BLOB 二进制数据，如图片、声音等</li>
+</ul>
+<h2 id="SQLite命令行工具安装">SQLite命令行工具安装</h2><ul>
+<li>Windows版本：<a href="http://www.sqlite.org/sqlite-shell-win32-x86-3070701.zip" target="_blank" rel="external">下载</a></li>
+<li>Unix/Linux：终端中自带sqlite，无需下载安装</li>
+</ul>
+<h2 id="SQLite命令行工具">SQLite命令行工具</h2><h3 id="数据库和表的元命令">数据库和表的元命令</h3><ol>
+<li><p>创建数据库 <code>sqlite3 test.db</code></p>
+</li>
+<li><p>打开已经存在的数据库 <code>sqlite3 test.db</code></p>
+</li>
+<li><p>导入数据 <code>.read test.sql</code></p>
+</li>
+<li><p>列出所有数据表：<code>.tables</code></p>
+</li>
+<li><p>显示数据库结构：<code>.schema</code></p>
+</li>
+<li><p>显示表的结构： <code>.schema Students</code></p>
+</li>
+<li><p>导出某个表的数据：<code>.dump Students</code></p>
+</li>
+<li><p>设置导出文件流：<code>.output stdout</code> </p>
+</li>
+</ol>
+<h3 id="数据显示相关元命令">数据显示相关元命令</h3><ol>
+<li><p>设置分隔符：<code>.separator :</code></p>
+</li>
+<li><p>设置显示模式：<code>.mode column</code></p>
+</li>
+<li><p>显示标题栏：<code>.headers on</code></p>
+</li>
+<li><p>设置每列的显示宽度：<code>.width 8, 10, 15</code>        </p>
+</li>
+<li><p>设置NULL值得显示样式：<code>.nullvalue NaN</code></p>
+</li>
+<li><p>列出当前显示格式的设置情况：<code>.show</code></p>
+</li>
+<li><p>配置文件：<code>~/.sqliterc</code></p>
+</li>
+</ol>
+<hr>
+<h2 id="SQLite数据库操作">SQLite数据库操作</h2><h3 id="DDL">DDL</h3><h5 id="创建表_(CREATE)">创建表 (CREATE)</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Students(ID <span class="built_in">integer</span>, Name <span class="built_in">text</span>, Age <span class="built_in">integer</span>);</span></span><br></pre></td></tr></table></figure>
+<h6 id="修改表_(ALTER_TABLE)">修改表 (ALTER TABLE)</h6><p><em>将Students表改名为Teachers表</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Students <span class="keyword">RENAME</span> <span class="keyword">TO</span> Teachers;</span></span><br></pre></td></tr></table></figure>
+<p><em>向Teacher表的结构中，增加一个Sex列</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Teachers <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> Sex <span class="built_in">text</span>;</span></span><br></pre></td></tr></table></figure>
+<h6 id="删除表_(DROP_TABLE)">删除表 (DROP TABLE)</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> Teachers;</span></span><br></pre></td></tr></table></figure>
+<h3 id="约束_（Constraints）">约束 （Constraints）</h3><p>什么是约束？<br>比如学校教师的教师表，部分字段可能会有如下约束：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">年龄 - 大于20岁。如果你想录入一个小于20岁的教师，系统会报错</span><br><span class="line">国籍 - 默认中国。所谓默认，就是如果你不填写，系统自动填上默认值</span><br><span class="line">姓名 - 不能为空。如果不填，会报错</span><br><span class="line">员工号 - 唯一。如果重复，会报错</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面提到的大于、默认、不能为空、唯一等，就是数据的约束条件。在用 CREATE TABLE 创建表的时候，就应该将每个字段列的约束条件事先说明（如果有的话）， 以后再往表里输入数据的时候，系统会自动为我们检查是否满足约束条件，如果不满足，系统会报错。</p>
+</blockquote>
+<p>SQLite 常用约束如下：</p>
+<ul>
+<li>NOT NULL - 非空</li>
+<li>UNIQUE - 唯一</li>
+<li>PRIMARY KEY - 主键</li>
+<li>FOREIGN KEY - 外键</li>
+<li>CHECK - 条件检查</li>
+<li>DEFAULT - 默认</li>
+</ul>
+<h5 id="主键_（PRIMARY_KEY）">主键    （PRIMARY KEY）</h5><ul>
+<li>数据表中每一条记录都有一个主键，这就像我们每个人的身份证号码、员工号、银行帐号；反过来也可以说，每一个主键对应着一条数据记录。 所以，主键必须是唯一的</li>
+<li>一般情况下主键同时也是一个索引，所以通过主键查找记录速度比较快</li>
+<li>在关系型数据库中，一个表的主键可以作为另外一个表的外键， 这样，这两个表之间就通过这个键建立了关系</li>
+<li>主键一般是整数或者字符串，只要保证唯一就行。 在 SQLite 中，主键如果是整数类型，该列的值可以自动增长</li>
+</ul>
+<h5 id="默认值_（DEFAULT）">默认值 （DEFAULT）</h5><p>有些字段，在每条记录中，值都一样，只在个别情况下才需要更改，可以给这些字段设置默认值    </p>
+<h5 id="非空_(NOT_NULL)">非空 (NOT NULL)</h5><p>有些字段，可能一时不知道填什么值，并且也没设置默认值。当添加数据时，这些字段空置不填，系统会认为是NULL</p>
+<p>但有另外一些字段，必须被天上值，如果不填，就会出错。这样的字段被称为非空(NOT NULL)字段，需要在定义表的时候事先声明</p>
+<h5 id="唯一值_(UNIQUE)">唯一值    (UNIQUE)</h5><p>除了主键，可能也有写字段的值不能重复，就需要用到UNIQUE约束了</p>
+<h5 id="条件检查_(CHECK)">条件检查    (CHECK)</h5><p>某些值必须符合一定的条件才允许存入，这是就需要用到这个 CHECK 约束</p>
+<h5 id="外键_(FOREIGN_KEY)">外键 (FOREIGN KEY)</h5><p>现在，我们的数据库中已经有 Teachers 表了，假如我们再建立一个 Students 表， 要求 Students 表中的每一个学生都对应一个 Teachers 表中的教师。</p>
+<p>很简单，只需要在 Students 表中建立一个 TeacherID 字段，保存对应教师的 ID， 这样，学生和教师之间就建立了关系。</p>
+<p><code>问题是：我们有可能给学生存入一个不在的 Teachers 表中的 TeacherID 值， 而且发现不了这个错误。</code></p>
+<p>这种情况下，可以把 Students 表中 TeacherID 字段声明为一个外键， 让它的值对应到 Teachers 表的 ID 字段上。</p>
+<p>这样，一旦在 Students 表中存入一个不存在的教师 Id ，系统就会报错。</p>
+<p>实际测试中，发现尽管设置了外键约束，依然能够添加不在Teachers表中的ID，比如3。原因是因为外键开关默认是关闭的，打开开关即可使能外键约束。</p>
+<p><code>注意：</code>默认情况下，sqlite3动态库中外键功能是关闭的，如果要使用该动态库，需要重新编译该库，并打开响应编译宏开关。详见<a href="https://www.sqlite.org/foreignkeys.html" target="_blank" rel="external">SQLite Foreign Key Support</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/Sqlite/" data-id="cie2ful43002hc2s6hp7vkgxq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLite/">SQLite</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/15/fmdb/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          FMDB
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/15/iOS音频技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">音频处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

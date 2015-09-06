@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>知识点总结 | ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.让屏幕自动进入休眠状态1[UIApplication sharedApplication].idleTimerDisabled = NO;//自动进入锁屏状态
+2.检查一个字符串里相同字符个数的方法
+方法一：
+  1234567891011121314	int strCount = 0;NSString * str = @&quot;无限额&quot;;for (int i = 0; i &amp;lt; _strLim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知识点总结">
+<meta property="og:url" content="http://yoursite.com/2015/09/06/一些小的知识点总结/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description" content="1.让屏幕自动进入休眠状态1[UIApplication sharedApplication].idleTimerDisabled = NO;//自动进入锁屏状态
+2.检查一个字符串里相同字符个数的方法
+方法一：
+  1234567891011121314	int strCount = 0;NSString * str = @&quot;无限额&quot;;for (int i = 0; i &amp;lt; _strLim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="知识点总结">
+<meta name="twitter:description" content="1.让屏幕自动进入休眠状态1[UIApplication sharedApplication].idleTimerDisabled = NO;//自动进入锁屏状态
+2.检查一个字符串里相同字符个数的方法
+方法一：
+  1234567891011121314	int strCount = 0;NSString * str = @&quot;无限额&quot;;for (int i = 0; i &amp;lt; _strLim">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="ios-一些小的知识点总结" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/06/一些小的知识点总结/" class="article-date">
+  <time datetime="2015-09-06T09:20:14.000Z" itemprop="datePublished">2015-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      知识点总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-让屏幕自动进入休眠状态">1.让屏幕自动进入休眠状态</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">UIApplication</span> sharedApplication]<span class="variable">.idleTimerDisabled</span> = <span class="literal">NO</span>;<span class="comment">//自动进入锁屏状态</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-检查一个字符串里相同字符个数的方法">2.检查一个字符串里相同字符个数的方法</h3><ul>
+<li><p>方法一：</p>
+  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">int</span> strCount = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">NSString</span> * str = <span class="string">@"无限额"</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _strLimitTip<span class="variable">.length</span>-str<span class="variable">.length</span>+<span class="number">1</span>; i++) &#123;</span><br><span class="line">     <span class="keyword">if</span> ([[_strLimitTip substringWithRange:<span class="built_in">NSMakeRange</span>(i, str<span class="variable">.length</span>)] isEqualToString:str]) &#123;</span><br><span class="line">                        strCount++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (strCount == <span class="number">2</span>) &#123;</span><br><span class="line">                    _expand = <span class="literal">NO</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    BuyYqbSec1Cell * cell = (BuyYqbSec1Cell*)[tableView cellForRowAtIndexPath:indexPath];</span><br><span class="line">                    [cell setExpand:<span class="literal">YES</span>];</span><br><span class="line">                    _expand = <span class="literal">YES</span>;</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>方法二：</p>
+  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	<span class="built_in">NSMutableString</span> * strLImitTipM = [_strLimitTip mutableCopy];</span><br><span class="line">    <span class="built_in">NSRange</span> range = [_strLimitTip rangeOfString:<span class="string">@"无限额"</span>];</span><br><span class="line">    <span class="keyword">if</span> (range<span class="variable">.location</span> != <span class="built_in">NSNotFound</span>) &#123;</span><br><span class="line">        [strLImitTipM replaceCharactersInRange:range withString:<span class="string">@""</span>];</span><br><span class="line">        <span class="built_in">NSRange</span> range1 = [strLImitTipM rangeOfString:<span class="string">@"无限额"</span>];</span><br><span class="line">        <span class="keyword">if</span> (range1<span class="variable">.location</span> != <span class="built_in">NSNotFound</span>) &#123;</span><br><span class="line">            _expand = <span class="literal">NO</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            _expand = <span class="literal">YES</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        _expand = <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-Textview_失去第一响应者的方法">3.Textview 失去第一响应者的方法</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textView:(<span class="built_in">UITextView</span> *)textView shouldChangeTextInRange:(<span class="built_in">NSRange</span>)range replacementText:(<span class="built_in">NSString</span> *)text</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([text isEqualToString:<span class="string">@"\n"</span>]) &#123;</span><br><span class="line">        [<span class="keyword">self</span><span class="variable">.textView</span> resignFirstResponder];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-TextField_限制字符长度（只能输入六位数字_0—9）">4.TextField 限制字符长度（只能输入六位数字 0—9）</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span> ([string isEqualToString:<span class="string">@"\n"</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span> (range<span class="variable">.length</span> != <span class="number">1</span> )&#123;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> (textField ==_checkCodeField) &#123;</span><br><span class="line">           </span><br><span class="line">        <span class="built_in">NSString</span> *allowCharacters = <span class="string">@"0123456789"</span>;</span><br><span class="line">        <span class="built_in">NSCharacterSet</span> *setOfnonNumberSet = [[<span class="built_in">NSCharacterSet</span> characterSetWithCharactersInString:allowCharacters] invertedSet];</span><br><span class="line">           </span><br><span class="line">       <span class="keyword">if</span> ([string stringByTrimmingCharactersInSet:setOfnonNumberSet]<span class="variable">.length</span> ==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">         &#125;</span><br><span class="line">           </span><br><span class="line">   	<span class="built_in">NSString</span> *string1 =[textField<span class="variable">.text</span> stringByReplacingCharactersInRange:range withString:string];</span><br><span class="line">           </span><br><span class="line">         <span class="keyword">if</span> (string1<span class="variable">.length</span> &gt;<span class="number">6</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-按照label内字体的多少来确定字体的大小">5.按照label内字体的多少来确定字体的大小</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.yuqiMoneyLabel</span><span class="variable">.adjustsFontSizeToFitWidth</span> = <span class="literal">YES</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.yuqiMoneyLabel</span><span class="variable">.minimumFontSize</span> = <span class="number">0.0</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="6-对一行文字中的几个添加前景色以及下划线">6.对一行文字中的几个添加前景色以及下划线</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForFooterInSection:(<span class="built_in">NSInteger</span>)section</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span>([_hasBuyed isEqualToString:<span class="string">@"false"</span>]==<span class="literal">YES</span> &amp;&amp; section == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">UIControl</span> * v = [[<span class="built_in">UIControl</span> alloc] initWithFrame:APP_<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, P<span class="built_in">CIphoneDeviceWidth</span>, <span class="number">30.0</span>)];</span><br><span class="line">        v<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> clearColor];</span><br><span class="line">        <span class="built_in">UILabel</span> * lbTitle = [[<span class="built_in">UILabel</span> alloc] initWithFrame:APP_<span class="built_in">CGRectMake</span>(<span class="number">15</span>, <span class="number">13</span>, <span class="number">200</span>, <span class="number">11</span>)];</span><br><span class="line">        <span class="built_in">NSString</span> * s = <span class="string">@"点击“购买”意味您同意基金购买协议"</span>;</span><br><span class="line">        <span class="built_in">NSRange</span> range = [s rangeOfString:<span class="string">@"基金购买协议"</span>];</span><br><span class="line">        <span class="built_in">NSMutableAttributedString</span> *attString = [[<span class="built_in">NSMutableAttributedString</span> alloc] initWithString:s];</span><br><span class="line">        [attString addAttribute:(<span class="built_in">NSString</span>*)kCTUnderlineStyleAttributeName value:[<span class="built_in">NSNumber</span> numberWithInt:kCTUnderlineStyleSingle] range:range];</span><br><span class="line">        [attString addAttribute:<span class="built_in">NSForegroundColorAttributeName</span> value:PNCColor(<span class="number">64</span>,<span class="number">177</span>,<span class="number">255</span>) range:range];</span><br><span class="line"></span><br><span class="line">       </span><br><span class="line">        lbTitle<span class="variable">.font</span> = [AppFont getSysFont_size22];</span><br><span class="line">        lbTitle<span class="variable">.textColor</span> = PNCColor(<span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>);</span><br><span class="line">        lbTitle<span class="variable">.attributedText</span> = attString;</span><br><span class="line">        [v addSubview:lbTitle];</span><br><span class="line">        [v addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(showProlicy:) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/06/一些小的知识点总结/" data-id="cie8c1ou70000oanreqi24sq0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/20/afnetworking/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AFNetworking</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

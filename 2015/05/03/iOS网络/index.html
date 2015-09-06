@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS中的网络框架 | ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS中的网络框架
+Cocoa层，包含了用于URL加载的OC API、Bonjour、Web Kit与Game Kit
+Core Foundation层，是一套C API，其中包含了CFNetwork，这是大多数应用级别的网络代码的基础。CFNetwork在CFStream与CFSocket之上提供了一个简单地网络接口，是针对BSD socket的轻量级封装
+OS层的BSD socket严格使用C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中的网络框架">
+<meta property="og:url" content="http://yoursite.com/2015/05/03/iOS网络/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description" content="iOS中的网络框架
+Cocoa层，包含了用于URL加载的OC API、Bonjour、Web Kit与Game Kit
+Core Foundation层，是一套C API，其中包含了CFNetwork，这是大多数应用级别的网络代码的基础。CFNetwork在CFStream与CFSocket之上提供了一个简单地网络接口，是针对BSD socket的轻量级封装
+OS层的BSD socket严格使用C">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS中的网络框架">
+<meta name="twitter:description" content="iOS中的网络框架
+Cocoa层，包含了用于URL加载的OC API、Bonjour、Web Kit与Game Kit
+Core Foundation层，是一套C API，其中包含了CFNetwork，这是大多数应用级别的网络代码的基础。CFNetwork在CFStream与CFSocket之上提供了一个简单地网络接口，是针对BSD socket的轻量级封装
+OS层的BSD socket严格使用C">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="ios-iOS网络" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/03/iOS网络/" class="article-date">
+  <time datetime="2015-05-03T11:20:14.000Z" itemprop="datePublished">2015-05-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS中的网络框架
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iOS中的网络框架">iOS中的网络框架</h1><ul>
+<li>Cocoa层，包含了用于URL加载的OC API、Bonjour、Web Kit与Game Kit</li>
+<li>Core Foundation层，是一套C API，其中包含了CFNetwork，这是大多数应用级别的网络代码的基础。CFNetwork在CFStream与CFSocket之上提供了一个简单地网络接口，是针对BSD socket的轻量级封装</li>
+<li>OS层的BSD socket严格使用C来实现，提供了与远端设备与服务器通信的完全控制能力</li>
+</ul>
+<blockquote>
+<p>从上层框架到下层移动，会获得更为严密的控制，但也失去了上层提供的易用性与抽象能力。比如，BSD层的socket是无法访问系统范围的VPN，也无法激活Wi-Fi和蜂窝无线网络</p>
+</blockquote>
+<h2 id="NSURLConnection">NSURLConnection</h2><p>NSURLConnection是个Cocoa级别的API，构建在NSSream之上，设计时针对4个常见的URI模式进行了优化支持，文件、HTTP、HTTPS与FTP。NSURLConnection支持同步和异步两种请求</p>
+<h2 id="Game_Kit">Game Kit</h2><p>Game Kit并不需要网络基础设施就能使用，能够创建自组（ad-hoc）的Bluetooth Personal Area Networks（PAN）来实现点对点的通信</p>
+<h2 id="Bonjour">Bonjour</h2><p>Bonjour是Apple对零配置（zeroconf）网络的实现，通过名字、服务类型与域这几个元组来引用服务</p>
+<h2 id="NSStream">NSStream</h2><p>NSStream是一个Cocoa级别的API，构建在CFNetwork之上，作为NSURLConnection的基础，旨在完成一些底层的网络任务。NSStream可以支持使用telnet或SMTP等NSURLConnection不支持的协议进行通信。NSStream是异步的，通过NSStreamDelegate实现通信更新</p>
+<h2 id="CFNetwork">CFNetwork</h2><p>CFNetwork API位于基础的BSD socket之上，与BSD socket之间的主要差别在于CFNetwork集成了运行循环。CFNetwork构建在Core Foundation层的CFSocket和CFStream API之上</p>
+<h1 id="HTTP">HTTP</h1><h2 id="HTTP介绍">HTTP介绍</h2><p>Tim Berners-Lee于1990年创造了HTTP协议的首个版本，最初的的提案中有3个主要的创新：HTML、HTTP与URL。</p>
+<ul>
+<li>HTML定义了向文本添加样式的一种方式</li>
+<li>HTTP定义了在服务端与客户端之间传输数据的一种方式</li>
+<li>URL定义了在网络机器中定位唯一资源的一种方式</li>
+</ul>
+<h2 id="HTTP请求与响应">HTTP请求与响应</h2><p>HTTP的规范是IETF FRF 2616 <a href="http://www.ietf.org/rfc/rfc2616.txt" target="_blank" rel="external">http://www.ietf.org/rfc/rfc2616.txt</a></p>
+<h3 id="URL结构">URL结构</h3><p><a href="http://user:password@hostname:port/absolute-path?query" target="_blank" rel="external">http://user:password@hostname:port/absolute-path?query</a></p>
+<p>协议://[认证]主机名:端口/绝对路径/?查询字符串1&amp;查询字符串2</p>
+<p><strong>绝对路径和查询字符串不可以包含空格、回车与换行符，因此，URL通常会使用百分号进行编码，RFC 3986(<a href="http://tools.ietf.org/html/rfc3986)规定了URL百分号编码的详细信息" target="_blank" rel="external">http://tools.ietf.org/html/rfc3986)规定了URL百分号编码的详细信息</a></strong></p>
+<h3 id="请求内容">请求内容</h3><p>HTTP请求包含3部分：请求行、请求头与请求体</p>
+<p>HTTP是无状态的协议，即HTTP服务器不会保留关于某个请求的任何信息以用在未来的请求中。Cookie机制提供了一种方式，可以将一些简单地状态信息存储在客户端，并在后续的请求中与服务器进行通信</p>
+<p>请求体必须遵循客户端与服务器之间预先确定的数据编码，对于Web浏览器来说，这通常是表单编码数据，但对于移动应用来说，该编码通常是XML或JSON数据</p>
+<h3 id="响应内容">响应内容</h3><p>HTTP响应包含3部分：状态行、响应头与相应体</p>
+<p>在iOS的URL加载系统中，NSURLResponse及其子类NSHTTPURLResponse封装了请求返回的数据</p>
+<h1 id="Cocoa层_iOS_HTTP_API">Cocoa层 iOS HTTP API</h1><p>在URL加载系统中，有3个主要的方式可以执行HTTP请求和接收响应</p>
+<pre><code>-<span class="ruby"> 同步    （线程会被阻塞）
+</span>-<span class="ruby"> 队列式异步        （创建一个队列并放入后台线程执行）
+</span>-<span class="ruby"> 异步    （调用委托方法）</span>
+</code></pre><p>所有的URL加载请求方式都会用到这4类对象 </p>
+<pre><code><span class="built_in">NSURL</span>、<span class="built_in">NSURLRequest</span>、<span class="built_in">NSURLConnection</span>与<span class="built_in">NSURLResponse</span>对象
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/03/iOS网络/" data-id="cie2ful2g0019c2s678tmkr9u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/08/cocoapods/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          cocoapods
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/01/create-certificate/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">create_certificate</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

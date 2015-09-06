@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>sqlite3命令行工具 | ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。
+打开终端，键入如下命令：
+1234~  sqlite3 test.dbSQLite version 3.8.5 2014-08-15 22:37:57Enter &quot;.help&quot; for usage hints.sqlite&amp;gt;
+.help命令是sqlite3的元命令工具之一,它列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqlite3命令行工具">
+<meta property="og:url" content="http://yoursite.com/2015/04/15/sqlite命令行工具/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description" content="sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。
+打开终端，键入如下命令：
+1234~  sqlite3 test.dbSQLite version 3.8.5 2014-08-15 22:37:57Enter &quot;.help&quot; for usage hints.sqlite&amp;gt;
+.help命令是sqlite3的元命令工具之一,它列">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sqlite3命令行工具">
+<meta name="twitter:description" content="sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。
+打开终端，键入如下命令：
+1234~  sqlite3 test.dbSQLite version 3.8.5 2014-08-15 22:37:57Enter &quot;.help&quot; for usage hints.sqlite&amp;gt;
+.help命令是sqlite3的元命令工具之一,它列">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="ios-sqlite命令行工具" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/sqlite命令行工具/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sqlite3命令行工具
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。</p>
+<p>打开终端，键入如下命令：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~  sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">SQLite <span class="keyword">version</span> 3.8.5 2014-08-15 22:37:57</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> usage hints.</span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
+<p>.help命令是sqlite3的元命令工具之一,它列出了sqlite3所有的元命令。 </p>
+<p>.exit 和 .quit 命令退出sqlite3会话。我们还可以使用组合键Ctrl + D 退出sqlite3。</p>
+<p>.databases命令显示了连接数据库。</p>
+<p>.tables表命令列出可用的表。</p>
+<h2 id="创建一个数据库">创建一个数据库</h2><p>使用sqlite3命令行工具来创建一个新的数据库文件：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">这里我们创建一个新的<span class="keyword">test</span>.<span class="keyword">db</span>数据库。如果文件存在，则打开数据库。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##创建数据库表</span><br></pre></td></tr></table></figure>
+<p>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">##基本sqlite3元命令</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .tables<br>Cars<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">.tables命令显示可用的表。</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; SELECT * FROM cars;<br>1|Audi|52642<br>2|Mercedes|57127<br>3|Skoda|9000<br>4|Volvo|29000<br>5|Bentley|350000<br>6|Citroen|21000<br>7|Hummer|41400<br>8|Volkswagen|21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT查询语句的输出默认情况下是按行输出，行分隔符是<span class="escape">`|</span><span class="escape">`。</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .separator :<br>sqlite&gt; SELECT * FROM cars;<br>1:Audi:52642<br>2:Mercedes:57127<br>3:Skoda:9000<br>4:Volvo:29000<br>5:Bentley:350000<br>6:Citroen:21000<br>7:Hummer:41400<br>8:Volkswagen:21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">上面使用了新的分隔符`:<span class="escape">`</span><br><span class="line"></span></span></span><br><span class="line">还有其他几个可用的输出模式。下面的示例显示列的输出模式：</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .mode column<br>sqlite&gt; .headers on<br>sqlite&gt; SELECT * FROM cars;<br>Id          Name        Price</p>
+<hr>
+<p>1           Audi        52642<br>2           Mercedes    57127<br>3           Skoda       9000<br>4           Volvo       29000<br>5           Bentley     350000<br>6           Citroen     21000<br>7           Hummer      41400<br>8           Volkswagen  21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .width 15 18<br>sqlite&gt; SELECT Name, Price FROM cars;<br>Name             Price</p>
+<hr>
+<p>Audi             52642<br>Mercedes         57127<br>Skoda            9000<br>Volvo            29000<br>Bentley          350000<br>Citroen          21000<br>Hummer           41400<br>Volkswagen       21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在这里，我们改变列宽。第一列将15个字符宽,第二列是18。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .show<br>echo: off<br>      eqp: off<br>  explain: off<br>  headers: on<br>     mode: column<br>nullvalue: “”<br>   output: stdout<br>separator: “:”<br>    stats: off<br>    width: 15 18<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.show</span> 命令列出各种设置。这些包括输出模式，在列表模式下使用的分隔符和是否显示头部。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .schema Cars<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.schema</span> 命令显示表的结构。它返回创建表的DDL SQL。</span><br><span class="line"></span><br><span class="line"><span class="class">.prompt</span> 命令可以改变的sqlite3的提示。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .prompt “&gt; “ “. “</p>
+<blockquote>
+<p>SELECT * FROM Cars<br>. LIMIT 2;<br>Id               Name                Price</p>
+<hr>
+<p>1                Audi                52642<br>2                Mercedes            57127<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有两个提示。最主要是第一个提示，另一个是继续提示。默认的主提示符是<span class="string">'sqlite&gt;'</span> 和默认的继续提示<span class="string">'...&gt;'</span>。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">##从shell执行SQL</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>$ sqlite3 test.db “SELECT * FROM Cars;”<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">##Dumping tables</span></span><br><span class="line"></span><br><span class="line">我们将使用.<span class="keyword">dump</span>命令来转储。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .dump Cars<br>PRAGMA foreign_keys=OFF;<br>BEGIN TRANSACTION;<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br>COMMIT;<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.dump</span> 命令显示了我们所必需的SQL创建表的信息。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .output cars2.sql<br>sqlite&gt; .dump Cars<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">我们也可以将输出重定向到一个文件中。</span><br><span class="line"></span><br><span class="line">.output命令会将输出重定向cars2.sql文件。</span><br><span class="line"></span><br><span class="line"><span class="comment">##Reading SQL</span></span><br><span class="line"></span><br><span class="line">我们可以从一个文件名读取SQL语句 `.<span class="command">read</span>` 命令。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; DROP TABLE Cars;<br>sqlite&gt; .tables Cars<br>sqlite&gt; .read cars.sql<br>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; SELECT * FROM Cars WHERE Id=1;<br>Id          Name        Price     </p>
+<hr>
+<p>1           Audi        52642<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="stylus">#<span class="id">#The</span> <span class="class">.sqlite_history</span> file</span><br><span class="line"></span><br><span class="line">命令和语句中存档于 .sqlite_history文件。该文件位于主目录。</span></span><br></pre></td></tr></table></figure></p>
+<p>$ tail -5 ~/.sqlite_history<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用tail命令,我们显示最后五项。</span><br><span class="line"></span><br><span class="line">#<span class="id">#Resource</span> file</span><br><span class="line"></span><br><span class="line">sqlite3 工具有一个资源文件 <span class="class">.sqliterc</span> 。 它位于主目录。如果没有这些文件，我们可以简单地创建它。 这些文件可以包含元命令，或常规的SQL语句。</span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line">$ cat <span class="class">.sqliterc</span> </span><br><span class="line"><span class="class">.mode</span> column</span><br><span class="line"><span class="class">.header</span> on</span><br><span class="line"><span class="class">.nullvalue</span> NULL</span><br></pre></td></tr></table></figure></p>
+<p>这里是一个简单的资源文件的例子，它有三个元命令。有了资源文件，我们不需要再次执行已有的元命令。当我们开始 sqlite3 工具，他们将自动执行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/sqlite命令行工具/" data-id="cie2ful1y000oc2s6hn9uajkr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/15/navigationbar的刷新/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          navigationBar的刷新
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/15/XML&JSON/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据解析XML</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

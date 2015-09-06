@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>音频处理 | ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="音频基础知识自然界信息：模拟信号 
+模拟信号-&amp;gt;数字信号 （数字化）
+炭粒电话筒原理： 声音振动-&amp;gt;炭粒(电阻)-&amp;gt;电流变化
+采样-&amp;gt;量化-&amp;gt;编码
+采样
+频率 （人耳识别声波频率 20Hz-20KHz）
+采样定理（奈奎斯特定律:如果信号是带限的，并且采样频率大于信号带宽(频宽)的2倍，那么，原来的连续信号可以从采样样本中完全重建出来）
+采样率
+  1234在数字音频领">
+<meta property="og:type" content="article">
+<meta property="og:title" content="音频处理">
+<meta property="og:url" content="http://yoursite.com/2015/04/15/iOS音频技术/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description" content="音频基础知识自然界信息：模拟信号 
+模拟信号-&amp;gt;数字信号 （数字化）
+炭粒电话筒原理： 声音振动-&amp;gt;炭粒(电阻)-&amp;gt;电流变化
+采样-&amp;gt;量化-&amp;gt;编码
+采样
+频率 （人耳识别声波频率 20Hz-20KHz）
+采样定理（奈奎斯特定律:如果信号是带限的，并且采样频率大于信号带宽(频宽)的2倍，那么，原来的连续信号可以从采样样本中完全重建出来）
+采样率
+  1234在数字音频领">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="音频处理">
+<meta name="twitter:description" content="音频基础知识自然界信息：模拟信号 
+模拟信号-&amp;gt;数字信号 （数字化）
+炭粒电话筒原理： 声音振动-&amp;gt;炭粒(电阻)-&amp;gt;电流变化
+采样-&amp;gt;量化-&amp;gt;编码
+采样
+频率 （人耳识别声波频率 20Hz-20KHz）
+采样定理（奈奎斯特定律:如果信号是带限的，并且采样频率大于信号带宽(频宽)的2倍，那么，原来的连续信号可以从采样样本中完全重建出来）
+采样率
+  1234在数字音频领">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="ios-iOS音频技术" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/iOS音频技术/" class="article-date">
+  <time datetime="2015-04-15T05:44:05.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      音频处理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="音频基础知识">音频基础知识</h1><p>自然界信息：模拟信号 </p>
+<p>模拟信号-&gt;数字信号 （数字化）</p>
+<p>炭粒电话筒原理： 声音振动-&gt;炭粒(电阻)-&gt;电流变化</p>
+<p><code>采样</code>-&gt;<code>量化</code>-&gt;<code>编码</code></p>
+<h3 id="采样">采样</h3><ul>
+<li>频率 （人耳识别声波频率 20Hz-20KHz）</li>
+<li>采样定理（奈奎斯特定律:如果信号是带限的，并且采样频率大于信号带宽(频宽)的2倍，那么，原来的连续信号可以从采样样本中完全重建出来）</li>
+<li><p>采样率</p>
+  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在数字音频领域，常用的采样率:</span><br><span class="line"><span class="number">8</span>,<span class="number">000</span> Hz - 电话所用采样率，对于人的说话已经足够</span><br><span class="line"><span class="number">22</span>,<span class="number">050</span> Hz - 无线电广播所用采样率</span><br><span class="line"><span class="number">44</span>,<span class="number">100</span> Hz - 音频CD,也常用于<span class="built_in">MPEG</span>-<span class="number">1</span>音频（VCD, SVCD, <span class="built_in">MP3</span>）所用采样率</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>滤波 （高通滤波器、低通滤波器）    </p>
+</li>
+</ul>
+<h3 id="量化">量化</h3><p>连续信号经过采样成为离散信号，离散信号经过量化即成为数字信号。信号的采样和量化通常都是由ADC实现的。例如CD音频信号就是按照44110Hz的频率采样，按16位元量化为有着65536（=2^{16}）个可能取值的数字信号。</p>
+<h3 id="编码">编码</h3><p>调制即模拟信号-&gt;数字信号，解调即数字信号-&gt;模拟信号</p>
+<ul>
+<li><p>PCM (脉冲编码调制 英文：Pulse-code modulation)</p>
+<p>  在电话学中，电话的声音频号编码标准是每秒8000个模拟样本，每个样本8位，总共每秒64 kbit的数字信号</p>
+</li>
+<li><p>MP3、WMA、WAV</p>
+</li>
+</ul>
+<h1 id="使用System_Sound_Services播放UI音效和调用振动效果">使用System Sound Services播放UI音效和调用振动效果</h1><h2 id="概述">概述</h2><p>iOS中最简单的播放声音就是播放系统声音，播放系统声音要用到System Sound Services，它是Audio Toolbox Framework的一部分，它提供Ｃ语言风格接口用于播放短的声音，如果对应的设备支持振动，还可以调用振动效果。</p>
+<p>使用 System Sound Services 的限制条件：</p>
+<ul>
+<li>音频文件播放长度不能大于30秒</li>
+<li>必须是线性的音频格式：PCM or IMA4 (IMA/ADPCM) </li>
+<li>文件格式必须是.caf, .aif, 或者 .wav</li>
+</ul>
+<p>如果是使用<code>AudioServicesPlaySystemSound</code>函数，还有如下限制：</p>
+<ul>
+<li>音量大小调节，依赖于当前系统音量设置</li>
+<li>声音立即播放</li>
+<li>不支持循环播放、立体声和定位</li>
+<li>不支持同时播放，即一次只能播放一个声音</li>
+</ul>
+<p>类似地，<code>AudioServicesPlayAlertSound</code>函数可以播放一个简短的的声音作为警告音。如果在他们的铃音设置中配置了振动，调用这个函数除了播放声音文件外，还会调用振动功能</p>
+<p>注意：<code>系统提供的警告声音和系统提供的用户界面的声音效果并不提供给您的应用程序。例如，使用kSystemSoundID_UserPreferredAlert常数作为参数传递给AudioServicesPlayAlertSound函数将不会有任何效果</code></p>
+<h2 id="How_to？">How to？</h2><p>第一步：<code>引入头文件</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AudioToolbox/AudioToolbox.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>第二步：<code>创建一个系统声音ID对象</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加属性 (系统声音ID对象的URL)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CFURLRef</span> soundFileURLRef;</span><br><span class="line"><span class="comment">// 添加属性 (系统声音ID对象)</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) SystemSoundID soundFileObject;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用CoreFoudation接口获取app的 main bundle</span><span class="built_in">CFBundleRef</span> mainBundle = <span class="built_in">CFBundleGetMainBundle</span> ();<span class="comment">// 获取将要播放的音频文件（tap.aif）的URL</span></span><br><span class="line"><span class="comment">// 在CoreFoundation中，创建方法中又Create或Copy的需要手动释放内存，所以_soundFileURLRef需要在后面释放其内存</span></span><br><span class="line">_soundFileURLRef  = <span class="built_in">CFBundleCopyResourceURL</span> (							 mainBundle,							 <span class="built_in">CFSTR</span> (<span class="string">"tap"</span>),							 <span class="built_in">CFSTR</span> (<span class="string">"caf"</span>),							 <span class="literal">NULL</span>);</span><br><span class="line"><span class="comment">// 根据声音文件的URL，创建一个系统声音ID对象</span>AudioServicesCreateSystemSoundID (	_soundFileURLRef,   &amp;_soundFileObject);</span><br></pre></td></tr></table></figure>
+<p>第三步：<code>播放声音</code></p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 普通播放</span><br><span class="line"><span class="pp">- <span class="params">(<span class="variable">IBAction</span>)</span> playSystemSound &#123;	AudioServicesPlaySystemSound <span class="params">(<span class="variable">_</span>sound<span class="variable">FileObject</span>)</span>;&#125;</span><br><span class="line">// 播放同时，触发一次振动</span><br><span class="line">- <span class="params">(<span class="variable">IBAction</span>)</span> playSystemSound &#123;	AudioServicesPlayAlertSound<span class="params">(<span class="variable">_</span>sound<span class="variable">FileObject</span>)</span>;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>第四步：<code>回收内存</code></p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(void)</span>dealloc</span><br><span class="line">&#123;</span><br><span class="line">	AudioServicesDisposeSystemSoundID<span class="params">(self.sound<span class="variable">FileObject</span>)</span>;</span><br><span class="line">	CFRelease<span class="params">(<span class="variable">_</span>sound<span class="variable">FileURLRef</span>)</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>关于振动</strong></p>
+<p>在运行iOS系统的设备上，如果设备支持振动，可以使用如下代码调用振动功能(iPod touch不支持该功能)</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;UIKit/UIKit.h&gt;</span></span>- (<span class="keyword">void</span>) vibratePhone &#123;	AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>补充说明</strong></p>
+<p><code>使用CoreFoundation接口 V.S. Foundation接口</code></p>
+<blockquote>
+<p>关于第二步，获取音频文件的URL，也可以使用Foundation接口，如下：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *sndURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"tap"</span> withExtension:<span class="string">@"caf"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用__bridge修饰，不转移对象的所有权。所以，后面也就不再需要释放_soundFileURLRef的内存了</span></span><br><span class="line">_soundFileURLRef = (__bridge <span class="built_in">CFURLRef</span>)sndURL;</span><br></pre></td></tr></table></figure>
+<p><code>在播放完声音之后，通过回调的方式来回收内存</code></p>
+<blockquote>
+<p>关于第四步，回收内存，如果想再声音播放完之后，立刻就回收内存，需要通过注册回调函数的方式来进行，如下所示：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建完系统声音ID对象之后，注册移除对象的回调函数</span></span><br><span class="line">AudioServicesAddSystemSoundCompletion(_soundFileObject, <span class="literal">nil</span>, <span class="literal">nil</span>, SoundFinished, <span class="literal">nil</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是该回调函数的实现，首先移除该回调函数，然后移除系统ID对象</span></span><br><span class="line"><span class="comment">// 注意，不需要再释放_soundFileURLRef了</span></span><br><span class="line"><span class="keyword">void</span> SoundFinished (SystemSoundID snd, <span class="keyword">void</span>* context) &#123;</span><br><span class="line">	AudioServicesRemoveSystemSoundCompletion(snd);</span><br><span class="line">	AudioServicesDisposeSystemSoundID(snd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用AVAudioPlayer来播放本地的音频文件或内存中的音频数据">使用AVAudioPlayer来播放本地的音频文件或内存中的音频数据</h1><h2 id="概述-1">概述</h2><p>AVAudioPlayer类提供了一个简单的Objective-C接口，用于播放声音。如果您的应用程序不需要立体声定位或精确同步，如果你不是播放来自网络的音频流，苹果建议您使用这个类进行播放。</p>
+<p>使用AVAudioPlayer实例，你可以：</p>
+<ul>
+<li>播放任何时长的音频</li>
+<li>播放本地的音频文件或内存中的音频数据</li>
+<li>支持循环播放</li>
+<li>同时播放多个声音（虽然不是精确同步）</li>
+<li>可以直接定位到音频播放的任意一个位置，支持快进，快退</li>
+<li>可以改变播放速率</li>
+<li>可以设置播放的音量和立体声特性</li>
+</ul>
+<p><code>AVAudioPlayer类可以播放iOS系统支持的所有类型的音频格式</code></p>
+<h2 id="How_to?">How to?</h2><p>配置一个音频播放器对象需要如下三步:</p>
+<ol>
+<li>通过文件URL或者NSData初始化一个音频播放器实例对象</li>
+<li>调用prepareToPlay函数来初始化音频硬件</li>
+<li>设置代理对象，该代理对象用来处理一些中断和播放完成时的事件</li>
+</ol>
+<h3 id="常用属性">常用属性</h3><ul>
+<li>音量(volume)</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.volume =<span class="number">0.8</span>;	 <span class="comment">// 0.0-1.0之间</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>循环次数(numberOfLoops)</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.numberOfLoops =<span class="number">3</span>;	<span class="comment">// 默认为0，只播放一次。如果是－1表示无限循环</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>总时长(duration)</li>
+</ul>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSTimeInterval <span class="built_in">duration</span> <span class="subst">=</span> player<span class="built_in">.</span><span class="built_in">duration</span>;	<span class="comment">// 只读，获取总时间(单位是秒)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当前位置(currentTime)</li>
+</ul>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">player.<span class="keyword">currentTime</span> =<span class="number">15.0</span>;	<span class="comment">// 可以指定从任意位置(单位是秒)开始播放</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>声道数(numberOfChannels)</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSUInteger</span> channels = player<span class="variable">.numberOfChannels</span>;	<span class="comment">// 只读，声道数</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>是否允许快放和慢放(enableRate)</li>
+</ul>
+<p><code>该属性需要在prepareToPlay方法调用之前设置</code></p>
+<ul>
+<li>播放速率(rate)</li>
+</ul>
+<p><code>rate可设置在0.5-2.0范围之内，需要enableRate为YES</code></p>
+<ul>
+<li>设置(settings)</li>
+</ul>
+<p><code>一个只读的字典，用来描述音频的特性，比如比特率(AVEncoderBitRateKey)、采样率(AVSampleRateKey)、数据格式(AVFormatIDKey)等</code></p>
+<h3 id="常用方法">常用方法</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)prepareToPlay;	/* <span class="keyword">get</span> ready <span class="keyword">to</span> play <span class="keyword">the</span> sound. happens automatically <span class="function_start"><span class="keyword">on</span></span> play. */</span><br><span class="line">- (BOOL)play;			/* sound <span class="keyword">is</span> played asynchronously. */</span><br><span class="line">- (BOOL)playAtTime:(NSTimeInterval)<span class="property">time</span> NS_AVAILABLE(<span class="number">10</span>_7, <span class="number">4</span>_0); /* play a sound <span class="keyword">some</span> <span class="property">time</span> <span class="keyword">in</span> <span class="keyword">the</span> future. <span class="property">time</span> <span class="keyword">is</span> an absolute <span class="property">time</span> based <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">and</span> <span class="keyword">greater than</span> deviceCurrentTime. */</span><br><span class="line">- (void)pause;			/* pauses playback, <span class="keyword">but</span> remains ready <span class="keyword">to</span> play. */</span><br><span class="line">- (void)stop;		   /* stops playback. no longer ready <span class="keyword">to</span> play. */</span><br></pre></td></tr></table></figure>
+<hr>
+<p>第一步：<code>引入头文件</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AVFoundation/AVFoundation.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>第二步：<code>配置AVAudioPlayer对象</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVAudioPlayer</span> *player;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIButton</span> *button;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSURL</span> *soundFileURL = [[<span class="built_in">NSBundle</span> mainBundle] </span><br><span class="line">					urlForResource:<span class="string">@"sound"</span> withExtension: <span class="string">@"wav"</span>];</span><br><span class="line"><span class="built_in">AVAudioPlayer</span> *newPlayer =              [[<span class="built_in">AVAudioPlayer</span> alloc] initWithContentsOfURL: soundFileURL_player = newPlayer;_player<span class="variable">.delegate</span> = <span class="keyword">self</span>;[_player prepareToPlay];</span><br></pre></td></tr></table></figure>
+<p><code>播放或暂停</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">IBAction</span>) playOrPause: (<span class="keyword">id</span>) sender &#123;</span><br><span class="line">    <span class="comment">// 如果正在播放，就暂停</span>    <span class="keyword">if</span> (<span class="keyword">self</span><span class="variable">.player</span><span class="variable">.playing</span>) &#123;        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateHighlighted</span>];        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateNormal</span>];        [<span class="keyword">self</span><span class="variable">.player</span> pause];    <span class="comment">// 如果已经播放完成或暂停，则开始播放</span>    &#125; <span class="keyword">else</span> &#123;        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Pause"</span> forState: <span class="built_in">UIControlStateHighlighted</span>];        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Pause"</span> forState: <span class="built_in">UIControlStateNormal</span>];        [<span class="keyword">self</span><span class="variable">.player</span> play];&#125; &#125;</span><br></pre></td></tr></table></figure>
+<p><code>委托方法</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) audioPlayerDidFinishPlaying: (<span class="built_in">AVAudioPlayer</span> *) player                        successfully: (<span class="built_in">BOOL</span>) completed &#123;    <span class="keyword">if</span> (completed == <span class="literal">YES</span>) &#123;        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">        [<span class="keyword">self</span><span class="variable">.button</span> setTitle: <span class="string">@"Play"</span> forState: <span class="built_in">UIControlStateHighlighted</span>];        &#125; &#125;</span><br></pre></td></tr></table></figure>
+<!--# 使用AVPlayer来播放本地或远端音频数据-->
+<h1 id="音频后台播放">音频后台播放</h1><p>要支持音频后台播放，app需要做如下事情：</p>
+<ul>
+<li>在Info.plist文件中增加“Required background modes”键 (UIBackgroundModes)包含值为“App plays audio” (audio)”</li>
+</ul>
+<ul>
+<li>设置audio session支持Playback</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setAudio2SupportBackgroundPlay</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">UIDevice</span> *device = [<span class="built_in">UIDevice</span> currentDevice];</span><br><span class="line">    <span class="keyword">if</span> (![device respondsToSelector:<span class="keyword">@selector</span>(isMultitaskingSupported)]) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Unsupported device!"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!device<span class="variable">.multitaskingSupported</span>) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Unsupported multitask!"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">AVAudioSession</span> *session = [<span class="built_in">AVAudioSession</span> sharedInstance];</span><br><span class="line">    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line">    </span><br><span class="line">    [session setCategory:<span class="built_in">AVAudioSessionCategoryPlayback</span> error:&amp;error];</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Playback category error:%@"</span>, error);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    [session setActive:<span class="literal">YES</span> error:&amp;error];</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Active category error:%@"</span>, error);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>接收远程控制事件</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewWillAppear:animated];</span><br><span class="line">    <span class="comment">// 设置页面将要出现时，接收远程控制事件，并使该视图控制器成为第一响应者</span></span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] beginReceivingRemoteControlEvents];</span><br><span class="line">    [<span class="keyword">self</span> becomeFirstResponder];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewWillDisappear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewWillDisappear:animated];</span><br><span class="line">    <span class="comment">// 设置页面将要消失时，停止接收远程控制事件，并使该视图控制器失去第一响应者</span></span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] endReceivingRemoteControlEvents];</span><br><span class="line">    [<span class="keyword">self</span> resignFirstResponder];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)canBecomeFirstResponder</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 远程控制事件的处理</span></span><br><span class="line">- (<span class="keyword">void</span>)remoteControlReceivedWithEvent:(<span class="built_in">UIEvent</span> *)event</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (event<span class="variable">.type</span> == <span class="built_in">UIEventTypeRemoteControl</span>) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (event<span class="variable">.subtype</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlPause</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlPlay</span>:</span><br><span class="line">            <span class="comment">// 线控耳机控制切换暂停和播放</span></span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlTogglePlayPause</span>:</span><br><span class="line">                [<span class="keyword">self</span> playOrPause:<span class="literal">nil</span>];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlNextTrack</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">UIEventSubtypeRemoteControlPreviousTrack</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;MediaPlayer/MediaPlayer.h&gt;</span></span></span><br><span class="line">    <span class="comment">// 设置锁屏显示的图片</span></span><br><span class="line">    <span class="built_in">MPMediaItemArtwork</span> *artwork = [[<span class="built_in">MPMediaItemArtwork</span> alloc] initWithImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"红颜劫.jpg"</span>]];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 显示锁屏显示的播放信息</span></span><br><span class="line">    [<span class="built_in">MPNowPlayingInfoCenter</span> defaultCenter]<span class="variable">.nowPlayingInfo</span> = @&#123;</span><br><span class="line">                                                              <span class="built_in">MPMediaItemPropertyPlaybackDuration</span>:@(_player<span class="variable">.duration</span>),<span class="built_in">MPMediaItemPropertyTitle</span>:<span class="string">@"红颜劫"</span>, <span class="built_in">MPMediaItemPropertyArtist</span>:<span class="string">@"姚贝娜"</span>,<span class="built_in">MPMediaItemPropertyArtwork</span>:artwork, <span class="built_in">MPNowPlayingInfoPropertyPlaybackRate</span>:@(<span class="number">1.0</span>f)&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Audio_Session">Audio Session</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr_selector">[[AVAudioSession sharedInstance]</span> <span class="rule"><span class="attribute">setCategory</span>:<span class="value">AVAudioSessionCategoryPlayback error:&amp;error]</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="attr_selector">[[AVAudioSession sharedInstance]</span> <span class="rule"><span class="attribute">setActive</span>:<span class="value">YES error:&amp;error]</span></span>;</span><br></pre></td></tr></table></figure>
+<h1 id="中断(interruptions)">中断(interruptions)</h1><h1 id="输出线路变更（Routing_Changes）">输出线路变更（Routing Changes）</h1><h1 id="使用AVAudioRecorder来录制音频数据">使用AVAudioRecorder来录制音频数据</h1><p>How To:</p>
+<ul>
+<li>包含头文件</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AVFoundation/AVFoundation.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建属性 录音对象、播放对象、存放录音文件的URL</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>) <span class="built_in">AVAudioRecorder</span> *audioRecorder;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVAudioPlayer</span> *audioPlayer;</span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSURL</span> *soundFileURL;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置AVAudioSession支持录音和回放功能</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr_selector">[[AVAudioSession sharedInstance]</span> <span class="rule"><span class="attribute">setCategory</span>:<span class="value">AVAudioSessionCategoryPlayAndRecord error:nil]</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>录音前准备和设置工作</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableDictionary</span> *recordSettings = [<span class="built_in">NSMutableDictionary</span> dictionary];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 录音文件的编码格式</span></span><br><span class="line">recordSettings[<span class="built_in">AVFormatIDKey</span>] = @(kAudioFormatAppleIMA4);</span><br><span class="line"><span class="comment">// 采样率</span></span><br><span class="line">recordSettings[<span class="built_in">AVSampleRateKey</span>] = @(<span class="number">44100</span>);</span><br><span class="line"><span class="comment">// 通道数</span></span><br><span class="line">recordSettings[<span class="built_in">AVNumberOfChannelsKey</span>] = @<span class="number">2</span>;</span><br><span class="line"><span class="comment">// 量化位数</span></span><br><span class="line">recordSettings[<span class="built_in">AVLinearPCMBitDepthKey</span>] = @<span class="number">16</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编码质量</span></span><br><span class="line">recordSettings[<span class="built_in">AVEncoderAudioQualityKey</span>] = @(<span class="built_in">AVAudioQualityHigh</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line"><span class="keyword">self</span><span class="variable">.audioRecorder</span> = [[<span class="built_in">AVAudioRecorder</span> alloc] initWithURL:<span class="keyword">self</span><span class="variable">.soundFileURL</span> settings:recordSettings error:&amp;error];</span><br><span class="line"><span class="keyword">if</span> (error != <span class="literal">nil</span>) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"recorder error.%@"</span>,error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//准备录制</span></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.audioRecorder</span> prepareToRecord];</span><br></pre></td></tr></table></figure>
+<h1 id="视频播放">视频播放</h1><h2 id="MPMoviePlayerController">MPMoviePlayerController</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *url = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"abc"</span> withExtension:<span class="string">@"mp4"</span>];</span><br><span class="line"><span class="keyword">self</span><span class="variable">.player</span> = [[<span class="built_in">MPMoviePlayerController</span> alloc] initWithContentURL:url];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> prepareToPlay];</span><br><span class="line"></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.view</span> addSubview:<span class="keyword">self</span><span class="variable">.player</span><span class="variable">.view</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span><span class="variable">.player</span><span class="variable">.view</span><span class="variable">.frame</span> = <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.bounds</span>;</span><br><span class="line"></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> play];</span><br></pre></td></tr></table></figure>
+<h2 id="MPMoviePlayerViewController">MPMoviePlayerViewController</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://live.3gv.ifeng.com/live/hongkong.m3u8"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">MPMoviePlayerViewController</span> *player = [[<span class="built_in">MPMoviePlayerViewController</span> alloc] initWithContentURL:url];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 设置模态显示的过度效果</span></span><br><span class="line">    player<span class="variable">.modalTransitionStyle</span> = <span class="built_in">UIModalTransitionStyleCoverVertical</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 以模态的方式显示视频界面</span></span><br><span class="line"><span class="comment">//    [self presentMoviePlayerViewControllerAnimated:player];</span></span><br><span class="line">    [<span class="keyword">self</span> presentViewController:player animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
+<h1 id="流媒体网站测试">流媒体网站测试</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//live.3gv.ifeng.com/live/hongkong.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamEdge.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamEdge.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamMobLow.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamMobLow.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamMobHigh.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamMobHigh.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamWifi.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamWifi.m3u8 </span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819/nexttvnews_hls/StreamEdgeaudio.m3u8</span></span><br><span class="line"><span class="string">http:</span><span class="comment">//nexttvnews_hls-i.akamaihd.net/hls/live/215819-b/nexttvnews_hls/StreamEdgeaudio.m3u8</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/iOS音频技术/" data-id="cie2ful2e0016c2s6z1tnthem" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音频处理/">音频处理</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/15/Sqlite/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SQLite
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/10/键盘收起的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">键盘收起的方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

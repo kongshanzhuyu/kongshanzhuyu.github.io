@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ABeta’s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ABeta’s blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="ABeta’s blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ABeta’s blog">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="ABeta’s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ABeta’s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="ios-一些小的知识点总结" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/06/一些小的知识点总结/" class="article-date">
+  <time datetime="2015-09-06T09:20:14.000Z" itemprop="datePublished">2015-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-让屏幕自动进入休眠状态">1.让屏幕自动进入休眠状态</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">UIApplication</span> sharedApplication]<span class="variable">.idleTimerDisabled</span> = <span class="literal">NO</span>;<span class="comment">//自动进入锁屏状态</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-检查一个字符串里相同字符个数的方法">2.检查一个字符串里相同字符个数的方法</h3><ul>
+<li><p>方法一：</p>
+  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">int</span> strCount = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">NSString</span> * str = <span class="string">@"无限额"</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _strLimitTip<span class="variable">.length</span>-str<span class="variable">.length</span>+<span class="number">1</span>; i++) &#123;</span><br><span class="line">     <span class="keyword">if</span> ([[_strLimitTip substringWithRange:<span class="built_in">NSMakeRange</span>(i, str<span class="variable">.length</span>)] isEqualToString:str]) &#123;</span><br><span class="line">                        strCount++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (strCount == <span class="number">2</span>) &#123;</span><br><span class="line">                    _expand = <span class="literal">NO</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    BuyYqbSec1Cell * cell = (BuyYqbSec1Cell*)[tableView cellForRowAtIndexPath:indexPath];</span><br><span class="line">                    [cell setExpand:<span class="literal">YES</span>];</span><br><span class="line">                    _expand = <span class="literal">YES</span>;</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>方法二：</p>
+  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	<span class="built_in">NSMutableString</span> * strLImitTipM = [_strLimitTip mutableCopy];</span><br><span class="line">    <span class="built_in">NSRange</span> range = [_strLimitTip rangeOfString:<span class="string">@"无限额"</span>];</span><br><span class="line">    <span class="keyword">if</span> (range<span class="variable">.location</span> != <span class="built_in">NSNotFound</span>) &#123;</span><br><span class="line">        [strLImitTipM replaceCharactersInRange:range withString:<span class="string">@""</span>];</span><br><span class="line">        <span class="built_in">NSRange</span> range1 = [strLImitTipM rangeOfString:<span class="string">@"无限额"</span>];</span><br><span class="line">        <span class="keyword">if</span> (range1<span class="variable">.location</span> != <span class="built_in">NSNotFound</span>) &#123;</span><br><span class="line">            _expand = <span class="literal">NO</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            _expand = <span class="literal">YES</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        _expand = <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-Textview_失去第一响应者的方法">3.Textview 失去第一响应者的方法</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textView:(<span class="built_in">UITextView</span> *)textView shouldChangeTextInRange:(<span class="built_in">NSRange</span>)range replacementText:(<span class="built_in">NSString</span> *)text</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([text isEqualToString:<span class="string">@"\n"</span>]) &#123;</span><br><span class="line">        [<span class="keyword">self</span><span class="variable">.textView</span> resignFirstResponder];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-TextField_限制字符长度（只能输入六位数字_0—9）">4.TextField 限制字符长度（只能输入六位数字 0—9）</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span> ([string isEqualToString:<span class="string">@"\n"</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span> (range<span class="variable">.length</span> != <span class="number">1</span> )&#123;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> (textField ==_checkCodeField) &#123;</span><br><span class="line">           </span><br><span class="line">        <span class="built_in">NSString</span> *allowCharacters = <span class="string">@"0123456789"</span>;</span><br><span class="line">        <span class="built_in">NSCharacterSet</span> *setOfnonNumberSet = [[<span class="built_in">NSCharacterSet</span> characterSetWithCharactersInString:allowCharacters] invertedSet];</span><br><span class="line">           </span><br><span class="line">       <span class="keyword">if</span> ([string stringByTrimmingCharactersInSet:setOfnonNumberSet]<span class="variable">.length</span> ==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">         &#125;</span><br><span class="line">           </span><br><span class="line">   	<span class="built_in">NSString</span> *string1 =[textField<span class="variable">.text</span> stringByReplacingCharactersInRange:range withString:string];</span><br><span class="line">           </span><br><span class="line">         <span class="keyword">if</span> (string1<span class="variable">.length</span> &gt;<span class="number">6</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-按照label内字体的多少来确定字体的大小">5.按照label内字体的多少来确定字体的大小</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.yuqiMoneyLabel</span><span class="variable">.adjustsFontSizeToFitWidth</span> = <span class="literal">YES</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.yuqiMoneyLabel</span><span class="variable">.minimumFontSize</span> = <span class="number">0.0</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="6-对一行文字中的几个添加前景色以及下划线">6.对一行文字中的几个添加前景色以及下划线</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView viewForFooterInSection:(<span class="built_in">NSInteger</span>)section</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span>([_hasBuyed isEqualToString:<span class="string">@"false"</span>]==<span class="literal">YES</span> &amp;&amp; section == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">UIControl</span> * v = [[<span class="built_in">UIControl</span> alloc] initWithFrame:APP_<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, P<span class="built_in">CIphoneDeviceWidth</span>, <span class="number">30.0</span>)];</span><br><span class="line">        v<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> clearColor];</span><br><span class="line">        <span class="built_in">UILabel</span> * lbTitle = [[<span class="built_in">UILabel</span> alloc] initWithFrame:APP_<span class="built_in">CGRectMake</span>(<span class="number">15</span>, <span class="number">13</span>, <span class="number">200</span>, <span class="number">11</span>)];</span><br><span class="line">        <span class="built_in">NSString</span> * s = <span class="string">@"点击“购买”意味您同意基金购买协议"</span>;</span><br><span class="line">        <span class="built_in">NSRange</span> range = [s rangeOfString:<span class="string">@"基金购买协议"</span>];</span><br><span class="line">        <span class="built_in">NSMutableAttributedString</span> *attString = [[<span class="built_in">NSMutableAttributedString</span> alloc] initWithString:s];</span><br><span class="line">        [attString addAttribute:(<span class="built_in">NSString</span>*)kCTUnderlineStyleAttributeName value:[<span class="built_in">NSNumber</span> numberWithInt:kCTUnderlineStyleSingle] range:range];</span><br><span class="line">        [attString addAttribute:<span class="built_in">NSForegroundColorAttributeName</span> value:PNCColor(<span class="number">64</span>,<span class="number">177</span>,<span class="number">255</span>) range:range];</span><br><span class="line"></span><br><span class="line">       </span><br><span class="line">        lbTitle<span class="variable">.font</span> = [AppFont getSysFont_size22];</span><br><span class="line">        lbTitle<span class="variable">.textColor</span> = PNCColor(<span class="number">153</span>, <span class="number">153</span>, <span class="number">153</span>);</span><br><span class="line">        lbTitle<span class="variable">.attributedText</span> = attString;</span><br><span class="line">        [v addSubview:lbTitle];</span><br><span class="line">        [v addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(showProlicy:) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/06/一些小的知识点总结/" data-id="cie8c1ou70000oanreqi24sq0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-afnetworking" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/20/afnetworking/" class="article-date">
+  <time datetime="2015-05-20T11:20:14.000Z" itemprop="datePublished">2015-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/20/afnetworking/">AFNetworking</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AFNetworking">AFNetworking</h1><ol>
+<li>AFNetworking为什么存在</li>
+<li>AFNetworking的功能</li>
+</ol>
+<h1 id="AFNetworking之HTTP">AFNetworking之HTTP</h1><p><code>GET POST</code></p>
+<h1 id="AFNetworking功能封装">AFNetworking功能封装</h1><ul>
+<li>AFHTTPRequestOperation<blockquote>
+<p>AFHTTPRequestOperation is a subclass of AFURLConnectionOperation for requests using the HTTP or HTTPS protocols. It encapsulates the concept of acceptable status codes and content types, which determine the success or failure of a request. <code>Although AFHTTPRequestOperationManager is usually the best way to go about making requests, AFHTTPRequestOperation can be used by itself.</code></p>
+</blockquote>
+</li>
+</ul>
+<p><strong>GET with AFHTTPRequestOperation</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *URL = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://example.com/resources/123.json"</span>];</span><br><span class="line"><span class="built_in">NSURLRequest</span> *request = [<span class="built_in">NSURLRequest</span> requestWithURL:URL];</span><br><span class="line">AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];</span><br><span class="line">op<span class="variable">.responseSerializer</span> = [AFJSONResponseSerializer serializer];</span><br><span class="line">[op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, <span class="keyword">id</span> responseObject) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"JSON: %@"</span>, responseObject);</span><br><span class="line">&#125; failure:^(AFHTTPRequestOperation *operation, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Error: %@"</span>, error);</span><br><span class="line">&#125;];</span><br><span class="line">[[<span class="built_in">NSOperationQueue</span> mainQueue] addOperation:op];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>AFHTTPRequestOperationManager<blockquote>
+<p>AFHTTPRequestOperationManager encapsulates the common patterns of communicating with a web application over HTTP, including request creation, response serialization, network reachability monitoring, and security, as well as request operation management.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>GET Request</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];</span><br><span class="line">[manager GET:<span class="string">@"http://example.com/resources.json"</span> parameters:<span class="literal">nil</span> success:^(AFHTTPRequestOperation *operation, <span class="keyword">id</span> responseObject) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"JSON: %@"</span>, responseObject);</span><br><span class="line">&#125; failure:^(AFHTTPRequestOperation *operation, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Error: %@"</span>, error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p><strong>POST URL-Form-Encoded Request</strong></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];</span><br><span class="line"><span class="built_in">NSDictionary</span> *parameters = @&#123;<span class="string">@"foo"</span>: <span class="string">@"bar"</span>&#125;;</span><br><span class="line">[manager POST:<span class="string">@"http://example.com/resources.json"</span> parameters:parameters success:^(AFHTTPRequestOperation *operation, <span class="keyword">id</span> responseObject) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"JSON: %@"</span>, responseObject);</span><br><span class="line">&#125; failure:^(AFHTTPRequestOperation *operation, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Error: %@"</span>, error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p><strong>POST Multi-Part Request</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];</span><br><span class="line">NSDictionary *parameters = @&#123;@<span class="string">"foo"</span>: @<span class="string">"bar"</span>&#125;;</span><br><span class="line">NSURL *filePath = [NSURL <span class="string">fileURLWithPath:</span>@<span class="string">"file://path/to/image.png"</span>];</span><br><span class="line">[manager <span class="string">POST:</span>@<span class="string">"http://example.com/resources.json"</span> <span class="string">parameters:</span>parameters <span class="string">constructingBodyWithBlock:</span>^(id&lt;AFMultipartFormData&gt; formData) &#123;</span><br><span class="line">    [formData <span class="string">appendPartWithFileURL:</span>filePath <span class="string">name:</span>@<span class="string">"image"</span> <span class="string">error:</span>nil];</span><br><span class="line">&#125; <span class="string">success:</span>^(AFHTTPRequestOperation *operation, id responseObject) &#123;</span><br><span class="line">    NSLog(@<span class="string">"Success: %@"</span>, responseObject);</span><br><span class="line">&#125; <span class="string">failure:</span>^(AFHTTPRequestOperation *operation, NSError *error) &#123;</span><br><span class="line">    NSLog(@<span class="string">"Error: %@"</span>, error);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/20/afnetworking/" data-id="cie2ful3n0022c2s6i7kogl5h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AFNetworking/">AFNetworking</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-动态计算UITableviewCell高度" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/20/动态计算UITableviewCell高度/" class="article-date">
+  <time datetime="2015-05-20T11:20:14.000Z" itemprop="datePublished">2015-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="动态计算UITableViewCell高度">动态计算UITableViewCell高度</h1><h3 id="Auto_Layout">Auto Layout</h3><ul>
+<li><p>UILabel的属性Lines设为了0表示显示多行。Auto Layout约束一定要建立完完整</p>
+</li>
+<li><p>UITableView使用C1.xib中自定义的Cell,那么我们需要向UITableView进行注册</p>
+</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UINib *cellNib = [UINib <span class="string">nibWithNibName:</span>@<span class="string">"C1"</span> <span class="string">bundle:</span>nil]; </span><br><span class="line">[self.tableView <span class="string">registerNib:</span>cellNib <span class="string">forCellReuseIdentifier:</span>@<span class="string">"C1"</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数据源方法</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">NSInteger</span>)tableView:(<span class="built_in">UITableView</span> *)tableView numberOfRowsInSection:(<span class="built_in">NSInteger</span>)section </span><br><span class="line">&#123; </span><br><span class="line">    <span class="comment">// Return the number of rows in the section. </span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span><span class="variable">.tableData</span><span class="variable">.count</span>; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath </span><br><span class="line">&#123; </span><br><span class="line">    C1 *cell = [<span class="keyword">self</span><span class="variable">.tableView</span> dequeueReusableCellWithIdentifier:<span class="string">@"C1"</span>]; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    <span class="keyword">return</span> cell; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>需要用到一个新的API systemLayoutSizeFittingSize:来计算UITableViewCell所占空间高度。Cell的高度是在- (CGFloat)tableView:(UITableView )tableView heightForRowAtIndexPath:(NSIndexPath )indexPath这个UITableViewDelegate的方法里面传给UITableView的。</p>
+</li>
+<li><p>这里有一个需要特别注意的问题，也就是<code>效率</code>问题。UITableView是一次性计算完所有Cell的高度，如果有1W个Cell，那么- (CGFloat)tableView:(UITableView )tableView heightForRowAtIndexPath:(NSIndexPath )indexPath就会触发1W次，然后才显示内容。不过在iOS7以后，提供了一个新方法可以避免这1W次调用，它就是- (CGFloat)tableView:(UITableView )tableView estimatedHeightForRowAtIndexPath:(NSIndexPath )indexPath。要求返回一个Cell的估计值，实现了这个方法，那只有显示的Cell才会触发计算高度的protocol. 由于systemLayoutSizeFittingSize需要cell的一个实例才能计算，所以这儿用一个成员变量存一个Cell的实列，这样就不需要每次计算Cell高度的时候去动态生成一个Cell实例，这样即方便也高效也少用内存，可谓一举三得。</p>
+</li>
+<li>声明一个存计算Cell高度的实例变量</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UITableViewCell</span> *prototypeCell;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始化prototypeCell</li>
+</ul>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">self</span>.prototypeCell  = [<span class="literal">self</span>.<span class="built_in">table</span>View dequeueReusableCellWithIdentifier:@<span class="string">"C1"</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>计算Cell高度的实现</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123; </span><br><span class="line">    C1 *cell = (C1 *)<span class="keyword">self</span><span class="variable">.prototypeCell</span>; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    <span class="built_in">CGSize</span> size = [cell<span class="variable">.contentView</span> systemLayoutSizeFittingSize:<span class="built_in">UILayoutFittingCompressedSize</span>]; </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"h=%f"</span>, size<span class="variable">.height</span> + <span class="number">1</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>  + size<span class="variable">.height</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>UITableViewCell的高度要比它的contentView要高1,也就是它的分隔线的高度</li>
+</ul>
+<h3 id="Manual_Layout">Manual Layout</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath </span><br><span class="line">&#123; </span><br><span class="line">    C3 *cell = [<span class="keyword">self</span><span class="variable">.tableView</span> dequeueReusableCellWithIdentifier:<span class="string">@"C3"</span>]; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    [cell<span class="variable">.t</span> sizeToFit]; </span><br><span class="line">    <span class="keyword">return</span> cell; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123; </span><br><span class="line">    C3 *cell = (C3 *)<span class="keyword">self</span><span class="variable">.prototypeCell</span>; </span><br><span class="line">    <span class="built_in">NSString</span> *str = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = str; </span><br><span class="line">    <span class="built_in">CGSize</span> s = [str calculateSize:<span class="built_in">CGSizeMake</span>(cell<span class="variable">.t</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>, FLT_MAX) font:cell<span class="variable">.t</span><span class="variable">.font</span>]; </span><br><span class="line">    <span class="built_in">CGFloat</span> defaultHeight = cell<span class="variable">.contentView</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.height</span>; </span><br><span class="line">    <span class="built_in">CGFloat</span> height = s<span class="variable">.height</span> &gt; defaultHeight ? s<span class="variable">.height</span> : defaultHeight; </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"h=%f"</span>, height); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>  + height; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// NSString的类别</span></span><br><span class="line">- (<span class="built_in">CGSize</span>)calculateSize:(<span class="built_in">CGSize</span>)size font:(<span class="built_in">UIFont</span> *)font &#123; </span><br><span class="line">    <span class="built_in">CGSize</span> expectedLabelSize = <span class="built_in">CGSizeZero</span>; </span><br><span class="line">     </span><br><span class="line">    <span class="keyword">if</span> ([[[<span class="built_in">UIDevice</span> currentDevice] systemVersion] floatValue] &gt;= <span class="number">7</span>) &#123; </span><br><span class="line">        <span class="built_in">NSMutableParagraphStyle</span> *paragraphStyle = [[<span class="built_in">NSMutableParagraphStyle</span> alloc] init]; </span><br><span class="line">        paragraphStyle<span class="variable">.lineBreakMode</span> = <span class="built_in">NSLineBreakByWordWrapping</span>; </span><br><span class="line">        <span class="built_in">NSDictionary</span> *attributes = @&#123;<span class="built_in">NSFontAttributeName</span>:font, <span class="built_in">NSParagraphStyleAttributeName</span>:paragraphStyle<span class="variable">.copy</span>&#125;; </span><br><span class="line">         </span><br><span class="line">        expectedLabelSize = [<span class="keyword">self</span> boundingRectWithSize:size options:<span class="built_in">NSStringDrawingUsesLineFragmentOrigin</span> attributes:attributes context:<span class="literal">nil</span>]<span class="variable">.size</span>; </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> &#123; </span><br><span class="line">        expectedLabelSize = [<span class="keyword">self</span> sizeWithFont:font </span><br><span class="line">                                       constrainedToSize:size </span><br><span class="line">                                           lineBreakMode:<span class="built_in">NSLineBreakByWordWrapping</span>]; </span><br><span class="line">    &#125; </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CGSizeMake</span>(ceil(expectedLabelSize<span class="variable">.width</span>), ceil(expectedLabelSize<span class="variable">.height</span>)); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="UITextView_in_UITableViewCell">UITextView in UITableViewCell</h2><h3 id="Auto_Layout-1">Auto Layout</h3><ul>
+<li>计算高度的代码</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123; </span><br><span class="line">    C2 *cell = (C2 *)<span class="keyword">self</span><span class="variable">.prototypeCell</span>; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    <span class="built_in">CGSize</span> size = [cell<span class="variable">.contentView</span> systemLayoutSizeFittingSize:<span class="built_in">UILayoutFittingCompressedSize</span>]; </span><br><span class="line">    <span class="built_in">CGSize</span> textViewSize = [cell<span class="variable">.t</span> sizeThatFits:<span class="built_in">CGSizeMake</span>(cell<span class="variable">.t</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>, FLT_MAX)]; </span><br><span class="line">    <span class="built_in">CGFloat</span> h = size<span class="variable">.height</span> + textViewSize<span class="variable">.height</span>; </span><br><span class="line">    h = h &gt; <span class="number">89</span> ? h : <span class="number">89</span>;  <span class="comment">//89是图片显示的最低高度， 见xib </span></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"h=%f"</span>, h); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + h; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>说明：</code>通过sizeThatFits:计算的UITextView的高度(这是计算UITextView内容全部显示时的方法)，然后加上systemLayoutSizeFittingSize:返回的高度。为什么要这样呢？ 因为UITextView内容的高度不会影响systemLayoutSizeFittingSize计算。</p>
+</blockquote>
+<p><img src="example.jpg" alt=""></p>
+<blockquote>
+<p>此图中距顶的约束是10, 距底的约束8, 距左边约束是87,距右边的约束是13, 那么systemLayoutSizeFittingSize:返回的CGSize为height等于19, size等于100. 它UITextView的frame是不影响systemLayoutSizeFittingSize:的计算。所以，需要加上textViewSize.height</p>
+</blockquote>
+<h3 id="Manual_Layout-1">Manual Layout</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath </span><br><span class="line">&#123; </span><br><span class="line">    C4 *cell = [<span class="keyword">self</span><span class="variable">.tableView</span> dequeueReusableCellWithIdentifier:<span class="string">@"C4"</span>]; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    [cell<span class="variable">.t</span> sizeToFit]; </span><br><span class="line">    <span class="keyword">return</span> cell; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123; </span><br><span class="line">    C4 *cell = (C4 *)<span class="keyword">self</span><span class="variable">.prototypeCell</span>; </span><br><span class="line">    <span class="built_in">NSString</span> *str = [<span class="keyword">self</span><span class="variable">.tableData</span> objectAtIndex:indexPath<span class="variable">.row</span>]; </span><br><span class="line">    cell<span class="variable">.t</span><span class="variable">.text</span> = str; </span><br><span class="line">    <span class="built_in">CGSize</span> s =  [cell<span class="variable">.t</span> sizeThatFits:<span class="built_in">CGSizeMake</span>(cell<span class="variable">.t</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>, FLT_MAX)]; </span><br><span class="line">    <span class="built_in">CGFloat</span> defaultHeight = cell<span class="variable">.contentView</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.height</span>; </span><br><span class="line">    <span class="built_in">CGFloat</span> height = s<span class="variable">.height</span> &gt; defaultHeight ? s<span class="variable">.height</span> : defaultHeight; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>  + height; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/20/动态计算UITableviewCell高度/" data-id="cie2ful1j0009c2s6k482phsb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-ios多媒体采集" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/15/ios多媒体采集/" class="article-date">
+  <time datetime="2015-05-15T12:44:05.000Z" itemprop="datePublished">2015-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="媒体采集">媒体采集</h1><p>媒体采集，在这个流程中，这里会存在几个对象：</p>
+<ul>
+<li>AVCaptureDevice。这里代表抽象的硬件设备。</li>
+<li>AVCaptureInput。这里代表输入设备（可以是它的子类），它配置抽象硬件设备的ports。</li>
+<li>AVCaptureOutput。它代表输出数据，管理着输出到一个movie或者图像。</li>
+<li>AVCaptureSession。它是input和output的桥梁。它协调着intput到output的数据传输。</li>
+</ul>
+<h2 id="上述对象的关系：">上述对象的关系：</h2><p>有很多Device的input，也有很多数据类型的Output，都通过一个Capture Session来控制进行传输。也即：CaptureDevice适配AVCaptureInput，通过Session来输入到AVCaptureOutput中。这样也就达到了从设备到文件等持久化传输的目的（如从相机设备采集图像到UIImage中）。</p>
+<p>特别注意，这里的关系是可以通过一个Capture Session来同时控制多个设备的输入和输出。</p>
+<p>那么存在一个问题了：视频输入(input)就对应视频的输出(output)，而音频输入就应对应音频的输出，因而需要建立对应的Connections，来各自连接它们。而这样的连接对象，是由AVCaptureSession来持有的，这个对象叫AVCaptureConnection。</p>
+<p>在一个AVCaptureConnection中，这里维持着对应的数据传输输入到数据输出的过程（detail过程）。这里，AVCaptureInput或其子类对象包含着各种input port，通过各种input port，我们的AVCaptureOutput可以获取到相应的数据。</p>
+<p>一个AVCaptureConnection可以控制input到output的数据传输。</p>
+<p>当使用addInput:或addOutput:,Connection在所有兼容的输入和输出之间自动形成。手动添Connection是在在添加一个输入或输出时没有形成连接的时候。</p>
+<h2 id="AVCaptureDevice">AVCaptureDevice</h2><p>InputDevice即是对硬件的抽象，一对一的。一个AVCaptureDevice对象，对应一个实际的硬件设备。</p>
+<p>那么显然，我们可以通过AVCaptureDevice的类方法devices或devicesWithMediaType去获取全部或局部设备列表。（当然也可以检测相应的设备是否可以使用，这里注意有设备抢占问题，当前是否可用）</p>
+<h2 id="CaptureInput的构建和添加到Session中的方法">CaptureInput的构建和添加到Session中的方法</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*创建并配置输入设备*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">AVCaptureDevice</span> *device = [<span class="built_in">AVCaptureDevice</span> defaultDeviceWithMediaType:<span class="built_in">AVMediaTypeVideo</span>];</span><br><span class="line"><span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line"><span class="built_in">AVCaptureDeviceInput</span> *input = [<span class="built_in">AVCaptureDeviceInput</span> deviceInputWithDevice:device error:&amp;error];</span><br><span class="line"><span class="keyword">if</span> (error)&#123;</span><br><span class="line">	<span class="comment">//handle the failure.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加input到session的模式是(检查可否添加到session，然后根据情况添加或者不添加)：</span></span><br><span class="line"><span class="built_in">AVCaptureSession</span> *captureSession = &lt;<span class="preprocessor">#Get a capture session#&gt;;</span></span><br><span class="line"><span class="keyword">if</span> ([captureSession canAddInput:input]) &#123;</span><br><span class="line">	[captureSession addInput:captureDeviceInput];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">//handle the failure.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="output的分类和使用">output的分类和使用</h2><p>什么类型的输出,决定了什么输出数据的类型。在ios中，分为MovieFile、VideoData、AudioFile、AudioData、StillImage和Metadata几种output，使用方式类似，只是范围不同。另外，它们都继承于AVCaptureOutput,其自身是抽象类。</p>
+<p>第一个是输出成movie文件，第二个适用于逐个Frame的处理，第三个适用于输出成声音文件，第四个适用于声音采集，第五个是still image(静态图像&lt;拍照&gt;)相关，最后一个用于输出元数据（面部识别、条码等）。</p>
+<p>他们的添加方式都是使用session的addOutput方法。</p>
+<h1 id="二维码的扫描的实现">二维码的扫描的实现</h1><h3 id="1-获得扫描设备：（摄像头）。">1.获得扫描设备：（摄像头）。</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVCaptureDevice</span> *device = [<span class="built_in">AVCaptureDevice</span> defaultDeviceWithMediaType:<span class="built_in">AVMediaTypeVideo</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="2-生成连接设备和session的input。">2.生成连接设备和session的input。</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSError *<span class="keyword">error</span>;</span><br><span class="line">AVCaptureDeviceInput *<span class="keyword">input</span> = [AVCaptureDeviceInput deviceInputWithDevice:device <span class="keyword">error</span>:&amp;<span class="keyword">error</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">error</span>)&#123;</span><br><span class="line">    NSLog(@<span class="string">"%@"</span>, <span class="keyword">error</span>.localizedDescription);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-AVCaptureOutput。">3.AVCaptureOutput。</h3><p>在ios6之后，新增Output的实现类AVCaptureMetadataOutput。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVCaptureMetadataOutput</span> * output = [[<span class="built_in">AVCaptureMetadataOutput</span> alloc] init];</span><br><span class="line"><span class="built_in">dispatch_queue_t</span> dispatchQueue;</span><br><span class="line">dispatchQueue = dispatch_queue_create(<span class="string">"hellp"</span>, <span class="literal">NULL</span>);</span><br><span class="line">[output setMetadataObjectsDelegate:<span class="keyword">self</span> queue:dispatchQueue];</span><br></pre></td></tr></table></figure>
+<h3 id="4-AVCaptureSession。">4.AVCaptureSession。</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVCaptureSession</span> *session  = [[<span class="built_in">AVCaptureSession</span> alloc] init];</span><br><span class="line">[session addInput:input];</span><br><span class="line">[session addOutput:output];</span><br><span class="line"><span class="comment">//注意：设置AVMetadataMachineReadableCodeObject的可输出的元数据类型，一定要讲output添加到session中后，再设置；</span></span><br><span class="line">[output setMetadataObjectTypes:[<span class="built_in">NSArray</span> arrayWithObjects:</span><br><span class="line">                                                   <span class="built_in">AVMetadataObjectTypeEAN13Code</span>,</span><br><span class="line">                                                   <span class="built_in">AVMetadataObjectTypeCode39Code</span>,</span><br><span class="line">                                                   <span class="built_in">AVMetadataObjectTypeEAN8Code</span>,</span><br><span class="line">                                                   <span class="built_in">AVMetadataObjectTypeCode128Code</span>,</span><br><span class="line">                                                   <span class="built_in">AVMetadataObjectTypeQRCode</span>, <span class="literal">nil</span>]];</span><br></pre></td></tr></table></figure>
+<h3 id="5-AVCaptureVideoPreviewLayer,CALayer的子类,可以预览device扑捉的画面。">5.AVCaptureVideoPreviewLayer,CALayer的子类,可以预览device扑捉的画面。</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVCaptureVideoPreviewLayer</span> *videoPreviewLayer = [[<span class="built_in">AVCaptureVideoPreviewLayer</span> alloc] initWithSession:_session];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/15/ios多媒体采集/" data-id="cie2ful290010c2s6tx48v41q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/媒体采集/">媒体采集</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-uiview_animation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/08/uiview_animation/" class="article-date">
+  <time datetime="2015-05-08T12:44:05.000Z" itemprop="datePublished">2015-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/08/uiview_animation/">UIView Animation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="UIView_Animation_基本动画">UIView Animation 基本动画</h2><p>UIView类扩展实现动画实际就是通过修改视图一些动画属性：在设定时间内反复或逐步完成这些修改操作以达到动画展现的效果。</p>
+<h2 id="基本动画效果">基本动画效果</h2><p>动画属性如下：</p>
+<ol>
+<li>frame,bounds,center  //改变View的frame属性</li>
+<li>alpha  //改变透明度</li>
+<li>backgroundColor //改变背景颜色</li>
+<li>transform//仿射变换，其中包括Rotate，Translate，Scale（旋转，位移，缩放）</li>
+</ol>
+<p><code>普通的动画都是30帧每秒，肉眼能识别的是24帧每秒，而在游戏上会要求是60帧每秒。</code></p>
+<h2 id="iOS4之前的UIView_Animation实现方式">iOS4之前的UIView Animation实现方式</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[UIView <span class="string">beginAnimations:</span>@<span class="string">"ToggleViews"</span> <span class="string">context:</span>nil];</span><br><span class="line">   [UIView <span class="string">setAnimationDuration:</span><span class="number">1.</span>f];</span><br><span class="line">   self.animationView.alpha = <span class="number">0.</span>f;</span><br><span class="line">   [UIView <span class="string">setAnimationDelegate:</span>self];</span><br><span class="line">   [UIView <span class="string">setAnimationDidStopSelector:</span><span class="annotation">@selector</span>(<span class="string">animationDidStop:</span><span class="string">finished:</span><span class="string">context:</span>)];</span><br><span class="line">   [UIView commitAnimations];</span><br></pre></td></tr></table></figure>
+<h2 id="iOS4之后官方更推荐使用block实现UIView_Animation">iOS4之后官方更推荐使用block实现UIView Animation</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">5.</span>f</span><br><span class="line">                         delay:<span class="number">0.</span>f</span><br><span class="line">        usingSpringWithDamping:.<span class="number">3</span>f</span><br><span class="line">         initialSpringVelocity:.<span class="number">2</span>f</span><br><span class="line">                       options:<span class="built_in">UIViewAnimationOptionAllowUserInteraction</span></span><br><span class="line">                    animations:^&#123;</span><br><span class="line">                        <span class="keyword">self</span><span class="variable">.animationView</span><span class="variable">.center</span> = <span class="built_in">CGPointMake</span>(<span class="number">160</span>, <span class="number">450</span>);</span><br><span class="line">                    &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</span><br><span class="line">                        <span class="comment">//动画结束的回调</span></span><br><span class="line">                        </span><br><span class="line">  &#125;];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/08/uiview_animation/" data-id="cie2ful1v000lc2s62c1jy0a3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cocoapods" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/08/cocoapods/" class="article-date">
+  <time datetime="2015-05-08T10:55:26.000Z" itemprop="datePublished">2015-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/08/cocoapods/">cocoapods</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="简介">简介</h1><p> <a href="http://cocoapods.org" target="_blank" rel="external">cocoapods</a></p>
+<p> <a href="http://github.com/CocoaPods/CocoaPods" target="_blank" rel="external">CocoaPods项目源码</a></p>
+<h1 id="安装">安装</h1><ol>
+<li><p>使用MAC自带的ruby下的gem命令：</p>
+ <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>sudo gem install cocoapods</span><br><span class="line"><span class="variable">$ </span>pod setup</span><br></pre></td></tr></table></figure>
+<p> 在执行pod setup时，会输出Setting up CocoaPods master repo,但是会执行很长时间，在此期间CocoaPods将它的信息下载到~/.cocoapods目录下，此时可以cd到该目录，使用du -sh 命令查看下载进度。使用镜像索引可以提高下载速度（下面有介绍）。</p>
+</li>
+<li><p>将ruby源替换成国内淘宝源</p>
+ <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>gem sources --remove <span class="symbol">https:</span>/<span class="regexp">/rubygems.org/</span></span><br><span class="line"><span class="variable">$ </span>gem sources -a <span class="symbol">http:</span>/<span class="regexp">/ruby.taobao.org/</span></span><br><span class="line">查看源是否替换成功</span><br><span class="line"><span class="variable">$ </span>gem sources -l</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果安装的CocoaPods不能使用，可以尝试更新gem (sudo gem update —system),更新Iterm(删除原有的iterm,下载并安装新版本的iterm)。</p>
+</li>
+</ol>
+<h1 id="镜像索引">镜像索引</h1><p>所有的项目的PodSpec文件都托管在<a href="http://github.com/CocoaPods/Specs" target="_blank" rel="external">podSpec</a>。第一次执行pod setup时，将这些索引文件更新到本地~/.cocoapods/目录下。该文件比较大，所以第一次更新比较慢。</p>
+<p>akinkiu在<a href="http://gitcafe/com" target="_blank" rel="external">gitcafe</a>和<a href="http://www.oschina.net" target="_blank" rel="external">occhina</a>上建立了CocoaPods索引镜像。gitcafe和occhina都是国内服务器，在执行索引更新操作时会比较快。</p>
+<p>CoaoaPods设置成gitcafe镜像：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pod repo <span class="built_in">remove</span> master</span><br><span class="line">$ pod repo <span class="built_in">add</span> master http<span class="variable">s:</span>//gitcafe.<span class="keyword">com</span>/akuandev/Specs.git</span><br><span class="line">$ pod repo <span class="keyword">update</span></span><br></pre></td></tr></table></figure>
+<p>将以上url改为<a href="http://git.oschina.net.akuandev/Specs.git即可使用occhina镜像。" target="_blank" rel="external">http://git.oschina.net.akuandev/Specs.git即可使用occhina镜像。</a></p>
+<h1 id="用法">用法</h1><ol>
+<li><p>cd到以创建的项目的目录下执行以下命令</p>
+<ul>
+<li><p>pod init (生成Podfile文件，编辑该文件，添加所要加入的第三方库的名称版本（版本可以不用加）)</p>
+<p>  eg:</p>
+<p>  pod ‘AFNetworking’, ‘~&gt; 2.0’</p>
+<p>  pod ‘JSONKit’</p>
+</li>
+<li><p>pod install (自动将加入的第三方库源码下载下来，且为项目设置号好相应的系统依赖和编译参数)</p>
+<p><code>注意</code></p>
+</li>
+<li><p>使用CocoaPods生成的*.xcworkspace文件打开工程，而不是以前的*.xcodeproj文件。</p>
+</li>
+<li><p>每次修改了Podfile文件，都需要执行一次pod update命令。</p>
+</li>
+<li><p>pop install之后还生成的另一个文件Podfile.lock,该文件不能放在.gitignore文件中。该文件用来锁定当前各依赖库的版本，之后及时多次执行pod install也不会更改版本，只有执行pod update才会改变Podfile.lock文件。该文件可以在多人协作时，防止第三方库升级造成大家各自的第三方库的版本不一致。<a href="http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control" target="_blank" rel="external">Podfile.lock</a></p>
+</li>
+</ul>
+</li>
+<li><p>查找第三方库</p>
+</li>
+</ol>
+<p>查找CocoaPods管理是否有你想要的库，执行命令 pod search</p>
+<p>eg： pod search json 可查找与接送有关的所有库  </p>
+<ol>
+<li>生成第三方库帮助文档</li>
+</ol>
+<p>使用CocoaPods生成第三方库的帮助文档并集成到Xcode中，可使用brew安装appledoc即可：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew <span class="keyword">install</span> appledoc</span><br></pre></td></tr></table></figure>
+<p>其优点：将帮助文档集成到Xcode中，在敲代码时可以按住opt键查看相应帮助文档</p>
+<ol>
+<li>不更新podspec</li>
+</ol>
+<p>CocoaPods在执行pod install 和 pod update 时，会默认更新podspec索引。禁止更新podspec的命令：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pod install --<span class="keyword">no</span>-repo-<span class="keyword">update</span></span><br><span class="line">$ pod <span class="keyword">update</span> --<span class="keyword">no</span>-repo-<span class="keyword">update</span></span><br></pre></td></tr></table></figure>
+<h1 id="原理">原理</h1><p>CocoaPods的原理是将所有的依赖库都放到一个名为Pods的项目中，然互让主项目依赖Pods项目。</p>
+<ol>
+<li>Pods项目最终会编译成一个名为libPods.a的文件，主项目只需要依赖.a这个文件即可。</li>
+<li>对于资源文件，CocoaPods提供了一个名为Pods-resources.sh的bash脚本，该脚本在每次项目编译的时候都会执行，将第三方的各个资源文件复制到目标目录中。</li>
+<li>CocoaPods通过一个名为Pods.xcconfig的文件在编译的时候设置所有的参数和依赖。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/08/cocoapods/" data-id="cie2ful3f001tc2s6dbm9nxjh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoaPods/">cocoaPods</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-iOS网络" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/03/iOS网络/" class="article-date">
+  <time datetime="2015-05-03T11:20:14.000Z" itemprop="datePublished">2015-05-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/03/iOS网络/">iOS中的网络框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iOS中的网络框架">iOS中的网络框架</h1><ul>
+<li>Cocoa层，包含了用于URL加载的OC API、Bonjour、Web Kit与Game Kit</li>
+<li>Core Foundation层，是一套C API，其中包含了CFNetwork，这是大多数应用级别的网络代码的基础。CFNetwork在CFStream与CFSocket之上提供了一个简单地网络接口，是针对BSD socket的轻量级封装</li>
+<li>OS层的BSD socket严格使用C来实现，提供了与远端设备与服务器通信的完全控制能力</li>
+</ul>
+<blockquote>
+<p>从上层框架到下层移动，会获得更为严密的控制，但也失去了上层提供的易用性与抽象能力。比如，BSD层的socket是无法访问系统范围的VPN，也无法激活Wi-Fi和蜂窝无线网络</p>
+</blockquote>
+<h2 id="NSURLConnection">NSURLConnection</h2><p>NSURLConnection是个Cocoa级别的API，构建在NSSream之上，设计时针对4个常见的URI模式进行了优化支持，文件、HTTP、HTTPS与FTP。NSURLConnection支持同步和异步两种请求</p>
+<h2 id="Game_Kit">Game Kit</h2><p>Game Kit并不需要网络基础设施就能使用，能够创建自组（ad-hoc）的Bluetooth Personal Area Networks（PAN）来实现点对点的通信</p>
+<h2 id="Bonjour">Bonjour</h2><p>Bonjour是Apple对零配置（zeroconf）网络的实现，通过名字、服务类型与域这几个元组来引用服务</p>
+<h2 id="NSStream">NSStream</h2><p>NSStream是一个Cocoa级别的API，构建在CFNetwork之上，作为NSURLConnection的基础，旨在完成一些底层的网络任务。NSStream可以支持使用telnet或SMTP等NSURLConnection不支持的协议进行通信。NSStream是异步的，通过NSStreamDelegate实现通信更新</p>
+<h2 id="CFNetwork">CFNetwork</h2><p>CFNetwork API位于基础的BSD socket之上，与BSD socket之间的主要差别在于CFNetwork集成了运行循环。CFNetwork构建在Core Foundation层的CFSocket和CFStream API之上</p>
+<h1 id="HTTP">HTTP</h1><h2 id="HTTP介绍">HTTP介绍</h2><p>Tim Berners-Lee于1990年创造了HTTP协议的首个版本，最初的的提案中有3个主要的创新：HTML、HTTP与URL。</p>
+<ul>
+<li>HTML定义了向文本添加样式的一种方式</li>
+<li>HTTP定义了在服务端与客户端之间传输数据的一种方式</li>
+<li>URL定义了在网络机器中定位唯一资源的一种方式</li>
+</ul>
+<h2 id="HTTP请求与响应">HTTP请求与响应</h2><p>HTTP的规范是IETF FRF 2616 <a href="http://www.ietf.org/rfc/rfc2616.txt" target="_blank" rel="external">http://www.ietf.org/rfc/rfc2616.txt</a></p>
+<h3 id="URL结构">URL结构</h3><p><a href="http://user:password@hostname:port/absolute-path?query" target="_blank" rel="external">http://user:password@hostname:port/absolute-path?query</a></p>
+<p>协议://[认证]主机名:端口/绝对路径/?查询字符串1&amp;查询字符串2</p>
+<p><strong>绝对路径和查询字符串不可以包含空格、回车与换行符，因此，URL通常会使用百分号进行编码，RFC 3986(<a href="http://tools.ietf.org/html/rfc3986)规定了URL百分号编码的详细信息" target="_blank" rel="external">http://tools.ietf.org/html/rfc3986)规定了URL百分号编码的详细信息</a></strong></p>
+<h3 id="请求内容">请求内容</h3><p>HTTP请求包含3部分：请求行、请求头与请求体</p>
+<p>HTTP是无状态的协议，即HTTP服务器不会保留关于某个请求的任何信息以用在未来的请求中。Cookie机制提供了一种方式，可以将一些简单地状态信息存储在客户端，并在后续的请求中与服务器进行通信</p>
+<p>请求体必须遵循客户端与服务器之间预先确定的数据编码，对于Web浏览器来说，这通常是表单编码数据，但对于移动应用来说，该编码通常是XML或JSON数据</p>
+<h3 id="响应内容">响应内容</h3><p>HTTP响应包含3部分：状态行、响应头与相应体</p>
+<p>在iOS的URL加载系统中，NSURLResponse及其子类NSHTTPURLResponse封装了请求返回的数据</p>
+<h1 id="Cocoa层_iOS_HTTP_API">Cocoa层 iOS HTTP API</h1><p>在URL加载系统中，有3个主要的方式可以执行HTTP请求和接收响应</p>
+<pre><code>-<span class="ruby"> 同步    （线程会被阻塞）
+</span>-<span class="ruby"> 队列式异步        （创建一个队列并放入后台线程执行）
+</span>-<span class="ruby"> 异步    （调用委托方法）</span>
+</code></pre><p>所有的URL加载请求方式都会用到这4类对象 </p>
+<pre><code><span class="built_in">NSURL</span>、<span class="built_in">NSURLRequest</span>、<span class="built_in">NSURLConnection</span>与<span class="built_in">NSURLResponse</span>对象
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/03/iOS网络/" data-id="cie2ful2g0019c2s678tmkr9u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-create-certificate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/01/create-certificate/" class="article-date">
+  <time datetime="2015-05-01T12:05:19.000Z" itemprop="datePublished">2015-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/01/create-certificate/">create_certificate</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://zxs19861202.iteye.com/blog/1532460" target="_blank" rel="external">others’ blog</a></p>
+<h3 id="生成certSigningRequest文件">生成certSigningRequest文件</h3><p>该文件是MAC系统生成的，用于在Apple网站上申请推送证书文件。</p>
+<pre><code>打开应“钥匙串访问”软件，菜单-&gt;钥匙串访问-&gt;证书助理-&gt;从证书颁发机构请求证书，填写邮箱和名称（随便写）,选择保存到磁盘，此时会生成一个<span class="constant">CertificateSigningRequest.</span>certSigningRequest文件。
+</code></pre><h3 id="注册一个支持Push的app_id">注册一个支持Push的app id</h3><p>进入developer.apple.com，选择member center-certificates，Identifier &amp; profiles-identifiers-App ids，注册app id，设置app id名称。同时qpp id suffix一栏选择explicit app id，设置bundle id。勾选App Services中得Push Notifications，这样就可以注册一个支持push app id。</p>
+<h3 id="生成cer文件">生成cer文件</h3><p>该文件用于生成服务端需要的文件。</p>
+<p>生成过程：进入developer.apple.com，选择member center-certificates，Identifier &amp; profiles-certificates，然后创建certificate，类型分为Development 和 Product。eg：Development，选择Apple Push Notification service SSL (Sandbox) ，选择之前生成的支持push的Appid，然后提交之前创建的CSR文件,生成cer文件，保存到本地。</p>
+<h3 id="生成服务器端的证书文件">生成服务器端的证书文件</h3><p>如果使用网上的mac版PushMeBaby工具，在Mac机器上进行推送使用上面的cer就可以了，如果使用PHP、java/c#开发服务端，需要将cer转换生成pem或p12文件。</p>
+<p>在应用服务器采用php的方式将消息推送给APNS，</p>
+<pre><code>php连接APNS也是需要证书的，打开终端，对上面的证书做如下处理，
+
+cd  进入证书所在目录
+
+把.cer文件转换成.pem文件:
+
+$ openssl x509 -<span class="keyword">in</span> aps_developer_identity<span class="class">.cer</span> -inform der
+-out PushCert<span class="class">.pem</span>
+把私钥Push.p12文件转换成.pem文件：
+
+$ openssl pkcs12 -nocerts -out PushKey<span class="class">.pem</span> -<span class="keyword">in</span> Push<span class="class">.p12</span>
+Enter Import Password:
+MAC verified OK
+Enter PEM pass phrase:
+Verifying – Enter PEM pass phrase:
+你首先需要为.p12文件输入passphrase密码短语，这样OpenSSL可以读它。然后你需要键入一个新的密码短语来加密PEM文件。还是使用”pushchat”来作为PEM的密码短语。你需要选择一些更安全的密码短语。
+</code></pre><p><code>注意</code></p>
+<p>如果你没有键入一个PEM passphrase，OpenSSL将不会返回一个错误信息，但是产生的.pem文件里面将不会含有私钥。</p>
+<p>最后。把私钥和证书整合到一个.pem文件里：</p>
+<pre><code>$ cat PushCert<span class="class">.pem</span> PushKey<span class="class">.pem</span> &gt; ck<span class="class">.pem</span>
+为了测试证书是否工作，执行下面的命令：
+
+$ telnet gateway<span class="class">.sandbox</span><span class="class">.push</span><span class="class">.apple</span><span class="class">.com</span> <span class="number">2195</span>
+Trying <span class="number">17.172</span>.<span class="number">232.226</span>…
+Connected to gateway<span class="class">.sandbox</span><span class="class">.push-apple</span><span class="class">.com</span><span class="class">.akadns</span><span class="class">.net</span>.
+Escape character is ‘^]’.
+它将尝试发送一个规则的，不加密的连接到APNS服务。如果你看到上面的反馈，那说明你的MAC能够到达APNS。按下Ctrl+C 关闭连接。如果得到一个错误信息，那么你需要确保你的防火墙允许<span class="number">2195</span>端口。
+
+然后再次连接，这次用我们的SSL证书和私钥来设置一个安全的连接：
+
+$ openssl s_client -connect gateway<span class="class">.sandbox</span><span class="class">.push</span><span class="class">.apple</span><span class="class">.com</span>:<span class="number">2195</span>
+-cert PushChatCert<span class="class">.pem</span> -key PushChatKey<span class="class">.pem</span>
+Enter pass phrase <span class="keyword">for</span> PushChatKey<span class="class">.pem</span>:
+你会看到一个完整的输出，让你明白OpenSSL在后台做什么。如果连接是成功的，你可以键入一些字符。当你按下回车后，服务就会断开连接。如果在建立连接时有问题，OpenSSL将会给你一个错误消息，
+
+ck.pem文件就是我们需要得到php连接APNS 的文件，将ck.pem和push.php放入同一目录上传到服务器。
+</code></pre><h3 id="生成Xcode使用的provisioning文件">生成Xcode使用的provisioning文件</h3><p>该文件用于真机调试。</p>
+<p>生成过程：进入developer.apple.com，选择member center-certificates，Identifier &amp; profiles-provisioning profiles，然后创建provi file。选择iOS App Development-&gt;AppId-&gt;选中之前生成的支持push的appid-&gt;选中支持的push的certi-&gt;勾选支持的device id-&gt;设置provisioning文件的文件名，即完成provisioning文件的生成。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/01/create-certificate/" data-id="cie2ful39001nc2s6m41dtn5m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/certificate/">certificate</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-UIScrollView" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/27/UIScrollView/" class="article-date">
+  <time datetime="2015-04-27T05:26:50.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/UIScrollView/">UIScrollView</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ScrollView_不能滑动的常见原因">ScrollView 不能滑动的常见原因</h3><ol>
+<li>contentsize 未设置</li>
+<li>scrollEnabled = NO;</li>
+<li>userInteractionEnabled = NO;</li>
+<li>未取消autolayout</li>
+</ol>
+<h3 id="contentInset属性">contentInset属性</h3><p>控制scrollView四周可以多出的滑动长度，默认为四个参数均为0，急不可以滑动超出contentSize以外的区域</p>
+<h3 id="-（UIView_）viewForZoomingInScrollView:(UIScrollView_)scrollView;">-（UIView <em>）viewForZoomingInScrollView:(UIScrollView </em>)scrollView;</h3><p>该方法实现对返回的视图进行缩放大小，放回的视图必须是scrollView的<code>子视图</code></p>
+<h3 id="diractionalLockEnabled">diractionalLockEnabled</h3><p>该属性设置为YES时可以控制在滑动scrollView时不会有晃动的效果，即当用户的滑动的方向不是正方向时，scrollView仍然只是针对某一个方向滑动</p>
+<h3 id="pagingEnable">pagingEnable</h3><p>该属性设置为YES时，可以控制用户滑动一下只翻一页。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/27/UIScrollView/" data-id="cie2ful3y002bc2s6gfz0zsso" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIScorllView/">UIScorllView</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-公钥私钥加密" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/公钥私钥加密/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/公钥私钥加密/">公钥私钥加密</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>鲍勃有两把钥匙，一把是公钥，另一把是私钥。</p>
+<p>鲍勃把公钥送给他的朋友们——帕蒂、道格、苏珊——每人一把。</p>
+<p>苏珊要给鲍勃写一封保密的信。她写完后用鲍勃的公钥加密，就可以达到保密的效果。</p>
+<p>鲍勃收信后，用私钥解密，就看到了信件内容。这里要强调的是，只要鲍勃的私钥不泄露，这封信就是安全的，即使落在别人手里，也无法解密。</p>
+<p>鲍勃给苏珊回信，决定采用”数字签名”。他写完后先用Hash函数，生成信件的摘要（digest）。</p>
+<p>然后，鲍勃使用私钥，对这个摘要加密，生成”数字签名”（signature）。</p>
+<p>鲍勃将这个签名，附在信件下面，一起发给苏珊。</p>
+<p>苏珊收信后，取下数字签名，用鲍勃的公钥解密，得到信件的摘要。由此证明，这封信确实是鲍勃发出的。<br>苏珊再对信件本身使用Hash函数，将得到的结果，与上一步得到的摘要进行对比。如果两者一致，就证明这封信未被修改过。</p>
+<hr>
+<p>复杂的情况出现了。道格想欺骗苏珊，他偷偷使用了苏珊的电脑，用自己的公钥换走了鲍勃的公钥。此时，苏珊实际拥有的是道格的公钥，但是还以为这是鲍勃的公钥。因此，道格就可以冒充鲍勃，用自己的私钥做成”数字签名”，写信给苏珊，让苏珊用假的鲍勃公钥进行解密。</p>
+<p>后来，苏珊感觉不对劲，发现自己无法确定公钥是否真的属于鲍勃。她想到了一个办法，要求鲍勃去找”证书中心”（certificate authority，简称CA），为公钥做认证。证书中心用自己的私钥，对鲍勃的公钥和一些相关信息一起加密，生成”数字证书”（Digital Certificate）。</p>
+<p>鲍勃拿到数字证书以后，就可以放心了。以后再给苏珊写信，只要在签名的同时，再附上数字证书就行了。</p>
+<p>苏珊收到Bob的信，先用CA的公钥解开数字证书，就可以拿到鲍勃真实的公钥了，然后就能证明”数字签名”是否真的是鲍勃签的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/公钥私钥加密/" data-id="cie2ful1l000cc2s6ey3fmyhj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AFNetworking/">AFNetworking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARC规则/">ARC规则</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Block/">Block</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Persistence/">Data Persistence</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FMDB/">FMDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Local-Romote-Notification/">Local/Romote Notification</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScorllView/">UIScorllView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIView-Animation/">UIView Animation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI-Notes/">UI_Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM-Sed/">VIM_Sed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/accelerator-key/">accelerator-key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/background-task/">background_task</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/certificate/">certificate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoaPods/">cocoaPods</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS中的网络框架/">iOS中的网络框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kinds-of-viewControllers/">kinds of viewControllers</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oc/">oc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setUpBlog/">setUpBlog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一些小的知识点总结/">一些小的知识点总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态计算UITableViewCell高度/">动态计算UITableViewCell高度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/媒体采集/">媒体采集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据解析XML/">数据解析XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音频处理/">音频处理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a><a href="/tags/ARC规则/" style="font-size: 10px;">ARC规则</a><a href="/tags/Block/" style="font-size: 10px;">Block</a><a href="/tags/Data-Persistence/" style="font-size: 10px;">Data Persistence</a><a href="/tags/FMDB/" style="font-size: 10px;">FMDB</a><a href="/tags/Local-Romote-Notification/" style="font-size: 10px;">Local/Romote Notification</a><a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/UIScorllView/" style="font-size: 10px;">UIScorllView</a><a href="/tags/UIView-Animation/" style="font-size: 10px;">UIView Animation</a><a href="/tags/UI-Notes/" style="font-size: 10px;">UI_Notes</a><a href="/tags/VIM-Sed/" style="font-size: 10px;">VIM_Sed</a><a href="/tags/accelerator-key/" style="font-size: 10px;">accelerator-key</a><a href="/tags/background-task/" style="font-size: 10px;">background_task</a><a href="/tags/c/" style="font-size: 10px;">c</a><a href="/tags/certificate/" style="font-size: 10px;">certificate</a><a href="/tags/cocoaPods/" style="font-size: 10px;">cocoaPods</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/iOS中的网络框架/" style="font-size: 10px;">iOS中的网络框架</a><a href="/tags/kinds-of-viewControllers/" style="font-size: 10px;">kinds of viewControllers</a><a href="/tags/navigationBar的刷新/" style="font-size: 10px;">navigationBar的刷新</a><a href="/tags/oc/" style="font-size: 10px;">oc</a><a href="/tags/setUpBlog/" style="font-size: 10px;">setUpBlog</a><a href="/tags/sqlite3命令行工具/" style="font-size: 10px;">sqlite3命令行工具</a><a href="/tags/一些小的知识点总结/" style="font-size: 10px;">一些小的知识点总结</a><a href="/tags/公钥私钥加密/" style="font-size: 10px;">公钥私钥加密</a><a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a><a href="/tags/动态计算UITableViewCell高度/" style="font-size: 10px;">动态计算UITableViewCell高度</a><a href="/tags/多线程/" style="font-size: 10px;">多线程</a><a href="/tags/媒体采集/" style="font-size: 10px;">媒体采集</a><a href="/tags/屏幕上移的方法/" style="font-size: 10px;">屏幕上移的方法</a><a href="/tags/数据解析XML/" style="font-size: 10px;">数据解析XML</a><a href="/tags/键盘收起的方法/" style="font-size: 10px;">键盘收起的方法</a><a href="/tags/音频处理/" style="font-size: 10px;">音频处理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/06/一些小的知识点总结/">知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/afnetworking/">AFNetworking</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/20/动态计算UITableviewCell高度/">动态计算UITableViewCell高度</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/ios多媒体采集/">媒体采集</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/uiview_animation/">UIView Animation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 ABeta<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
