@@ -99,217 +99,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/navigationbar的刷新/" data-id="cie2ful27000xc2s6lpl1uwhx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/15/navigationbar的刷新/" data-id="cie8c3la00010ovnrt3jra1b9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/navigationBar的刷新/">navigationBar的刷新</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="ios-sqlite命令行工具" class="article article-type-ios" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/15/sqlite命令行工具/" class="article-date">
-  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/15/sqlite命令行工具/">sqlite3命令行工具</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。</p>
-<p>打开终端，键入如下命令：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~  sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">SQLite <span class="keyword">version</span> 3.8.5 2014-08-15 22:37:57</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> usage hints.</span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
-<p>.help命令是sqlite3的元命令工具之一,它列出了sqlite3所有的元命令。 </p>
-<p>.exit 和 .quit 命令退出sqlite3会话。我们还可以使用组合键Ctrl + D 退出sqlite3。</p>
-<p>.databases命令显示了连接数据库。</p>
-<p>.tables表命令列出可用的表。</p>
-<h2 id="创建一个数据库">创建一个数据库</h2><p>使用sqlite3命令行工具来创建一个新的数据库文件：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">这里我们创建一个新的<span class="keyword">test</span>.<span class="keyword">db</span>数据库。如果文件存在，则打开数据库。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##创建数据库表</span><br></pre></td></tr></table></figure>
-<p>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">##基本sqlite3元命令</span></span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .tables<br>Cars<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">.tables命令显示可用的表。</span></span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; SELECT * FROM cars;<br>1|Audi|52642<br>2|Mercedes|57127<br>3|Skoda|9000<br>4|Volvo|29000<br>5|Bentley|350000<br>6|Citroen|21000<br>7|Hummer|41400<br>8|Volkswagen|21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT查询语句的输出默认情况下是按行输出，行分隔符是<span class="escape">`|</span><span class="escape">`。</span></span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .separator :<br>sqlite&gt; SELECT * FROM cars;<br>1:Audi:52642<br>2:Mercedes:57127<br>3:Skoda:9000<br>4:Volvo:29000<br>5:Bentley:350000<br>6:Citroen:21000<br>7:Hummer:41400<br>8:Volkswagen:21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">上面使用了新的分隔符`:<span class="escape">`</span><br><span class="line"></span></span></span><br><span class="line">还有其他几个可用的输出模式。下面的示例显示列的输出模式：</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .mode column<br>sqlite&gt; .headers on<br>sqlite&gt; SELECT * FROM cars;<br>Id          Name        Price</p>
-<hr>
-<p>1           Audi        52642<br>2           Mercedes    57127<br>3           Skoda       9000<br>4           Volvo       29000<br>5           Bentley     350000<br>6           Citroen     21000<br>7           Hummer      41400<br>8           Volkswagen  21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .width 15 18<br>sqlite&gt; SELECT Name, Price FROM cars;<br>Name             Price</p>
-<hr>
-<p>Audi             52642<br>Mercedes         57127<br>Skoda            9000<br>Volvo            29000<br>Bentley          350000<br>Citroen          21000<br>Hummer           41400<br>Volkswagen       21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在这里，我们改变列宽。第一列将15个字符宽,第二列是18。</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .show<br>echo: off<br>      eqp: off<br>  explain: off<br>  headers: on<br>     mode: column<br>nullvalue: “”<br>   output: stdout<br>separator: “:”<br>    stats: off<br>    width: 15 18<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.show</span> 命令列出各种设置。这些包括输出模式，在列表模式下使用的分隔符和是否显示头部。</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .schema Cars<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.schema</span> 命令显示表的结构。它返回创建表的DDL SQL。</span><br><span class="line"></span><br><span class="line"><span class="class">.prompt</span> 命令可以改变的sqlite3的提示。</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .prompt “&gt; “ “. “</p>
-<blockquote>
-<p>SELECT * FROM Cars<br>. LIMIT 2;<br>Id               Name                Price</p>
-<hr>
-<p>1                Audi                52642<br>2                Mercedes            57127<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有两个提示。最主要是第一个提示，另一个是继续提示。默认的主提示符是<span class="string">'sqlite&gt;'</span> 和默认的继续提示<span class="string">'...&gt;'</span>。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">##从shell执行SQL</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>$ sqlite3 test.db “SELECT * FROM Cars;”<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">##Dumping tables</span></span><br><span class="line"></span><br><span class="line">我们将使用.<span class="keyword">dump</span>命令来转储。</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .dump Cars<br>PRAGMA foreign_keys=OFF;<br>BEGIN TRANSACTION;<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br>COMMIT;<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.dump</span> 命令显示了我们所必需的SQL创建表的信息。</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .output cars2.sql<br>sqlite&gt; .dump Cars<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">我们也可以将输出重定向到一个文件中。</span><br><span class="line"></span><br><span class="line">.output命令会将输出重定向cars2.sql文件。</span><br><span class="line"></span><br><span class="line"><span class="comment">##Reading SQL</span></span><br><span class="line"></span><br><span class="line">我们可以从一个文件名读取SQL语句 `.<span class="command">read</span>` 命令。</span><br></pre></td></tr></table></figure></p>
-<p>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; DROP TABLE Cars;<br>sqlite&gt; .tables Cars<br>sqlite&gt; .read cars.sql<br>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; SELECT * FROM Cars WHERE Id=1;<br>Id          Name        Price     </p>
-<hr>
-<p>1           Audi        52642<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="stylus">#<span class="id">#The</span> <span class="class">.sqlite_history</span> file</span><br><span class="line"></span><br><span class="line">命令和语句中存档于 .sqlite_history文件。该文件位于主目录。</span></span><br></pre></td></tr></table></figure></p>
-<p>$ tail -5 ~/.sqlite_history<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用tail命令,我们显示最后五项。</span><br><span class="line"></span><br><span class="line">#<span class="id">#Resource</span> file</span><br><span class="line"></span><br><span class="line">sqlite3 工具有一个资源文件 <span class="class">.sqliterc</span> 。 它位于主目录。如果没有这些文件，我们可以简单地创建它。 这些文件可以包含元命令，或常规的SQL语句。</span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line">$ cat <span class="class">.sqliterc</span> </span><br><span class="line"><span class="class">.mode</span> column</span><br><span class="line"><span class="class">.header</span> on</span><br><span class="line"><span class="class">.nullvalue</span> NULL</span><br></pre></td></tr></table></figure></p>
-<p>这里是一个简单的资源文件的例子，它有三个元命令。有了资源文件，我们不需要再次执行已有的元命令。当我们开始 sqlite3 工具，他们将自动执行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/sqlite命令行工具/" data-id="cie2ful1y000oc2s6hn9uajkr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="ios-XML&amp;JSON" class="article article-type-ios" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/15/XML&JSON/" class="article-date">
-  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/15/XML&JSON/">数据解析XML</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="XML">XML</h1><h2 id="SAX解析">SAX解析</h2><ol>
-<li><p>创建XML解析对象</p>
- <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *fileURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"bookstore"</span> withExtension:<span class="string">@"xml"</span>];</span><br><span class="line"><span class="built_in">NSXMLParser</span> *xmlParser = [[<span class="built_in">NSXMLParser</span> alloc] initWithContentsOfURL:fileURL];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li>设置XML解析对象的代理</li>
-<li><p>开始解析</p>
- <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">BOOL</span> flag = [xmlParser parse];</span><br><span class="line">   <span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">       <span class="built_in">NSLog</span>(<span class="string">@"xmlParser parse error."</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<p>NSXMLParser对象代理方法：</p>
-<ul>
-<li><p>(void)parserDidStartDocument:(NSXMLParser *)parser </p>
-<blockquote>
-<p>当开始解析XML文档的时候，调用这个方法。通常在这个方法里，<code>创建存储模型对象的数组</code></p>
-</blockquote>
-</li>
-<li><p>(void)parser:(NSXMLParser <em>)parser didStartElement:(NSString </em>)elementName namespaceURI:(NSString <em>)namespaceURI qualifiedName:(NSString </em>)qName attributes:(NSDictionary *)attributeDict </p>
-<blockquote>
-<p>当开始解析，遇到元素的开始标签的时候，调用这个方法。通常在这个方法里，<code>创建模型对象或解析标签中的属性保存在模型对象中</code></p>
-</blockquote>
-</li>
-<li><p>(void)parser:(NSXMLParser <em>)parser foundCharacters:(NSString </em>)string</p>
-<blockquote>
-<p>当解析到xml标签的文本内容的时候，调用这个方法, 通常在这里先<code>暂存解析到的文本内容</code></p>
-</blockquote>
-</li>
-<li><p>(void)parser:(NSXMLParser <em>)parser didEndElement:(NSString </em>)elementName namespaceURI:(NSString <em>)namespaceURI qualifiedName:(NSString </em>)qName</p>
-<blockquote>
-<p>当解析xml内容遇到结束标签的时候，调用这个方法。通常在这个方法里，<code>需要将模型对象保存入数组中或把标签对应的文本内容解析出来，保存在模型对象中（KVC）</code></p>
-</blockquote>
-</li>
-<li><p>(void)parserDidEndDocument:(NSXMLParser *)parser</p>
-<blockquote>
-<p>当整个xml文档全部解析结束的时候，该方法会被调用</p>
-</blockquote>
-</li>
-<li><p>(void)parser:(NSXMLParser <em>)parser parseErrorOccurred:(NSError </em>)parseError</p>
-<blockquote>
-<p>当遇到解析错误时，该方法会被调用</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="DOM解析_(以GDataXMLNode为例)">DOM解析 (以GDataXMLNode为例)</h2><p>使用:</p>
-<p>添加头文件搜索路径：<br><code>Build Settings-&gt;Header Search Paths-&gt;&quot;/usr/include/libxml2&quot;</code></p>
-<p>用非ARC的方式编译GDataXMLNode.m文件：<br><code>-fno-objc-arc</code></p>
-<p>链接libxml2.dylib该动态库：<br><code>Build Phases-&gt;Link Binary With Libraries-&gt;&quot;libxml2.dylib&quot;</code></p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span></span><br><span class="line">    <span class="keyword">*</span> <span class="variable">&lt;节点&gt;</span> (GDataXMLNode)</span><br><span class="line">    <span class="keyword">*</span> 根据 DOM，XML 文档中的每个成分都是一个节点。</span><br><span class="line">    <span class="keyword">*</span> DOM 是这样规定的：</span><br><span class="line">    <span class="keyword">*</span> 整个文档是一个文档节点</span><br><span class="line">    <span class="keyword">*</span> 每个 XML 标签是一个元素节点</span><br><span class="line">    <span class="keyword">*</span> 包含在 XML 元素中的文本是文本节点</span><br><span class="line">    <span class="keyword">*</span> 每一个 XML 属性是一个属性节点</span><br><span class="line">    <span class="keyword">*</span> 注释属于注释节点</span><br><span class="line">    <span class="keyword">*</span>/</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>根据XML文件创建NSData对象</p>
- <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSURL</span> *fileURL = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"bookstore"</span> withExtension:<span class="string">@"xml"</span>];</span><br><span class="line">   <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfURL:fileURL];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>根据NSData对象创建GDataXMLDocument对象（即DOM模型对象），该对象在内存中是以树形结构存储的</p>
- <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GDataXMLDocument *doc = [[GDataXMLDocument alloc] <span class="string">initWithData:</span>data <span class="string">options:</span><span class="number">0</span> <span class="string">error:</span>nil];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过DOM模型对象，取出XML文件的根元素</p>
- <figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">GDataXMLElement *rootElement </span>=<span class="string"> [doc rootElement];</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>由于是树形结构，所以，可以根据子元素的名字使用根元素获取到所有子元素，并类推获得子元素的子元素</p>
- <figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="atom">for</span> (<span class="name">GDataXMLElement</span> *<span class="atom">element</span> <span class="atom">in</span> <span class="atom">elements</span>) &#123;</span><br><span class="line">       // 创建图书对象</span><br><span class="line">       <span class="name">YMBook</span> *<span class="atom">book</span> = [[<span class="name">YMBook</span> <span class="atom">alloc</span>] <span class="atom">init</span>];</span><br><span class="line">       </span><br><span class="line">       // 根据属性名字，解析<span class="atom">book</span>元素的属性值</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">category</span> = [[<span class="atom">element</span> <span class="atom">attributeForName</span>:<span class="atom">kCategory</span>] <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       // 解析<span class="atom">book</span>的子元素包含的文本内容及其子元素的属性</span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">titleElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kTitle</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">title</span> = [<span class="atom">titleElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">lang</span> = [[<span class="atom">titleElement</span> <span class="atom">attributeForName</span>:<span class="atom">kLanguage</span>] <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">authorElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kAuthor</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">author</span> = [<span class="atom">authorElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">yearElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kYear</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">year</span> = [<span class="atom">yearElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       <span class="name">GDataXMLElement</span> *<span class="atom">priceElement</span> = [<span class="atom">element</span> <span class="atom">elementsForName</span>:<span class="atom">kPrice</span>][<span class="number">0</span>];</span><br><span class="line">       <span class="atom">book</span>.<span class="atom">price</span> = [<span class="atom">priceElement</span> <span class="atom">stringValue</span>];</span><br><span class="line">       </span><br><span class="line">       [<span class="name">_bookStore</span> <span class="atom">addObject</span>:<span class="atom">book</span>];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="JSON">JSON</h1><p>从结构上看，所有的数据（data）最终都可以分解成三种类型：</p>
-<ul>
-<li>第一种类型是标量（scalar），也就是一个单独的字符串（string）或数字（numbers），比如”北京”这个单独的词</li>
-<li>第二种类型是序列（sequence），也就是若干个相关的数据按照一定顺序并列在一起，又叫做数组（array）或列表（List），比如”北京，上海”</li>
-<li>第三种类型是映射（mapping），也就是一个名/值对（Name/value），即数据有一个名称，还有一个与之相对应的值，这又称作散列（hash）或字典（dictionary），比如”首都：北京”</li>
-</ul>
-<p>Douglas Crockford发明了JSON，Json的规定非常简单:</p>
-<ol>
-<li>并列的数据之间用逗号（”, “）分隔</li>
-<li>映射用冒号（”: “）表示</li>
-<li>并列数据的集合（数组）用方括号(“[]”)表示</li>
-<li>映射的集合（对象）用大括号（”{}”）表示</li>
-</ol>
-<p>比如，下面这句话：</p>
-<blockquote>
-<p>“北京市的面积为16800平方公里，常住人口1600万人。上海市的面积为6400平方公里，常住人口1800万。”</p>
-</blockquote>
-<p>写成JSON格式就是这样：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">　　&#123;"<span class="attribute">城市</span>":<span class="value"><span class="string">"北京"</span></span>,"<span class="attribute">面积</span>":<span class="value"><span class="number">16800</span></span>,"<span class="attribute">人口</span>":<span class="value"><span class="number">1600</span></span>&#125;,</span><br><span class="line">　　&#123;"<span class="attribute">城市</span>":<span class="value"><span class="string">"上海"</span></span>,"<span class="attribute">面积</span>":<span class="value"><span class="number">6400</span></span>,"<span class="attribute">人口</span>":<span class="value"><span class="number">1800</span></span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>如果事先知道数据的结构，上面的写法还可以进一步简化：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">　　[<span class="string">"北京"</span>,<span class="number">16800</span>,<span class="number">1600</span>],</span><br><span class="line">　　[<span class="string">"上海"</span>,<span class="number">6400</span>,<span class="number">1800</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p><em><code>rfc-4627</code></em></p>
-<p><em><code>www.json.org/json-zh.htm</code></em></p>
-<p><em><code>www.sojson.com</code></em></p>
-<h2 id="NSJSONSerialization">NSJSONSerialization</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">id</span>)JSONObjectWithData:(<span class="built_in">NSData</span> *)data</span><br><span class="line">                options:(<span class="built_in">NSJSONReadingOptions</span>)opt</span><br><span class="line">                  error:(<span class="built_in">NSError</span> **)error</span><br><span class="line">                  </span><br><span class="line">+ (<span class="built_in">NSData</span> *)dataWithJSONObject:(<span class="keyword">id</span>)obj</span><br><span class="line">                      options:(<span class="built_in">NSJSONWritingOptions</span>)opt</span><br><span class="line">                        error:(<span class="built_in">NSError</span> **)error</span><br></pre></td></tr></table></figure>
-<h2 id="JSONKit">JSONKit</h2><p>使用：<br><code>-fno-objc-arc</code></p>
-<p>序列化: <code>NSArray</code> <code>NSDictionary</code> <code>NSString</code></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">– JSONData</span><br><span class="line">– <span class="string">JSONDataWithOptions:</span><span class="string">includeQuotes:</span><span class="string">error:</span></span><br><span class="line">- <span class="string">JSONDataWithOptions:</span><span class="string">serializeUnsupportedClassesUsingDelegate:</span><span class="string">selector:</span><span class="string">error:</span></span><br><span class="line">- <span class="string">JSONDataWithOptions:</span><span class="string">serializeUnsupportedClassesUsingBlock:</span><span class="string">error:</span></span><br><span class="line"></span><br><span class="line">– JSONString</span><br><span class="line">– <span class="string">JSONStringWithOptions:</span><span class="string">includeQuotes:</span><span class="string">error:</span></span><br><span class="line">- <span class="string">JSONStringWithOptions:</span><span class="string">serializeUnsupportedClassesUsingDelegate:</span><span class="string">selector:</span><span class="string">error:</span></span><br><span class="line">– <span class="string">JSONStringWithOptions:</span><span class="string">serializeUnsupportedClassesUsingBlock:</span><span class="string">error:</span></span><br></pre></td></tr></table></figure>
-<p>反序列化: <code>NSData</code> <code>NSString</code></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">– objectFromJSONData</span><br><span class="line">– <span class="string">objectFromJSONDataWithParseOptions:</span></span><br><span class="line">– <span class="string">objectFromJSONDataWithParseOptions:</span><span class="string">error:</span></span><br><span class="line">– mutableObjectFromJSONData</span><br><span class="line">– <span class="string">mutableObjectFromJSONDataWithParseOptions:</span></span><br><span class="line">– <span class="string">mutableObjectFromJSONDataWithParseOptions:</span><span class="string">error:</span></span><br><span class="line"></span><br><span class="line">– objectFromJSONString</span><br><span class="line">– <span class="string">objectFromJSONStringWithParseOptions:</span></span><br><span class="line">– <span class="string">objectFromJSONStringWithParseOptions:</span><span class="string">error:</span></span><br><span class="line">– mutableObjectFromJSONString</span><br><span class="line">– <span class="string">mutableObjectFromJSONStringWithParseOptions:</span></span><br><span class="line">– <span class="string">mutableObjectFromJSONStringWithParseOptions:</span><span class="string">error:</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/XML&JSON/" data-id="cie2ful3v0028c2s6ywcvllg5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据解析XML/">数据解析XML</a></li></ul>
 
     </footer>
   </div>
@@ -410,10 +203,83 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/fmdb/" data-id="cie2ful2o001hc2s63hf44bje" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/15/fmdb/" data-id="cie8c3lal001kovnrz90g4mgc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FMDB/">FMDB</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-sqlite命令行工具" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/sqlite命令行工具/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/sqlite命令行工具/">sqlite3命令行工具</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sqlite3命令行工具是基于终端的SQLite软件，可以查询交互，并且可以多种格式显示结果。它也可以用在脚本中。</p>
+<p>打开终端，键入如下命令：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~  sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">SQLite <span class="keyword">version</span> 3.8.5 2014-08-15 22:37:57</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> usage hints.</span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
+<p>.help命令是sqlite3的元命令工具之一,它列出了sqlite3所有的元命令。 </p>
+<p>.exit 和 .quit 命令退出sqlite3会话。我们还可以使用组合键Ctrl + D 退出sqlite3。</p>
+<p>.databases命令显示了连接数据库。</p>
+<p>.tables表命令列出可用的表。</p>
+<h2 id="创建一个数据库">创建一个数据库</h2><p>使用sqlite3命令行工具来创建一个新的数据库文件：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sqlite3 <span class="keyword">test</span>.<span class="keyword">db</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">这里我们创建一个新的<span class="keyword">test</span>.<span class="keyword">db</span>数据库。如果文件存在，则打开数据库。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##创建数据库表</span><br></pre></td></tr></table></figure>
+<p>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">##基本sqlite3元命令</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .tables<br>Cars<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">.tables命令显示可用的表。</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; SELECT * FROM cars;<br>1|Audi|52642<br>2|Mercedes|57127<br>3|Skoda|9000<br>4|Volvo|29000<br>5|Bentley|350000<br>6|Citroen|21000<br>7|Hummer|41400<br>8|Volkswagen|21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">SELECT查询语句的输出默认情况下是按行输出，行分隔符是<span class="escape">`|</span><span class="escape">`。</span></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .separator :<br>sqlite&gt; SELECT * FROM cars;<br>1:Audi:52642<br>2:Mercedes:57127<br>3:Skoda:9000<br>4:Volvo:29000<br>5:Bentley:350000<br>6:Citroen:21000<br>7:Hummer:41400<br>8:Volkswagen:21600<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">上面使用了新的分隔符`:<span class="escape">`</span><br><span class="line"></span></span></span><br><span class="line">还有其他几个可用的输出模式。下面的示例显示列的输出模式：</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .mode column<br>sqlite&gt; .headers on<br>sqlite&gt; SELECT * FROM cars;<br>Id          Name        Price</p>
+<hr>
+<p>1           Audi        52642<br>2           Mercedes    57127<br>3           Skoda       9000<br>4           Volvo       29000<br>5           Bentley     350000<br>6           Citroen     21000<br>7           Hummer      41400<br>8           Volkswagen  21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .width 15 18<br>sqlite&gt; SELECT Name, Price FROM cars;<br>Name             Price</p>
+<hr>
+<p>Audi             52642<br>Mercedes         57127<br>Skoda            9000<br>Volvo            29000<br>Bentley          350000<br>Citroen          21000<br>Hummer           41400<br>Volkswagen       21600<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在这里，我们改变列宽。第一列将15个字符宽,第二列是18。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .show<br>echo: off<br>      eqp: off<br>  explain: off<br>  headers: on<br>     mode: column<br>nullvalue: “”<br>   output: stdout<br>separator: “:”<br>    stats: off<br>    width: 15 18<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.show</span> 命令列出各种设置。这些包括输出模式，在列表模式下使用的分隔符和是否显示头部。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .schema Cars<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.schema</span> 命令显示表的结构。它返回创建表的DDL SQL。</span><br><span class="line"></span><br><span class="line"><span class="class">.prompt</span> 命令可以改变的sqlite3的提示。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .prompt “&gt; “ “. “</p>
+<blockquote>
+<p>SELECT * FROM Cars<br>. LIMIT 2;<br>Id               Name                Price</p>
+<hr>
+<p>1                Audi                52642<br>2                Mercedes            57127<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有两个提示。最主要是第一个提示，另一个是继续提示。默认的主提示符是<span class="string">'sqlite&gt;'</span> 和默认的继续提示<span class="string">'...&gt;'</span>。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">##从shell执行SQL</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>$ sqlite3 test.db “SELECT * FROM Cars;”<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">##Dumping tables</span></span><br><span class="line"></span><br><span class="line">我们将使用.<span class="keyword">dump</span>命令来转储。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .dump Cars<br>PRAGMA foreign_keys=OFF;<br>BEGIN TRANSACTION;<br>CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER);<br>INSERT INTO “Cars” VALUES(1,’Audi’,52642);<br>INSERT INTO “Cars” VALUES(2,’Mercedes’,57127);<br>INSERT INTO “Cars” VALUES(3,’Skoda’,9000);<br>INSERT INTO “Cars” VALUES(4,’Volvo’,29000);<br>INSERT INTO “Cars” VALUES(5,’Bentley’,350000);<br>INSERT INTO “Cars” VALUES(6,’Citroen’,21000);<br>INSERT INTO “Cars” VALUES(7,’Hummer’,41400);<br>INSERT INTO “Cars” VALUES(8,’Volkswagen’,21600);<br>COMMIT;<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.dump</span> 命令显示了我们所必需的SQL创建表的信息。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .output cars2.sql<br>sqlite&gt; .dump Cars<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">我们也可以将输出重定向到一个文件中。</span><br><span class="line"></span><br><span class="line">.output命令会将输出重定向cars2.sql文件。</span><br><span class="line"></span><br><span class="line"><span class="comment">##Reading SQL</span></span><br><span class="line"></span><br><span class="line">我们可以从一个文件名读取SQL语句 `.<span class="command">read</span>` 命令。</span><br></pre></td></tr></table></figure></p>
+<p>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; DROP TABLE Cars;<br>sqlite&gt; .tables Cars<br>sqlite&gt; .read cars.sql<br>sqlite&gt; .tables Cars<br>Cars<br>sqlite&gt; SELECT * FROM Cars WHERE Id=1;<br>Id          Name        Price     </p>
+<hr>
+<p>1           Audi        52642<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="stylus">#<span class="id">#The</span> <span class="class">.sqlite_history</span> file</span><br><span class="line"></span><br><span class="line">命令和语句中存档于 .sqlite_history文件。该文件位于主目录。</span></span><br></pre></td></tr></table></figure></p>
+<p>$ tail -5 ~/.sqlite_history<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用tail命令,我们显示最后五项。</span><br><span class="line"></span><br><span class="line">#<span class="id">#Resource</span> file</span><br><span class="line"></span><br><span class="line">sqlite3 工具有一个资源文件 <span class="class">.sqliterc</span> 。 它位于主目录。如果没有这些文件，我们可以简单地创建它。 这些文件可以包含元命令，或常规的SQL语句。</span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line">$ cat <span class="class">.sqliterc</span> </span><br><span class="line"><span class="class">.mode</span> column</span><br><span class="line"><span class="class">.header</span> on</span><br><span class="line"><span class="class">.nullvalue</span> NULL</span><br></pre></td></tr></table></figure></p>
+<p>这里是一个简单的资源文件的例子，它有三个元命令。有了资源文件，我们不需要再次执行已有的元命令。当我们开始 sqlite3 工具，他们将自动执行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/sqlite命令行工具/" data-id="cie8c3l9r000rovnrjzt3db79" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqlite3命令行工具/">sqlite3命令行工具</a></li></ul>
 
     </footer>
   </div>
@@ -546,10 +412,61 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/Sqlite/" data-id="cie2ful43002hc2s6hp7vkgxq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/15/Sqlite/" data-id="cie8c3lbx002kovnr23sq809r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLite/">SQLite</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="ios-公钥私钥加密" class="article article-type-ios" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/15/公钥私钥加密/" class="article-date">
+  <time datetime="2015-04-15T11:20:14.000Z" itemprop="datePublished">2015-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/15/公钥私钥加密/">公钥私钥加密</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>鲍勃有两把钥匙，一把是公钥，另一把是私钥。</p>
+<p>鲍勃把公钥送给他的朋友们——帕蒂、道格、苏珊——每人一把。</p>
+<p>苏珊要给鲍勃写一封保密的信。她写完后用鲍勃的公钥加密，就可以达到保密的效果。</p>
+<p>鲍勃收信后，用私钥解密，就看到了信件内容。这里要强调的是，只要鲍勃的私钥不泄露，这封信就是安全的，即使落在别人手里，也无法解密。</p>
+<p>鲍勃给苏珊回信，决定采用”数字签名”。他写完后先用Hash函数，生成信件的摘要（digest）。</p>
+<p>然后，鲍勃使用私钥，对这个摘要加密，生成”数字签名”（signature）。</p>
+<p>鲍勃将这个签名，附在信件下面，一起发给苏珊。</p>
+<p>苏珊收信后，取下数字签名，用鲍勃的公钥解密，得到信件的摘要。由此证明，这封信确实是鲍勃发出的。<br>苏珊再对信件本身使用Hash函数，将得到的结果，与上一步得到的摘要进行对比。如果两者一致，就证明这封信未被修改过。</p>
+<hr>
+<p>复杂的情况出现了。道格想欺骗苏珊，他偷偷使用了苏珊的电脑，用自己的公钥换走了鲍勃的公钥。此时，苏珊实际拥有的是道格的公钥，但是还以为这是鲍勃的公钥。因此，道格就可以冒充鲍勃，用自己的私钥做成”数字签名”，写信给苏珊，让苏珊用假的鲍勃公钥进行解密。</p>
+<p>后来，苏珊感觉不对劲，发现自己无法确定公钥是否真的属于鲍勃。她想到了一个办法，要求鲍勃去找”证书中心”（certificate authority，简称CA），为公钥做认证。证书中心用自己的私钥，对鲍勃的公钥和一些相关信息一起加密，生成”数字证书”（Digital Certificate）。</p>
+<p>鲍勃拿到数字证书以后，就可以放心了。以后再给苏珊写信，只要在签名的同时，再附上数字证书就行了。</p>
+<p>苏珊收到Bob的信，先用CA的公钥解开数字证书，就可以拿到鲍勃真实的公钥了，然后就能证明”数字签名”是否真的是鲍勃签的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/15/公钥私钥加密/" data-id="cie8c3l9b000covnr685vhr0u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/公钥私钥加密/">公钥私钥加密</a></li></ul>
 
     </footer>
   </div>
@@ -737,7 +654,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/iOS音频技术/" data-id="cie2ful2e0016c2s6z1tnthem" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/15/iOS音频技术/" data-id="cie8c3la80019ovnr29g8uhlg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音频处理/">音频处理</a></li></ul>
@@ -789,7 +706,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/10/键盘收起的方法/" data-id="cie2ful140003c2s6ko2fat9a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/10/键盘收起的方法/" data-id="cie8c3l920003ovnr8o5536ux" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/键盘收起的方法/">键盘收起的方法</a></li></ul>
@@ -843,7 +760,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/10/ios_屏幕上移/" data-id="cie2ful2c0013c2s62cnnq1ds" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/10/ios_屏幕上移/" data-id="cie8c3la50016ovnreupqsnzy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/屏幕上移的方法/">屏幕上移的方法</a></li></ul>
@@ -893,7 +810,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/03/git常用操作/" data-id="cie2ful2j001cc2s6erdyrbly" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/03/git常用操作/" data-id="cie8c3lae001fovnrlyu07ry4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -972,7 +889,7 @@ myBlock();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/24/Block-代码块/" data-id="cie2ful4e002qc2s6sikcs6sa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/24/Block-代码块/" data-id="cie8c3lc7002tovnrfu1p98w0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Block/">Block</a></li></ul>
